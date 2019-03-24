@@ -1,0 +1,21 @@
+@keyframes FishTranslateHover {
+    0%      {transform: translatex(  0px) translatey( 0px) rotateY(  0deg)}
+    10%     {transform: translatex( 40px) translatey(40px) rotateY(  0deg)}
+    20%     {transform: translatex( 80px) translatey( 0px) rotateY(  0deg)}
+    30%     {transform: translatex(120px) translatey(70px) rotateY(  0deg)}
+    40%     {transform: translatex(160px) translatey( 0px) rotateY(  0deg)}
+    49%     {transform: translatex(200px) translatey(40px) rotateY(  0deg)}
+    51%     {transform: translatex(200px) translatey(40px) rotateY(180deg)}
+    60%     {transform: translatex(160px) translatey( 0px) rotateY(180deg)}
+    70%     {transform: translatex(120px) translatey(70px) rotateY(180deg)}
+    80%     {transform: translatex( 80px) translatey( 0px) rotateY(180deg)}
+    90%     {transform: translatex( 40px) translatey(40px) rotateY(180deg)}
+    98%     {transform: translatex(  0px) translatey( 0px) rotateY(180deg)}
+    100%    {transform: translatex(  0px) translatey( 0px) rotateY(  0deg)}
+}
+
+#GOLDiFisch{
+    z-index:999;
+    animation:FishTranslateHover 7s linear;
+    animation-play-state: paused;
+}

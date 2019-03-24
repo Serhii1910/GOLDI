@@ -1,0 +1,446 @@
+<nav id="TopNavigationBar" class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+
+        <!--
+        Navbar Header
+        
+        GOLDI Schriftzug links oben in der Ecke
+        -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="glyphicon glyphicon-flag"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><img id="GOLDiFisch" style="width:50px; position:relative; top:-7px" src="Images/GOLDi_Logo.png">&nbsp&nbsp&nbsp</a>
+            <script>
+                $(document).ready(function(){
+                    $("#GOLDiFisch").click(function(){
+                        $("#GOLDiFisch").css("animation-play-state","running");
+                    })
+                });
+            </script>
+        </div>
+
+
+        <!--
+        Navbar Inhalt
+        
+        WICHTIG: alle "class" mit "navbar-btn" füllen! - stellt die Button alle mittig dar
+        -->
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <!--style="text-align:center;"-->
+
+            <div class="nav navbar-nav">
+                    <!-- Control Unit Schriftzug -->
+                    <div class="btn-group navbar-btn">
+                        <span style="font-weight: bold" class="navbar-text ECP_Label" LabelId = "BPU" >Control Unit:</span>
+                    </div>
+                    <div class="btn-group navbar-btn">
+                        <span style="font-weight: bold" class="navbar-text" id = "BPU_Type"></span>
+                    </div>
+
+                    <!-- Upload Button -->
+                    <button id="UploadButton" type="button" class="btn btn-default navbar-btn"
+                            data-placement="bottom" data-toggle="tooltip" data-animation="false">
+                        <span class="glyphicon glyphicon-upload"></span>
+                    </button>
+
+                    <div id="ExampleDropDown" class="btn-group navbar-btn">
+
+                    <!-- Example Dropdown Button -->
+                    <button id="ExampleButton" type="button" class="btn btn-default dropdown-toggle navbar-btn ECP_Label"
+                            data-placement="bottom" data-animation="false" data-toggle="dropdown" LabelId="ECP_EXAMPLEBUTTON">
+                        Example
+                        <span class="caret"></span>
+                    </button>
+
+                    <!-- Inhalt des Dropdown Menüs -->
+                    <ul id="ExampleSelector" class="dropdown-menu" role="menu"></ul>
+
+                    </div>
+            </div>
+                
+            <div  id ="VisitorModeIconWrapper" class="navbar-text navbar-right">
+
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- Input description Schriftzug -->
+
+                    <div class="btn-group navbar-btn">
+                        <span style="font-weight: bold" class="navbar-text ECP_Label" LabelId = "ECP_INPUTDESCRIPTION"> IO-Description </span>
+                    </div>
+
+                    <div id="ActuatorDropDown" class="btn-group navbar-btn">
+                        <!-- Actuators -->
+                        <button id="ActuatorButton" type="button" class="btn btn-default dropdown-toggle navbar-btn ECP_Label" LabelId = "ECP_ACTUATORS"
+                                data-toggle="dropdown" data-placement="bottom" data-animation="false">
+                            Actuators
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="ActuatorsList" class="dropdown-menu" role="menu">
+                        </ul>
+                    </div>
+
+
+                    <div id="SensorDropDown" class="btn-group navbar-btn">
+                        <!-- Sensor -->
+                        <button id="SensorButton" type="button" class="btn btn-default dropdown-toggle navbar-btn ECP_Label" LabelId = "ECP_SENSORS"
+                                data-toggle="dropdown" data-placement="bottom" data-animation="false">
+                            Sensors
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="SensorList" class="dropdown-menu" role="menu">
+                        </ul>
+                    </div>
+
+                    <div id="LanguageDropDown" class="btn-group navbar-btn">
+                        <button id="LanguageButton" type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown" data-placement="bottom" data-animation="false">
+                            <span class="glyphicon glyphicon-flag"></span>
+                        </button>
+                        <ul id="LanguageList" class="dropdown-menu" role="menu" style="cursor: pointer"></ul>
+                    </div>
+
+                    <button id="HelpButton" type="button" class="btn btn-default navbar-btn" data-placement="bottom" data-toggle="tooltip" data-animation="false" onclick="window.open('index.php?Site=32');">
+                        <span class="glyphicon glyphicon-question-sign"></span>
+                    </button>
+
+                    <!--div class="btn-group navbar-btn"-->
+                    <button id="CloseECPButton" type="button" class="btn btn-default navbar-btn" data-placement="bottom" data-animation="false">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                    </button>
+
+                    <button id="ECPLogoutButton" type="button" class="btn btn-default navbar-btn ECP_Label" LabelId = "ECP_LOGOUT" data-placement="bottom" data-animation="false">
+                        Logout
+                    </button>
+
+                    <!--/div-->
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- style="float: none; margin: 0 auto;" -->
+<!-- SVG + CAM -->
+<div class="container-fluid">
+
+    <div id="RowMainView" class="row equal" style="overflow: hidden">
+
+        <div id="DIVAnimation" class="col-md-6 ecp-box vcenter noSelect" style="margin:0; display:block; text-align:center">
+        </div>
+
+        <div id="DIVWebCam" class="col-md-6 ecp-box vcenter noSelect">
+        </div>
+
+        <div id="DIVRightPanel" class="col-md-6 ecp-box vcenter">
+        </div>
+
+    </div>
+
+</div>
+<!-- Footer -->
+<footer>
+
+    <div id="BottomNavigationBar" class="navbar navbar-default navbar-fixed-bottom" id="footer-body" role="navigation" style="text-align:center;">
+
+        <!-- Light -->
+        <div class="btn-group navbar-btn">
+            <span style="font-weight: bold" class="navbar-text ECP_Label" LabelId = "ECP_LIGHT" >Light</span>
+        </div>
+
+        <div class="btn-group navbar-btn">
+            <button id="LightButton" type="button" class="btn btn-default" data-placement="top"
+                    data-animation="false">
+                <img src="ECP/Animation/Images/lightbulb_on.png">
+            </button>
+        </div>
+
+        <!-- Flow Control -->
+        <div class="btn-group navbar-btn">
+            <span style="font-weight: bold" class="navbar-text ECP_Label" LabelId = "ECP_FLOWCONTROL" >Flow Control</span>
+        </div>
+
+        <div class="btn-group vmrem">
+
+            <div class="btn-group navbar-btn">
+                <button id="StartButton" type="button" class="btn btn-default navbar-btn" data-placement="top" data-animation="false">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+
+                <button id="SingleStepSensorsButton" type="button" class="btn btn-default navbar-btn" data-placement="top"
+                        data-animation="false">
+                    <span class="glyphicon glyphicon-step-forward"></span>
+                </button>
+
+                <button id="SingleStepActuatorsButton" type="button" class="btn btn-default navbar-btn" data-placement="top"
+                        data-animation="false">
+                    <span class="glyphicon glyphicon-step-forward"></span>
+                </button>
+
+                <button id="RestartButton" type="button" class="btn btn-default navbar-btn" data-placement="top"
+                        data-animation="false">
+                    <span class="glyphicon glyphicon-share"></span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Breakpoints -->
+        <div class="btn-group navbar-btn">
+            <span style="font-weight: bold" class="navbar-text ECP_Label" LabelId = "ECP_BREAKPOINTS" >Breakpoints:</span>
+        </div>
+
+
+        <div class="btn-group vmrem">
+
+            <div class="btn-group navbar-btn">
+                <button id="SetBreakpointsButton" type="button" class="btn btn-default navbar-btn"
+                        data-placement="top" data-animation="false">
+                    <span class="glyphicon glyphicon-screenshot"></span>
+                </button>
+
+                <button id="ToggleBreakpointsButton" type="button" class="btn btn-default navbar-btn"
+                        data-placement="top" data-animation="false">
+                    <span class="glyphicon glyphicon-ok-circle"></span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Initialize -->
+        <div class="btn-group">
+
+            <!-- font-size: 3em;line-height: 1em;-->
+            <!--p style="font-size: 130%;padding-top: 2px;" class="navbar-text">&nbsp;Initialize:&nbsp;</p-->
+
+            <div class="btn-group dropup vmrem">
+
+                <button id="InitializeButton" type="button" class="btn btn-default dropdown-toggle navbar-btn ECP_Label" LabelId = "ECP_CHOOSEINITIALIZATION"
+                        data-toggle="dropdown">
+                    Choose Initialization
+                    <span class="caret"></span>
+                </button>
+
+                <ul id="InitializeList" class="dropdown-menu" role="menu">
+                </ul>
+
+            </div>
+
+            <!-- Error Log -->
+            <div class="btn-group dropup">
+                <!--                <p class="navbar-text">&nbsp;</p> -->
+
+                <button id="ErrorLogButton" type="button" class="btn btn-default dropdown-toggle navbar-btn ECP_Label"
+                        LabelId = "ECP_ERRORLOG" data-toggle="dropdown">
+                    Errorlog
+                    <span class="caret"></span>
+                </button>
+
+                <ul id="ErrorLogList" class="dropdown-menu" role="menu">
+                    <li><a> No Errors </a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="progress">
+            <div id="RemainingTimeProgressBar" class="progress-bar" role="progressbar" aria-valuenow="100"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span id="RemainingTimeText" class="progress-value"></span>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+<div id="ExampleDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div class="modal-content">
+            <div id="ExampleDialogCaption" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="LoadExampleOKButton">Load
+                </button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="UploadDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div>
+            <form id="UploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">File upload</h4>
+                    </div>
+                    <div id="UploadDialogContent" class="modal-body">
+                        <input id="FileUpload" type="file" name="UserFile" data-bfi-disabled>
+                    </div>
+                    <div class="modal-footer">
+                        <div style="float:left" id="UploadDialogFooterInfo"></div>
+                        <button id="UploadFileButton" type="button" class="btn btn-primary" disabled>Upload</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </form>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="BreakpointsDialog" class="modal fade js-loading-bar" data-backdrop="static">
+    <div class="modal-dialog" style="width:75%">
+        <div class="modal-content">
+            <div id="BreakpointsDialogContent" class="modal-body">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+        </div>
+    </div>
+</div>
+
+<div id="WaitingDialog" class="modal fade js-loading-bar" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h4 class="modal-title">Uploading file to control unit...</h4>
+                </div>
+                <div class="progress progress-popup">
+                    <div id="UploadingProgressBar" class="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                    </div>
+                </div>
+                <div id="ProgrammingProgressBarPopUp">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Flashing control unit...</h4>
+                    </div>
+                    <div class="progress progress-popup">
+                        <div id="ProgrammingProgressBar" class="progress-bar progress-bar-striped active"
+                             role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="CompleteErrorDialog" class="modal fade" data-backdrop="true">
+    <div class="modal-dialog">
+        <div id="CompleteErrorDialogContent" class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="modal-header alert alert-danger" role="alert">
+                        <h4 class="modal-title">All errors</h4>
+                    </div>
+                    <!--dl class="dl-horizontal" id="ErrorText">
+                    </dl-->
+                    <dl id="CompleteErrorText">
+                    </dl>
+                    <div class="modal-footer" style="text-align:center;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="TemporaryErrorDialog" class="modal fade" data-backdrop="true">
+    <div class="modal-dialog">
+        <div id="TemporaryErrorDialogContent" class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="modal-header alert alert-danger" role="alert">
+                        <h4 class="modal-title">Error</h4>
+                    </div>
+                    <!--dl class="dl-horizontal" id="ErrorText">
+                    </dl-->
+                    <dl id="TemporaryErrorText">
+                    </dl>
+                    <div class="modal-footer" style="text-align:center;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ExitDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div class="modal-content">
+            <div id="DeleteDialogCaption" class="modal-body">
+                Do you really want to exit your experiment?
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="exit">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="LogoutDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div class="modal-content">
+            <div id="DeleteDialogCaption" class="modal-body">
+                Do you really want to log out? This will also end your experiment!
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="logout">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="SimulationInitDialog" class="modal fade" role="dialog">
+    <div class="modal-dialog"data-keyboard="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Simulation Initialisation Dialog</h4>
+            </div>
+            <div id="SimulationInitDialogBody" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="BreakPointReachedSnackbar" class="ECP_Label snackbar navbar-default" LabelId = "ECP_BREAKPOINTREACHED">Breakpoint reached.</div>
+
+
+
+

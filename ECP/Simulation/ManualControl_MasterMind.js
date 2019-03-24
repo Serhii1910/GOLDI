@@ -1,0 +1,2 @@
+ManualControl.prototype.BuildUserControlPanelContent = function() {
+};

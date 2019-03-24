@@ -1,0 +1,2 @@
+ErrorDocument 404 http://goldi-labs.net/index.php?Site=10
+ErrorDocument 500 http://goldi-labs.net/index.php?Site=10

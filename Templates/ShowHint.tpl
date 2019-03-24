@@ -1,0 +1,1 @@
+<p class="alert alert-success tag" role="alert" data-i18n="[[++ErrorHint++]]"></p>

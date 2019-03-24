@@ -1,0 +1,2048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GOLDiFabric</name>
+  </assembly>
+  <members>
+    <member name="T:GOLDi.Fabric.Infrastructure.DefaultEndpointContext"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.DefaultEndpointContext.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.DefaultEndpointContext</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.DefaultEndpointContext.Default"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.DefaultEndpointContext.GetName(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.DeviceType"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.DeviceTypeConverter"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.DeviceTypeConverter.FromDeviceName(System.String)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.DeviceTypeConverter.ToDeviceName(GOLDi.Fabric.Infrastructure.DeviceType)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Endpoint">
+      <summary>
+            Represents the endpoint to which control messages are directed.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.#ctor(System.Int32,GOLDi.Fabric.Infrastructure.IEndpointContext)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Endpoint</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.Broadcast"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.CompareTo(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.Equals(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.Equals(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.GetHashCode"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.ID"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.Invalid"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.LegacyBaseID"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.LegacyServiceID"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_Equality(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_GreaterThan(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_GreaterThanOrEqual(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_Inequality(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_LessThan(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.op_LessThanOrEqual(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Endpoint.Server"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Endpoint.ToString"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.EndpointContext">
+      <summary>
+            Provides facilities to allocate and name endpoints.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.EndpointContext.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.EndpointContext</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.EndpointContext.Allocate(System.String)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.EndpointContext.GetName(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.EndpointContext.Infrastructure">
+      <summary>
+            Gets a pseudo-singleton instance.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Flow"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Flow.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Flow</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Flow.Destination"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Flow.FromMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Flow.Source"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.IEndpointContext"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IEndpointContext.GetName(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.IFabric"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IFabric.AddLink(GOLDi.Fabric.Infrastructure.IRoutableLink)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.IFabric.BroadcastedMessages"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.IFabric.DroppedMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IFabric.GetAttachedLinkInformation"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.IFabric.IncomingMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IFabric.InjectMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IFabric.RemoveLink(GOLDi.Fabric.Infrastructure.IRoutableLink)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.IFabric.ServiceLink"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.ILink">
+      <summary>
+            Defines the interface for accessing the GOLDi Bus at message level. 
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.ILink.IncomingMessages">
+      <summary>
+            Provides a stream of incoming messages.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.ILink.Post(GOLDi.Fabric.Messages.IMessage)">
+      <summary>
+            Queue a message for sending. There are no garanties for the message ordering.
+            This call ist thread-safe.
+            </summary>
+      <param name="message"></param>
+    </member>
+    <member name="T:GOLDi.Fabric.Infrastructure.IRoutableLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IRoutableLink.IsConnectable(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+            Check whether a given endpoint could be attached to this link.
+            </summary>
+      <param name="endpoint"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.IRoutableLink.IsConnected(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+            Check whether the endpoint is currently attached to this link.
+            </summary>
+      <param name="endpoint"></param>
+      <returns></returns>
+    </member>
+    <member name="T:GOLDi.Fabric.Infrastructure.IRoutableLinkInformation"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.IRoutableLinkInformation.Name"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.ISynchronizedLink">
+      <summary>
+            Provides synchronization facilities for GOLDi Bus access.
+            Communication with individual endpoints can be locked to allow exclusive access.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.ISynchronizedLink.BackgroundTransfer">
+      <summary>
+            Provides a link to the GOLDi Bus which will queue messages until they can be sent.
+            Locks aquired by <see cref="M:GOLDi.Fabric.Infrastructure.ISynchronizedLink.RequestExclusiveAccessAsync(GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)" />
+            will prevent immediate delivery and filter incoming messages.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.ISynchronizedLink.HasAccess(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+            Check whether the current link has access to the given endpoint.
+            </summary>
+      <param name="endpoint">Endpoint which should be checked for exclusive access.</param>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.ISynchronizedLink.RequestExclusiveAccessAsync(GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)">
+      <summary>
+            Request exclusive access to a single endpoint.
+            The function returns when the endpoint locks was successfully aquired.
+            </summary>
+      <param name="endpoint">Endpoint requiring exclusive access.</param>
+      <param name="cancel">Cancellation token to abort the wait for the reservation.</param>
+      <returns>Link with exclusive access to the given endpoint, which must be disposed to release the lock. It can only communicate with the set endpoint.</returns>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.ISynchronizedLink.RequestExclusiveAccessAsync(System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint},System.Threading.CancellationToken)">
+      <summary>
+            Request exclusive access to a number of endpoints. 
+            The function returns when all endpoint locks were successfully aquired.
+            </summary>
+      <param name="requiredEndpoints">List of all endpoints which require exculse access.</param>
+      <param name="cancel">Cancellation token to abort the wait for reservations.</param>
+      <returns>Link with exclusive access to the given endpoints, which must be disposed to release the lock.</returns>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.ISynchronizedLink.TryRequestExclusiveAccess(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+            Try to aquire exclusive access to an endpoint.
+            The atempt fails immediately if the device is already locked.
+            </summary>
+      <param name="endpoint">Endpoint requiring exclusive access.</param>
+      <returns>
+            If the request failed, <see langword="null" /> is returned. 
+            Otherwise a link with exclusive access to the given endpoint is returned, which must be disposed to release the lock.
+            It can only communicate with the set endpoint.
+            </returns>
+    </member>
+    <member name="T:GOLDi.Fabric.Infrastructure.LegacyEndpoints"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.LegacyEndpoints.FromLegacyIDOrNull(System.Int32)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Router"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Router</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.AddLink(GOLDi.Fabric.Infrastructure.IRoutableLink)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Router.BroadcastedMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Infrastructure.Router</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Router.DroppedMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.GetAttachedLinkInformation"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.GOLDi#Core#ComponentModel#ICollectionDependency{GOLDi#Fabric#Infrastructure#IRoutableLink}#ResolveDependency(System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.IRoutableLink})"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Router.IncomingMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.InjectMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Router.RemoveLink(GOLDi.Fabric.Infrastructure.IRoutableLink)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Router.ServiceLink"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter.#ctor(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.SingleEndpointAdapter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Infrastructure.SingleEndpointAdapter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter.LocalEndpoint"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter.LocalLink"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.SingleEndpointAdapter.Uplink"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.HandleIncomingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.HandleIncomingMessageAsync(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.HandleOutgoingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.HandleOutgoingMessageAsync(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.IncomingMessages"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.Link"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.AsyncFilterLink.Reply(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.FilterLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.FilterLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.FilterLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.FilterLink.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.FilterLink</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.FilterLink</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.FilterLink.HandleIncomingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.FilterLink.HandleOutgoingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.FilterLink.IncomingMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.FilterLink.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.ForwardingLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ForwardingLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.ForwardingLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ForwardingLink.HandleIncomingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ForwardingLink.HandleOutgoingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink.IncomingMessages"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink.Packets"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.PacketCollectingLink.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.ProgrammableLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.ProgrammableLink</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.ProgrammableLink</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.Forward(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.IncomingMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.IsBackgroundNoise(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.IsIncomingProcessingRequired(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.IsOutgoingProcessingRequired(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.ProcessIncomingMessageAsync(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.ProcessOutgoingMessageAsync(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.ReceiveAsync(System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.ReceiveAsync(System.TimeSpan)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.Reply(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.ProgrammableLink.ReplyAck(GOLDi.Fabric.Infrastructure.Endpoint,System.Boolean)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint},System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink.HandleIncomingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.RestrictedDestinationLink.HandleOutgoingMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.#ctor(GOLDi.Fabric.Infrastructure.ILink)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.SynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.SynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.BackgroundTransfer"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.SynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.SynchronizedLink</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.HasAccess(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.IncomingMessages"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.RequestExclusiveAccessAsync(GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.RequestExclusiveAccessAsync(System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint},System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.SynchronizedLink.TryRequestExclusiveAccess(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="T:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.#ctor(GOLDi.Fabric.Infrastructure.ILink)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.#ctor(GOLDi.Fabric.Infrastructure.ILink,System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.BackgroundTransfer"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.HasAccess(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.RequestExclusiveAccessAsync(GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.RequestExclusiveAccessAsync(System.Collections.Generic.IEnumerable{GOLDi.Fabric.Infrastructure.Endpoint},System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.Infrastructure.Links.UnsynchronizedLink.TryRequestExclusiveAccess(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="T:GOLDi.Fabric.Messages.DefaultNameValue"></member>
+    <member name="M:GOLDi.Fabric.Messages.DefaultNameValue.#ctor(System.String,System.Object)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.DefaultNameValue</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.DefaultNameValue.IsBindable(System.Reflection.ParameterInfo)"></member>
+    <member name="P:GOLDi.Fabric.Messages.DefaultNameValue.Value"></member>
+    <member name="T:GOLDi.Fabric.Messages.DefaultTypeValue"></member>
+    <member name="M:GOLDi.Fabric.Messages.DefaultTypeValue.#ctor(System.Object)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.DefaultTypeValue</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.DefaultTypeValue.IsBindable(System.Reflection.ParameterInfo)"></member>
+    <member name="P:GOLDi.Fabric.Messages.DefaultTypeValue.Value"></member>
+    <member name="T:GOLDi.Fabric.Messages.GOLDiMessageBase">
+      <summary>
+            Provides default implementations for all <see cref="T:GOLDi.Fabric.Messages.IMessage" /> members and 
+            allows the annotation of properties with the <see cref="T:GOLDi.Fabric.Messages.MessagePropertyAttribute" /> attribute for debugging purposes.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.GOLDiMessageBase.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+            Creates a new instance and sets the immutable members to the provided values.
+            </summary>
+      <param name="source">Source of the message, see <see cref="P:GOLDi.Fabric.Messages.IMessage.Source" />.</param>
+      <param name="destination">Destination of the message, see <see cref="P:GOLDi.Fabric.Messages.IMessage.Destination" />.</param>
+      <param name="creation">Timestamp of the message, see <see cref="P:GOLDi.Fabric.Messages.IMessage.Created" />.</param>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.GOLDiMessageBase.Created"></member>
+    <member name="P:GOLDi.Fabric.Messages.GOLDiMessageBase.Destination"></member>
+    <member name="M:GOLDi.Fabric.Messages.GOLDiMessageBase.GetAdditionalProperties">
+      <summary>
+            Derivered classes can use this method to provide attitional debug properties. (see <see cref="P:GOLDi.Fabric.Messages.GOLDiMessageBase.MessageContent" />)
+            </summary>
+      <returns>A sequence of name-value pairs describing the message content or <code>null</code>, if there are none.</returns>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.GOLDiMessageBase.MessageContent"></member>
+    <member name="P:GOLDi.Fabric.Messages.GOLDiMessageBase.Source"></member>
+    <member name="M:GOLDi.Fabric.Messages.GOLDiMessageBase.ToString"></member>
+    <member name="T:GOLDi.Fabric.Messages.IDefaultValue">
+      <summary>
+            Classes implementing IDefaultValue provide the Information of a defaultValue for objects during deserializing in an ObjectFactory.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.IDefaultValue.IsBindable(System.Reflection.ParameterInfo)">
+      <summary>
+            Checks if this DefaultValue is applicable for an given parameter.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.IDefaultValue.Value">
+      <summary>
+            The default Value to use
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.IMessage"></member>
+    <member name="P:GOLDi.Fabric.Messages.IMessage.Created">
+      <summary>
+            Timestamp of the creation of the message.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.IMessage.Destination">
+      <summary>
+            Destination of the message.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.IMessage.MessageContent">
+      <summary>
+            Request a human-readable list of the properites of the message.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.IMessage.Source">
+      <summary>
+            Creator of the message.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.IObjectDeserializer`1">
+      <summary>
+            Provides facilities to deserialize an object from a binary representation.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.IObjectDeserializer`1.TryParseObject(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])">
+      <summary>
+            Try parsing an object from a sequence of bytes.
+             
+            </summary>
+      <param name="format">Gives the format name in which the packet will be encoded.</param>
+      <param name="rawObject">Byte sequence to parse</param>
+      <param name="defaultValues">Default Values for the Object fields</param>
+      <returns>parsed object on success, <code>null</code> otherwise.</returns>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.IObjectFactory"></member>
+    <member name="T:GOLDi.Fabric.Messages.IObjectFactory`1"></member>
+    <member name="T:GOLDi.Fabric.Messages.IObjectSerializer`1">
+      <summary>
+            Provides facilities to convert an object into a binary representation.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.IObjectSerializer`1.IsCompatible(`0)">
+      <summary>
+            Check whether an Object can be passed to methods of this factory.
+            </summary>
+      <param name="obj">Object to check for validity.</param>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.IObjectSerializer`1.SerializeObject(System.String,`0)">
+      <summary>
+            Create a byte sequence for a object.
+            </summary>
+      <param name="format">Gives the format name in which the packet will be encoded.</param>
+      <param name="obj">Object to serialize</param>
+      <returns></returns>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.MessagePropertyAttribute">
+      <summary>
+            Labels a property in a class inheriting from <see cref="T:GOLDi.Fabric.Messages.GOLDiMessageBase" /> as relevant debugging information.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.MessagePropertyAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.MessagePropertyAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.MessagePropertyAttribute.Name"></member>
+    <member name="P:GOLDi.Fabric.Messages.MessagePropertyAttribute.RelativePosition"></member>
+    <member name="T:GOLDi.Fabric.Messages.ObjectIncompatibleException"></member>
+    <member name="M:GOLDi.Fabric.Messages.ObjectIncompatibleException.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ObjectIncompatibleException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ObjectIncompatibleException.#ctor(System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ObjectIncompatibleException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BCDAttribute">
+      <summary>
+            Labels a field inside a message layout definition as BCD-encoded.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BCDAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Byte)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int16}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int16}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int16)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int32}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int32}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int64}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int64}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int64)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#SByte}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#SByte}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.SByte)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt16}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt16}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt16)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt32}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt32}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt32)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BCDAttribute.WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt64)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BigEndianAttribute">
+      <summary>
+            Interpret raw incoming message as a big-endian bit vector with padding in the least significant bits.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BigEndianAttribute.#ctor(System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BigEndianAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BigEndianAttribute.Length"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BindingAttribute">
+      <summary>
+            Binds a constructor parameter to a specific field or property in the layout.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BindingAttribute.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BindingAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BindingAttribute.Source"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute">
+      <summary>
+            This is a positional attribute which selects a contiguous range of bits.
+            
+            When multiple positional attributes are applied to a single member, the first one will locate the most significant bits,
+            while the last one describes the least significant bits.
+            
+            All positional attributes used in a layout class must describe pairwise disjoint bit selections.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BitRangeAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute.GetView(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute.IsReverse"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute.LowerBound"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BitRangeAttribute.UpperBound"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BitsAttribute">
+      <summary>
+            This is a positional attribute which selects single bits by their index.
+            
+            When multiple positional attributes are applied to a single member, the first one will locate the most significant bits,
+            while the last one describes the least significant bits.
+            
+            All positional attributes used in a layout class must describe pairwise disjoint bit selections.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BitsAttribute.#ctor(System.Int32[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BitsAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BitsAttribute.GetView(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BitsAttribute.Positions"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute">
+      <summary>
+            This is a positional attribute which selects a contiguous range of bytes.
+            
+            When multiple positional attributes are applied to a single member, the first one will locate the most significant bits,
+            while the last one describes the least significant bits.
+            
+            All positional attributes used in a layout class must describe pairwise disjoint bit selections.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute.GetView(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute.IsReverse"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute.LowerBound"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.ByteRangeAttribute.UpperBound"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.BytesAttribute">
+      <summary>
+            This is a positional attribute which selects bytes by their index. 
+            
+            When multiple positional attributes are applied to a single member, the first one will locate the most significant bits,
+            while the last one describes the least significant bits.
+            
+            All positional attributes used in a layout class must describe pairwise disjoint bit selections.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BytesAttribute.#ctor(System.Int32[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.BytesAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.BytesAttribute.GetView(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.BytesAttribute.Positions"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.CodeLayoutForAttribute"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.CodeLayoutForAttribute.#ctor(System.Type,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.CodeLayoutForAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.CodeLayoutForAttribute.Format"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.CodeLayoutForAttribute.ObjectType"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.DefaultBindingAttribute">
+      <summary>
+            Indicate that default binding should take place on the specified parameter or all parameters of the constructor.
+            Default binding will try to case-insensitively find equaly named members of the layout and use their values. 
+            If that fails, binding by type to the provided default values (usually packet source or packet flow, creation timestamp)
+            will take place.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.DefaultBindingAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.DefaultBindingAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.FormatAttribute">
+      <summary>
+            Specify a format for the layout. The format is used to differentiate between different bus systems.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.FormatAttribute.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.FormatAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.FormatAttribute.Format"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.InvariantAttribute">
+      <summary>
+            Signals that the layout the member is defined in is only applicable if the original message object
+            contains a property with the same name and value. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.InvariantAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.InvariantAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.ISupportedFormatNameProvider"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.ISupportedFormatNameProvider.Format"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.LayoutAttribute">
+      <summary>
+            Provides a reference to a layout that can be used to serialize and deserialize the message.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.LayoutAttribute.#ctor(System.Type)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.LayoutAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.LayoutAttribute.LayoutType"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.LayoutForAttribute"></member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.LayoutForAttribute.#ctor(System.Type,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.LayoutForAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.LayoutForAttribute.Format"></member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.LayoutForAttribute.ObjectType"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.LengthAttribute">
+      <summary>
+            Provides the length of the message in bytes.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.LengthAttribute.#ctor(System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.LengthAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Attributes.LengthAttribute.Length"></member>
+    <member name="T:GOLDi.Fabric.Messages.Attributes.LittleEndianAttribute">
+      <summary>
+            Interpret raw incoming message as a little-endian bit vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Attributes.LittleEndianAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Attributes.LittleEndianAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory">
+      <summary>
+            Provides a <see cref="T:GOLDi.Fabric.Messages.IObjectFactory" /> implementation that uses reflection to serialize and deserialize
+            objects using layouts assigned by <see cref="T:GOLDi.Fabric.Messages.Attributes.LayoutAttribute" /> to them. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.AddSupportedLayout(System.Type)">
+      <summary>
+            Add a layout and its object type to the list of supported types.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.AddSupportedType(System.Type)">
+      <summary>
+            Add a type and all its layouts to the list of supported types.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.CompatibleTypes"></member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.Default">
+      <summary>
+            Get a quasi-singleton instance instance of this class.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.GOLDi#Fabric#Messages#IObjectDeserializer{GOLDi#Fabric#Messages#IMessage}#TryParseObject(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.GOLDi#Fabric#Messages#IObjectSerializer{GOLDi#Fabric#Messages#IMessage}#IsCompatible(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.GOLDi#Fabric#Messages#IObjectSerializer{GOLDi#Fabric#Messages#IMessage}#SerializeObject(System.String,GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.InstanceID"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.IsCompatible(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.LoadCurrentAndFutureObjectTypes">
+      <summary>
+            Load all objects with layouts from all assemblies in the current app domain.
+            Additinally, when another assembly is loaded, its defined objects will also be loaded.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.SerializeObject(System.String,System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.AttributeBasedObjectFactory.TryParseObject(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory">
+      <summary>
+            Provides a <see cref="T:GOLDi.Fabric.Messages.IObjectFactory" /> implementation that uses reflection to serialize and deserialize
+            objects using CodeLayouts. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.AddSupportedLayout(System.Type)">
+      <summary>
+            Add layout and its object type to the list of supported types.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.Default"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.InstanceID"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.IsCompatible(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.LoadCurrentAndFutureObjectTypes">
+      <summary>
+            Load all objects with layouts from all assemblies in the current app domain.
+            Additinally, when another assembly is loaded, its defined objects will also be loaded.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.SerializeObject(System.String,System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CodeBasedObjectFactory.TryParseObject(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory">
+      <summary>
+            Provides a <see cref="T:GOLDi.Fabric.Messages.IObjectFactory" /> implementation that allows to combine other ObjectFactories
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.AddFactory(GOLDi.Fabric.Messages.IObjectFactory)">
+      <summary>
+            Add an ObjectFactory to the combined Factory.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.Default"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.IsCompatible(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.SerializeObject(System.String,System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.CompositionObjectFactory.TryParseObject(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.DefaultFormatter">
+      <summary>
+            Provides serialization and deserialization support for all common types.
+            For signed numeric values, two's complement representation is used.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.DefaultFormatter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Boolean[]}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Boolean[]}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Boolean[])"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Boolean}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Boolean}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Boolean)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte[]}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte[]}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Byte[])"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Byte}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Byte)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int16}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int16}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int16)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int32}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int32}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int64}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#Int64}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.Int64)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#SByte}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#SByte}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.SByte)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt16}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt16}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt16)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt32}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt32}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt32)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt64}#ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.GOLDi#Fabric#Messages#Declarative#IValueFormatter{System#UInt64}#WriteTo(GOLDi.Core.BitManipulation.IBitVector,System.UInt64)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.DefaultFormatter.Instance"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.EnumFormatter"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.EnumFormatter.Create``1"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.EnumFormatter`2">
+      <summary>
+            Provides a value formatter for an enum type. 
+            </summary>
+      <typeparam name="TEnum"></typeparam>
+      <typeparam name="TRep"></typeparam>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.EnumFormatter`2.#ctor(GOLDi.Fabric.Messages.Declarative.IValueFormatter{`1})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.EnumFormatter`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.EnumFormatter`2.ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.EnumFormatter`2.WriteTo(GOLDi.Core.BitManipulation.IBitVector,`0)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ICodeBasedObjectLayout"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ICodeBasedObjectLayout.Serialize(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ICodeBasedObjectLayout.TryParse(System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.IContextFilter">
+      <summary>
+            Provides an interface attributes can implement to allow filtering deserialization support 
+            by environtment arguments like source address, packet flow and timestamp.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.IContextFilter.IsSupported(System.Object[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ILayoutConstant">
+      <summary>
+            Represents a contant in a layout.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ILayoutConstant.CheckValue(GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+            Check if the constant is correctly set in the vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ILayoutConstant.StoreValue(GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+            Store the value of the constant into the right places in the bit vector.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ILayoutMember">
+      <summary>
+            Represents a data member in a layout.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ILayoutMember.LoadValue(System.Object,GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+            Read the value from the bit vector into the proerty or field in the object.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ILayoutMember.StoreValue(System.Object,GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+            Store the value from the field or property of the given object into the bit vector.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ImplicitConversions"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ImplicitConversions.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.ImplicitConversions</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ImplicitConversions.IsConvertibleTo(System.Type,System.Type)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ImplicitConversions.PerformImplicitConversion(System.Type,System.Object)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.IValueFormatter`1">
+      <summary>
+            Provides methods to serialize and deserialize a given type into a bit vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.IValueFormatter`1.ReadFrom(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.IValueFormatter`1.WriteTo(GOLDi.Core.BitManipulation.IBitVector,`0)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.Layout">
+      <summary>
+            Represents a attribute based object layout and allows serialization and deserialization thereof.
+            These classes are normally referenced by a <see cref="T:GOLDi.Fabric.Messages.Attributes.LayoutAttribute" />.  
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.Layout.#ctor(System.Type)">
+      <summary>
+            Initialize a layout from its representing type using the information provided in the attached attributes.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.Layout.CreateRawObject(System.Object)">
+      <summary>
+            Serailize a layout instance into its binary representation.
+            </summary>
+      <param name="layout"></param>
+      <returns></returns>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.Layout.Invariant">
+      <summary>
+            Get all invariant properties of the layout.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.Layout.IsFormatSupported(System.String)"></member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.Layout.LayoutType"></member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.Layout.Length"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.Layout.TryCreateInstance(System.Collections.Generic.IReadOnlyList{System.Byte})">
+      <summary>
+            Create an instance of the layout type from a binary representation.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.LayoutConstant`1">
+      <summary>
+            Provides an abstract representation of a constant inside a layout class.
+            </summary>
+      <typeparam name="T">Defines the type of the const field.</typeparam>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutConstant`1.#ctor(System.Reflection.FieldInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.LayoutConstant`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutConstant`1.CheckValue(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutConstant`1.StoreValue(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.LayoutField`1">
+      <summary>
+            Provides an abstract representation of a mutable field inside a layout class.
+            </summary>
+      <typeparam name="T">Defines the type of the const field.</typeparam>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutField`1.#ctor(System.Reflection.FieldInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.LayoutField`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutField`1.GetValue(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutField`1.SetValue(System.Object,`0)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1">
+      <summary>
+            Provides the common functionality for accessing mutable members of layouts.
+            </summary>
+      <typeparam name="T">Defines the members type.</typeparam>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1.#ctor(System.Collections.Generic.IEnumerable{System.Attribute})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1.GetValue(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1.LoadValue(System.Object,GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1.SetValue(System.Object,`0)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutMemberBase`1.StoreValue(System.Object,GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.LayoutProperty`1">
+      <summary>
+            Provides an abstract representation of a property inside a layout class.
+            </summary>
+      <typeparam name="T">Defines the type of the const field.</typeparam>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutProperty`1.#ctor(System.Reflection.PropertyInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.LayoutProperty`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutProperty`1.GetValue(System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutProperty`1.SetValue(System.Object,`0)"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.LayoutToObjectConverter">
+      <summary>
+            This helper class tries to convert an input layout object into an instance of the class it represents.
+            It performs constructor argument binding by using the <see cref="T:GOLDi.Fabric.Messages.Attributes.DefaultBindingAttribute" /> semantics
+            or the <see cref="T:GOLDi.Fabric.Messages.Attributes.BindingAttribute" /> semantics.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutToObjectConverter.#ctor(System.Type)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.LayoutToObjectConverter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.LayoutToObjectConverter.TryCreateObject(System.Object,GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.Message"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.Message.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.Message</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ObjectSerializer"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectSerializer.#ctor(System.Type)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.ObjectSerializer</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectSerializer.AddLayout(System.Type)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectSerializer.Serialize(System.String,System.Object)"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectSerializer.TryDeserialize(System.String,System.Byte[],GOLDi.Fabric.Messages.IDefaultValue[])"></member>
+    <member name="T:GOLDi.Fabric.Messages.Declarative.ObjectToLayoutConverter">
+      <summary>
+            Constructs an instance of a layout type from a given object.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectToLayoutConverter.#ctor(System.Type,GOLDi.Fabric.Messages.Declarative.Layout)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.Declarative.ObjectToLayoutConverter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.Declarative.ObjectToLayoutConverter.Layout"></member>
+    <member name="M:GOLDi.Fabric.Messages.Declarative.ObjectToLayoutConverter.TryCreateLayout(System.Object)"></member>
+    <member name="T:GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage">
+      <summary>
+            Defines a message containing a computed actuator state and the sensor state that was used to compute the actuators.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage.#ctor(System.Boolean[],System.Boolean[],GOLDi.Fabric.Infrastructure.Flow,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage.ActuatorValues"></member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage.AlwaysFalse"></member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.BPUStateMessage.SensorValues"></member>
+    <member name="T:GOLDi.Fabric.Messages.ExperimentMessages.ExperimentConstants"></member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.ExperimentConstants.ActuatorCount">
+      <summary>
+            Get the maximum number of actuators supported by all devices.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.ExperimentConstants.SensorCount">
+      <summary>
+            Get the maximum number of sensors supported by all device.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ExperimentMessages.ExperimentDataMessage">
+      <summary>
+            Defines a base class for all messages containing experiment flow data.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ExperimentMessages.ExperimentDataMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ExperimentMessages.ExperimentDataMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ExperimentMessages.SPUStateMessage">
+      <summary>
+            Defines a message containing the state of an SPU containing the current value of the sensors.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ExperimentMessages.SPUStateMessage.#ctor(System.Boolean[],GOLDi.Fabric.Infrastructure.Flow,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ExperimentMessages.SPUStateMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.SPUStateMessage.AlwaysFalse"></member>
+    <member name="P:GOLDi.Fabric.Messages.ExperimentMessages.SPUStateMessage.SensorValues"></member>
+    <member name="T:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceFoundMessage">
+      <summary>
+            This is an out-of-band message signalling the detection of a new GOLDi device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceFoundMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.InfrastructureMessages.DeviceFoundMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceFoundMessage.FoundEndpoint"></member>
+    <member name="T:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceLostMessage">
+      <summary>
+            This is an out-of-band message signalling the loss of a previously connected GOLDi device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceLostMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.InfrastructureMessages.DeviceLostMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.InfrastructureMessages.DeviceLostMessage.LostEndpoint"></member>
+    <member name="T:GOLDi.Fabric.Messages.InfrastructureMessages.InfrastructureMessage">
+      <summary>
+            Defines a superclass for all messages that contain only meta information about state changes within the GOLDi infrastructure.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.InfrastructureMessages.InfrastructureMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.InfrastructureMessages.InfrastructureMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.AckMessage">
+      <summary>
+            Defines a message signaling the completion of an operation.
+            The <see cref="P:GOLDi.Fabric.Messages.ServiceMessages.AckMessage.Success" /> property indicates whether the operation was successful.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.AckMessage.#ctor(System.Boolean,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.AckMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AckMessage.Success"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage">
+      <summary>
+            Instructs an SPU to update the state of a breakpoint.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.#ctor(System.Boolean,System.Boolean,System.UInt32,System.Boolean,System.Boolean,System.Boolean,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.BitIndex"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.DeleteAll"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.DontCare"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.SelectActuator"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.SelectSensor"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.WhenOne"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AddBreakpointMessage.WhenZero"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage">
+      <summary>
+            Defines a message containing the response data to a <see cref="T:GOLDi.Fabric.Messages.ServiceMessages.PingMessage" />.
+            It contains information about the device and its firmware.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage.#ctor(System.UInt32,System.UInt32,GOLDi.Fabric.Infrastructure.DeviceType,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.AliveMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage.DeviceType"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage.FirmwareVersion"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage.HardwareVersion"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage">
+      <summary>
+            Provides a fragment of the name of a device, which is a string representation of its type.
+            This message is a reply to a <see cref="T:GOLDi.Fabric.Messages.ServiceMessages.QueryNameMessage" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.#ctor(System.Boolean,System.UInt32,System.Byte[],GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.Counter"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.IsLast"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.OffsetInBytes"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.Part"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage.PartialName"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage">
+      <summary>
+            Defines a message sent to a SPU to control the experiment flow. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.Nullable{System.DateTimeOffset},System.Boolean,System.Boolean,System.Nullable{System.Byte},System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ControlMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ControlMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.#ctor(System.Byte,System.Byte,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ControlMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.DisableBreakpoint"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.EnableBreakpoint"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.Flags"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.Initialize"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.InitMode"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.Parameter"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.Run"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.SingleStepActuator"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.SingleStepSensor"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ControlMessage.Stop"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.EEPROMAckMessage">
+      <summary>
+            This message is a reply to a <see cref="T:GOLDi.Fabric.Messages.ServiceMessages.ReadEEPROMMessage" /> and contains the read data.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.EEPROMAckMessage.#ctor(System.Byte,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.EEPROMAckMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.EEPROMAckMessage.Read"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage">
+      <summary>
+            This out-of-band message indicates a protection violation detected by an SPU.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage.#ctor(System.UInt32,System.Boolean,System.UInt32,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage.Code">
+      <summary>
+            Contains the ID of the error that was detected.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage.Counter">
+      <summary>
+            If multiple errors occured at once, 
+            it contains an increasing number starting at zero for the messages belonging to each other.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ErrorCodeMessage.IsTimeoutError">
+      <summary>
+            Indicates whether the error was caused by a timeout or a control exception.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.HardwareMessage">
+      <summary>
+            Defines a common base class for all messages that were sent by a GOLDi device as a response to a 
+            <seealso cref="T:GOLDi.Fabric.Messages.ServiceMessages.ServerMessage" />, hence its destination is always the service endpoint of the server.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.HardwareMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.HardwareMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.IdentityMessage">
+      <summary>
+            Provides a common base class for messages querying device information.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.IdentityMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.IdentityMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.IdentityMessage.RequestName"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.PingMessage">
+      <summary>
+            Queries a device for its hard- and software version, as well as its device type if supported.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.PingMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.PingMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.PingMessage.CreateDiscoveryPacket"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.PingMessage.RequestName"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage">
+      <summary>
+            Provides data for an SD card page and instructs the device to append the data to the SD card data.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage.#ctor(System.Byte[],GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage.Data"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage.Length"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage">
+      <summary>
+            Instructs a device to perform a programming-related operation.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.UInt32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.#ctor(System.Byte,System.UInt32,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.CopyFIFOToSD">
+      <summary>
+            On legacy systems, this action is used as part of the processing of a <see cref="T:GOLDi.Fabric.Messages.ServiceMessages.ProgramDataMessage" />.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.FileLength">
+      <summary>
+            Specifies the length of the program for the <see cref="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.UserProgram" /> and <see cref="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.SelfProgram" /> actions.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.Flags"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.HardReset">
+      <summary>
+            Trigger a hardware reset.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.ResetPageCounter">
+      <summary>
+            Signals the device to reset its internal SD card page pointer, causing the next written page to override the first one.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.SelfProgram">
+      <summary>
+            Override the device firmware with the program on the SD card.
+            The length of the program must be given in the <see cref="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.FileLength" /> property.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.UserProgram">
+      <summary>
+            Program the slave controller (µC/FPGA) with the data given at the SD card. 
+            The length of the program must be given in the <see cref="P:GOLDi.Fabric.Messages.ServiceMessages.ProgramMessage.FileLength" /> property.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage">
+      <summary>
+            Defines an out-of-band indication of a change of the experiment flow.
+            This message is sent by a SPU.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage.BreakPoint"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage.InitDone"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage.SingleStepActuators"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.PSPUControlMessage.SingleStepSensors"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.QueryNameMessage">
+      <summary>
+            Queries a device for its device name.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.QueryNameMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.QueryNameMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.QueryNameMessage.RequestName"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ReadEEPROMMessage">
+      <summary>
+            Instructs a device to retreive a byte from its on-board EEPROM.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ReadEEPROMMessage.#ctor(System.UInt32,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ReadEEPROMMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ReadEEPROMMessage.Address"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage">
+      <summary>
+            Signals an SPU to reset all breakpoints.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.BitIndex"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.DeleteAll"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.DontCare"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.SelectActuator"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.SelectSensor"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.WhenOne"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.RemoveAllBreakpointsMessage.WhenZero"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ResetDeviceMessage">
+      <summary>
+            Trigger a soft reset of a device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ResetDeviceMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ResetDeviceMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.SendDataMessage">
+      <summary>
+            Ask a SPU or BPU to send its current sensor and/or actuator values to the destination device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.SendDataMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.SendDataMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ServerMessage">
+      <summary>
+            Provides a common base class for all service messages created by the GOLDi server.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ServerMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ServerMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.ServerMessage.DestinationID"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.ServiceMessage">
+      <summary>
+            Provides a common base class for all service messages.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.ServiceMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.ServiceMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.SetBPUResetMessage">
+      <summary>
+            Instruct a BPU to hold its salve in the reset state or release it from the release state.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.SetBPUResetMessage.#ctor(System.Boolean,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.SetBPUResetMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetBPUResetMessage.Reset"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.SetDestinationMessage">
+      <summary>
+            Sets the other endpoint of an experiment for a BPU or SPU.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.SetDestinationMessage.#ctor(GOLDi.Fabric.Infrastructure.Endpoint,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.SetDestinationMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetDestinationMessage.TargetEndpoint"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage">
+      <summary>
+            Dimms the light attached to the SPU.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.UInt32,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.Blue"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.Green"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.Red"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.Value"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetLightLevelMessage.White"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.SetUserSensorMessage">
+      <summary>
+            Instructs an SPU to change an user sensors value.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.SetUserSensorMessage.#ctor(System.Byte,System.UInt32,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.SetUserSensorMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetUserSensorMessage.Index"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.SetUserSensorMessage.Value"></member>
+    <member name="T:GOLDi.Fabric.Messages.ServiceMessages.WriteEEPROMMessage">
+      <summary>
+            Instruct an SPU or BPU to change the value of a byte in its EEPROM.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.Messages.ServiceMessages.WriteEEPROMMessage.#ctor(System.UInt32,System.Byte,GOLDi.Fabric.Infrastructure.Endpoint,System.DateTimeOffset)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.Messages.ServiceMessages.WriteEEPROMMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.WriteEEPROMMessage.Address"></member>
+    <member name="P:GOLDi.Fabric.Messages.ServiceMessages.WriteEEPROMMessage.Data"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.Colors"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.DeviceInformationAPI"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.DeviceInformationAPI</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.PingAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.PingAsync(System.TimeSpan,System.Threading.CancellationToken)">
+      <summary>
+            Ping a device.
+            </summary>
+      <param name="pingTimeout">maximum time to wait for a reply of the device.</param>
+      <param name="cancel"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.QueryDeviceTypeAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.QueryDeviceTypeAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.QueryNameAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceInformationAPI.QueryNameAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.DeviceNameBuilder"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceNameBuilder.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.DeviceNameBuilder</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Fabric.RemoteApi.DeviceNameBuilder.CurrentState"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceNameBuilder.ProcessPacket(GOLDi.Fabric.Messages.ServiceMessages.AliveNameMessage)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.CopyBlockToSDCardAsync(System.Collections.Generic.IReadOnlyList{System.Byte},System.IProgress{System.Double})"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.CopyBlockToSDCardAsync(System.Collections.Generic.IReadOnlyList{System.Byte},System.IProgress{System.Double},System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.FlashSelfAsync(System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.FlashSelfAsync(System.Int32,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.HardResetDeviceAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.ProgramDataAsync(System.Collections.Generic.IEnumerable{System.Byte},System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.ResetPageCounterAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.ResetPageCounterAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.StartFlashingAsync(System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.DeviceProgrammingAPI.StartFlashingAsync(System.Int32,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.EepromAPI"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.EepromAPI.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.EepromAPI</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.EepromAPI.ReadAsync(System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.EepromAPI.ReadAsync(System.Int32,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.EepromAPI.WriteAsync(System.Int32,System.Byte)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.EepromAPI.WriteAsync(System.Int32,System.Byte,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.ExperimentAPI"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.ExperimentAPI</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.DisableBreakpointsAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.DisableBreakpointsAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.EnableBreakpointsAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.EnableBreakpointsAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.PerformSingleStepActuatorsAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.PerformSingleStepActuatorsAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.PerformSingleStepSensorsAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.PerformSingleStepSensorsAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.RemoveAllBreakpointsAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.RemoveAllBreakpointsAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.RequestSensorData"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.ResetAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.ResetAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetActuatorBreakpointAsync(System.Int32,System.Nullable{System.Boolean})"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetActuatorBreakpointAsync(System.Int32,System.Nullable{System.Boolean},System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetSensorBreakpointAsync(System.Int32,System.Nullable{System.Boolean})"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetSensorBreakpointAsync(System.Int32,System.Nullable{System.Boolean},System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetUserSensorAsync(System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.SetUserSensorAsync(System.Int32,System.Int32,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.StartExperimentAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.StartExperimentAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.StopExperimentAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.ExperimentAPI.StopExperimentAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.LabServiceBase"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.LabServiceBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.AssertSuccessAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.CollectAnswerAsync``1(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.CollectAnswersAsync``1(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="P:GOLDi.Fabric.RemoteApi.LabServiceBase.DefaultCancellationToken"></member>
+    <member name="P:GOLDi.Fabric.RemoteApi.LabServiceBase.DefaultTimeout"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Fabric.RemoteApi.LabServiceBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Fabric.RemoteApi.LabServiceBase</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="isDisposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Fabric.RemoteApi.LabServiceBase</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="P:GOLDi.Fabric.RemoteApi.LabServiceBase.Endpoint"></member>
+    <member name="P:GOLDi.Fabric.RemoteApi.LabServiceBase.Link"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.SendAndWaitForAckAsync(GOLDi.Fabric.Messages.IMessage,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LabServiceBase.WaitForAckAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.LightAPI"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LightAPI.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.LightAPI</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LightAPI.SetLightLevelAsync(GOLDi.Fabric.RemoteApi.Colors,System.Double)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LightAPI.SetLightLevelAsync(GOLDi.Fabric.RemoteApi.Colors,System.Double,System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Fabric.RemoteApi.LinkDecorator"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.#ctor(GOLDi.Fabric.Infrastructure.ILink,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Fabric.RemoteApi.LinkDecorator</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.AssertSuccessAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.AssertSuccessAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.CollectAnswerAsync``1"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.CollectAnswerAsync``1(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.CollectAnswersAsync``1"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.CollectAnswersAsync``1(System.TimeSpan,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.Post(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.WaitForAckAsync"></member>
+    <member name="M:GOLDi.Fabric.RemoteApi.LinkDecorator.WaitForAckAsync(System.TimeSpan,System.Threading.CancellationToken)"></member>
+  </members>
+</doc>

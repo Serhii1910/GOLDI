@@ -1,0 +1,183 @@
+<div id="WrapperFSMInterpreter"> <!--wrapper for vertical alignment-->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+       	<li class="active"><a class="ECP_Label" LabelId="ECP_EQUATIONTABSOUTPUTS" href="#outputs" role="tab" data-toggle="tab">Outputs y</a></li>
+        <li><a class="ECP_Label" LabelId="ECP_EQUATIONTABSMACHINES" href="#machines" role="tab" data-toggle="tab">Machines</a></li>
+        <li><a class="ECP_Label" LabelId="ECP_TABTIMEDMACHINES" href="#timedmachines" style="white-space: nowrap" role="tab" data-toggle="tab">Timed Machines</a></li>
+		<li><div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			File
+			<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a class="ECP_Label" LabelId="ECP_OPENBUTTON" id="OpenFileButton" href="#">Open</a></li>
+			<li><a class="ECP_Label" LabelId="ECP_SAVEBUTTON" id="SaveFileButton" href="#">Save</a></li>
+            <li><a class="ECP_Label" LabelId="ECP_IMPORTGIFT" id="ImportGIFTButton" href="#">Import from GIFT</a></li>
+			<li><a class="ECP_Label" LabelId="ECP_DELETEALLBUTTON" id="DeleteAllEquationsButton" data-toggle="modal" data-target="#FSM_DeleteAllEquationsDialog" href="#">Delete All</a></li>
+			</ul>
+		</div></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="outputs">
+            <div id="InputFieldsWrapper" style="margin: 30px;">
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="machines">
+            <div class="btn-group" style="margin: 30px;">
+                <button id="AddMachineButton" type="button" data-toggle="modal" data-target="#AddMachineDialog"
+                        class="btn btn-default" data-placement="bottom" data-animation="false">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button id="RemoveMachineButton" type="button" class="btn btn-default" disabled="disabled"
+                        data-placement="bottom" data-animation="false">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <div class="btn-group">
+                    <select id="MachineSelector" class="form-control" role="menu">
+                    </select>
+                </div>
+            </div>
+            <div class="input-group" style="margin: 40px;">
+                <div class="row">
+                    <label class="ECP_Label" LabelId="ECP_INITSTATE">Initial State:</label>
+                    <input id="InitialStateInput" style="width:10%">
+
+                    </input>
+                    <label class="ECP_Label" LabelId="ECP_CURRENTSTATE">Current State:</label>
+                    <input id="CurrentStateInput" disabled="disabled" style="width:10%">
+                    </input>
+                </div>
+            </div>
+
+            <div id="StateEquationsWrapper">
+            </div>
+        </div>
+        <div class="tab-pane fade" id="timedmachines">
+            <br>
+
+            <button
+                    type="button"
+                    class="btn btn-default"
+                    id="PlusTimedExpression"
+                    data-placement="bottom"
+                    data-animation="false"
+                    data-original-title="Add Timed Expression">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+
+            <button
+                    type="button"
+                    class="btn btn-default"
+                    id="MinusTimedExpression"
+                    data-placement="bottom"
+                    data-animation="false"
+                    data-original-title="Remove Timed Expression">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+
+            <br><br>
+
+            <div id="TimedExpressionsWrapper"></div>
+
+        </div>
+    </div>
+    <div id="AddMachineDialog" class="modal fade">
+        <div class="modal-dialog" data-keyboard="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title ECP_Label" LabelId="ECP_ADDMACHINE">Add machine</h4>
+                </div>
+                <div class="modal-body">
+                    <span class="ECP_Label" LabelId="ECP_ADDMACHINEDIALOGUEINFORMATION">Please enter a name for the new machine:</span>
+                    <p><input id="AddMachineName" type="text" class="span12"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default ECP_Label" LabelId="ECP_CANCELBUTTON" data-dismiss="modal">Cancel</button>
+                    <button id="AddMachineSaveButton" type="button ECP_Label" LabelId="ECP_SAVEBUTTON" class="btn btn-primary ECP_Label">Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div id="DeleteDialog" class="modal fade">
+        <div class="modal-dialog" data-keyboard="true">
+            <div class="modal-content">
+                <div id="DeleteDialogCaption" class="modal-body">
+                    Delete this machine?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-default ECP_Label" LabelId="ECP_CANCELBUTTON">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /wrapper for vertical alignment-->
+
+<div id="FSM_UploadDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div>
+            <form id="FSM_myForm" action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">FSM file upload</h4>
+                    </div>
+                    <div id="FSM_UploadDialogContent" class="modal-body">
+                        <input id="FSM_FileUpload" type="file" accept=".ecp" name="myfile" data-bfi-disabled>
+                    </div>
+                    <div class="modal-footer">
+                        <div style="float:left" id="FSM_UploadDialogFooterInfo"></div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="FSM_UploadFileButton" type="button" class="btn btn-primary" disabled="true">Open
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </form>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="FSM_ImportGIFTDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="ECP_Label" LabelId="ECP_IMPORTGIFTMACHINEDIALOGUEINFORMATION">Please name the Machine to be imported:</span>
+                <p><input id="ImportGIFTMachineName" type="text" class="span12"></p>
+            </div>
+            <div class="modal-body" id="VariableAssignmentDiv">
+                <!--Filled by the GIFT import function -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ECP_Label" LabelId="ECP_OKBUTTON" id="FSM_ImportGIFTButton">OK</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default ECP_Label" LabelId="ECP_CANCELBUTTON">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div><!-- /.modal -->
+
+<div id="FSM_DeleteAllEquationsDialog" class="modal fade">
+    <div class="modal-dialog" data-keyboard="true">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span> Are you sure deleting all equations?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ECP_Label" LabelId="ECP_OKBUTTON" id="FSM_DeleteAllEquationsModalButtonOk">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default ECP_Label" LabelId="ECP_CANCELBUTTON">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div><!-- /.modal -->

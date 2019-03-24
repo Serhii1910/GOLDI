@@ -1,0 +1,642 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>GOLDi Control API</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f" /><meta name="Description" content="The GOLDi Common Protocol specifies a number of API calls that must be implemented by all devices. This document describes the GOLDi Control API Protocol, which defines sequences of message exchanges to perform a wide variety operations on the devices." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script><script type="text/javascript" src="../scripts/clipboard.min.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">GOLDi Lab Server<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html\c0564785-82de-4e26-9716-cde0e96cc0d2.htm" title="GOLDi Lab Server" tocid="roottoc">GOLDi Lab Server</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html/b3d63f0b-7a28-4308-bde3-f25c0f8e555b.htm" title="GOLDi Common Protocol" tocid="b3d63f0b-7a28-4308-bde3-f25c0f8e555b">GOLDi Common Protocol</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="../html/10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f.htm" title="GOLDi Control API" tocid="10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f">GOLDi Control API</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="../html/f2f064c2-d979-44ad-8055-812a4e6bc951.htm" title="Experiment State Transmission" tocid="f2f064c2-d979-44ad-8055-812a4e6bc951">Experiment State Transmission</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img width="50" src="../icons/Help.png" /></td><td class="titleColumn"><h1>GOLDi Control API</h1></td></tr></table><span class="introStyle"></span> <div class="summary"><p>
+        The GOLDi Common Protocol specifies a number of API calls that must be implemented by all devices.
+        This document describes the GOLDi Control API Protocol, which defines sequences of message exchanges to
+        perform a wide variety operations on the devices.
+      </p></div><div class="introduction"><p>
+        The GOLDi Control API Protocol consists of many sub-protocols, each providing functionality for a group of related commands.
+        These tasks cover the experiment setup, teardown, user interactions, as well as maintenance tasks.
+        Each section of this document will introduce a group of commands and the message exchange sequences required to perform these.
+      </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SharedProtocol">Shared Protocol Properties</a></li><li class="outlineSectionEntry"><a href="#CommandOverview">
+        Command Overview
+      </a></li><li class="outlineSectionEntry"><a href="#ExperimentSetupAPI">Experiment Setup and Teardown</a></li><li class="outlineSectionEntry"><a href="#ExperimentFlow">Experiment Flow Control</a></li><li class="outlineSectionEntry"><a href="#SetLightLevel">Light Control</a></li><li class="outlineSectionEntry"><a href="#SetUserSensor">User Sensor Update</a></li></ul></div><div class="collapsibleAreaRegion" id="SharedProtocol"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shared Protocol Properties</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          All commands of the GOLDi Control API Protocol follow a common pattern, which is intended to look like function invocations.
+        </p><p>
+          To initiate a command, the lab server send a message inherting from 
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ServerMessage.htm">ServerMessage</a>
+          to the device. This message will be called the command message and has at least the following properties:
+        </p><dl><dt>
+            Command Message Source
+            (<a href="P_GOLDi_Fabric_Messages_IMessage_Source.htm">Source</a>)
+          </dt><dd><p>
+              The message source must be the GOLDi Lab Server, as given in
+              <a href="P_GOLDi_Fabric_Infrastructure_Endpoint_Server.htm">Server</a>.
+            </p></dd><dt>
+            Command Message Destination
+            (<a href="P_GOLDi_Fabric_Messages_IMessage_Destination.htm">Destination</a>)
+          </dt><dd><p>
+              The message destination is the target device endpoint.
+            </p></dd></dl><p>
+          A command is usually identified by the type of its command message.
+          Despite this convention, some messages might also have boolean flags that select one of many related commands. 
+        </p><p>
+          When a device received a message, it usually creates one or more replies.
+          By convention, a device will reply to a command causing a side effect with an
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_AckMessage.htm">AckMessage</a>
+          indicating success or failure of the operation using the
+          <a href="P_GOLDi_Fabric_Messages_ServiceMessages_AckMessage_Success.htm">Success</a>
+          property.
+          An unsuccessful command should always be treated as exceptional behavior. 
+        </p><p>
+          If a command yields one or more results, these will be packed into reply messages.
+          After all reply messages, a final acknowledgement (see above) must be sent.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            If a message is sent to a device, either the device itself, the link connecting it to the fabric, or a combination of both
+            can process a command message and create replies.
+            In this document, no distiction between these cases will be made.
+          </p></td></tr></table></div><p>
+          The replies created by the device share the following properties:
+        </p><dl><dt>
+            Reply Message Source
+            (<a href="P_GOLDi_Fabric_Messages_IMessage_Source.htm">Source</a>)
+          </dt><dd><p>
+              The message source is the device endpoint.
+            </p></dd><dt>
+            Reply Message Destination
+            (<a href="P_GOLDi_Fabric_Messages_IMessage_Destination.htm">Destination</a>)
+          </dt><dd><p>
+              The message destiantion must be the GOLDi Lab Server, as given in
+              <a href="P_GOLDi_Fabric_Infrastructure_Endpoint_Server.htm">Server</a>.
+            </p></dd></dl><h3 class="procedureSubHeading">General Command Sequence (Summary)</h3><div class="subSection"><ol><li><p>
+                  The GOLDi Lab Server sends the command message.
+                </p></li><li><p>
+                  The device receives and processes the message.
+                </p></li><li><p>
+                  If the command yield results, these will be packed into messages and sent back to the GOLDi Lab Server.
+                </p></li><li><p>
+                  If the command has yielded a result or has had a side effect, a final acknowledgement is sent.
+                </p></li></ol></div></div><div class="collapsibleAreaRegion" id="CommandOverview"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />
+        Command Overview
+      </span></div><div id="ID1RBSection" class="collapsibleSection"><div class="tableSection"><div class="caption">Command Summary</div><table><tr><th><p>
+                  Command Name
+                </p></th><th><p>
+                  Command Message Type
+                </p></th><th><p>
+                  Reply Message Type
+                </p></th><th><p>
+                  Number of Reply Messages
+                </p></th><th><p>
+                  Acknowledgement
+                </p></th></tr><tr><td><p><a href="#SetDestination">Set Destination</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetDestinationMessage.htm">SetDestinationMessage</a></p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#ResetDevice">Reset Device</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ResetDeviceMessage.htm">ResetDeviceMessage</a></p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_Run">Run Experiment</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>: 
+              <span class="keyword"><span id="LSTB47D1933_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_0?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_Stop">Stop Experiment</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>:
+                <span class="keyword"><span id="LSTB47D1933_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_1?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_Init">Initialize Model</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>:
+                <span class="keyword"><span id="LSTB47D1933_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_2?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_SSA">Run Until Actuator Changes</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>:
+                <span class="keyword"><span id="LSTB47D1933_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_3?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_SSS">Run Until Sensor Changes</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>:
+                <span class="keyword"><span id="LSTB47D1933_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_4?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_BPEnable">Enable Breakpoints</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>:
+                <span class="keyword"><span id="LSTB47D1933_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_5?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#Control_BPEnable">Disable Breakpoints</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>:
+                <span class="keyword"><span id="LSTB47D1933_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_6?vb=True|nu=true");</script></span>)
+              </p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#SetLightLevel">Change Lighting</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage.htm">SetLightLevelMessage</a></p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr><tr><td><p><a href="#SetUserSensor">Set User Sensor</a></p></td><td><p><a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetUserSensorMessage.htm">SetUserSensorMessage</a></p></td><td><p>
+                - </p></td><td><p>
+                0 </p></td><td><p>
+                Yes </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="ExperimentSetupAPI"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Experiment Setup and Teardown</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          The Experiment Setup API provides functions to setup up and tear down an experiment.
+        </p><p>This section contains the following subsections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SetDestination">
+            Experiment Component Linking
+          </a></li><li class="outlineSectionEntry"><a href="#ResetDevice">Experiment Interface Reset</a></li></ul><h4 class="subHeading" id="SetDestination">
+            Experiment Component Linking
+          </h4><div class="subsection"><p>
+              Before an experiment is started, the pariticipating devices must be linked together.
+              This is done by setting their destinations: The SPU becomes the destination of the BPU and vice versa.
+            </p><p>
+              To set the destination of a device, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetDestinationMessage.htm">SetDestinationMessage</a>
+              to the device.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Target endpoint
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetDestinationMessage_TargetEndpoint.htm">TargetEndpoint</a>)
+              </dt><dd><p>
+                  The target endpoint is the endpoint of the other device participating in the same experiment.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p></div><h4 class="subHeading" id="ResetDevice">Experiment Interface Reset</h4><div class="subsection"><p>
+              Before and after each experiment, an experiment interface reset is performed on all devices.
+              This command performs cleanup actions, which must include at least resetting the component linking.
+            </p><p>
+              To reset a device, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ResetDeviceMessage.htm">ResetDeviceMessage</a>
+              to the device.
+            </p><p>
+              This command yields no results, but requires an acknowledgement.
+            </p></div></div><div class="collapsibleAreaRegion" id="ExperimentFlow"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Experiment Flow Control</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+          The Experiment Flow Control API provides functions to start, stop or single step through experiments.
+        </p><p>This section contains the following subsections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Control_Run">
+            Run an experiment
+          </a></li><li class="outlineSectionEntry"><a href="#Control_Stop">
+            Stop an experiment
+          </a></li><li class="outlineSectionEntry"><a href="#Control_Init">
+            Initialize a model
+          </a></li><li class="outlineSectionEntry"><a href="#Control_SSA">
+            Run the experiment until an actuator changes
+          </a></li><li class="outlineSectionEntry"><a href="#Control_SSS">
+            Run the experiment until a sensor changes
+          </a></li><li class="outlineSectionEntry"><a href="#Control_BPEnable">
+            Enable breakpoints
+          </a></li><li class="outlineSectionEntry"><a href="#Control_BPDisable">
+            Disable breakpoints
+          </a></li></ul><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            Currently, all experiment flow functions are implemented using the 
+            <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>.
+            This is a design issue and is likely to be changed in future revisions of the GOLDi Common Protocol.
+          </p></td></tr></table></div><h4 class="subHeading" id="Control_Run">
+            Run an experiment
+          </h4><div class="subsection"><p>
+              To begin with the execution of an experiment, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x80</span> indicating the "Run" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_7?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_8?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_9?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_10?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_11?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Start the experiment execution, set to <span class="keyword"><span id="LSTB47D1933_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_12?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_13?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p></div><h4 class="subHeading" id="Control_Stop">
+            Stop an experiment
+          </h4><div class="subsection"><p>
+              To stop the execution of an experiment, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x40</span> indicating the "Stop" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_14?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_15?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_16?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_17?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_18?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_19?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Stop the experiment execution, set to <span class="keyword"><span id="LSTB47D1933_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_20?vb=True|nu=true");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p></div><h4 class="subHeading" id="Control_Init">
+            Initialize a model
+          </h4><div class="subsection"><p>
+              To put a model into a well-defined initial state, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Provides the id of the initial position the model should go to.
+                  Valid positions depend on the type of the SPU.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x08</span> indicating the "Init" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_21?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_22?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Runs the initialization, set to <span class="keyword"><span id="LSTB47D1933_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_23?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_24?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_25?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_26?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_27"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_27?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                When the initialization is completed, the device will send an out-of-band
+                <a href="T_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage.htm">PSPUControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage_InitDone.htm">InitDone</a>: <span class="keyword"><span id="LSTB47D1933_28"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_28?vb=True|nu=true");</script></span>)
+                message.
+              </p></td></tr></table></div></div><h4 class="subHeading" id="Control_SSA">
+            Run the experiment until an actuator changes
+          </h4><div class="subsection"><p>
+              To run the experiment until an actuator changes, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x10</span> indicating the "SingleStepActuator" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_29"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_29?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_30"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_30?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_31"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_31?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Runs until an actuator changes, set to <span class="keyword"><span id="LSTB47D1933_32"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_32?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_33"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_33?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_34"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_34?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_35"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_35?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                When the experiment was paused because an actuator changed, the device will send an out-of-band
+                <a href="T_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage.htm">PSPUControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage_SingleStepActuators.htm">SingleStepActuators</a>: <span class="keyword"><span id="LSTB47D1933_36"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_36?vb=True|nu=true");</script></span>)
+                message.
+              </p></td></tr></table></div></div><h4 class="subHeading" id="Control_SSS">
+            Run the experiment until a sensor changes
+          </h4><div class="subsection"><p>
+              To run the experiment until a sensor changes, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x20</span> indicating the "SingleStepSensor" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_37"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_37?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_38"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_38?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_39"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_39?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_40"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_40?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Runs until a sensor changes, set to <span class="keyword"><span id="LSTB47D1933_41"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_41?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_42"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_42?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_43"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_43?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                When the experiment was paused because a sensor changed, the device will send an out-of-band
+                <a href="T_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage.htm">PSPUControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage_SingleStepSensors.htm">SingleStepSensors</a>: <span class="keyword"><span id="LSTB47D1933_44"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_44?vb=True|nu=true");</script></span>)
+                message.
+              </p></td></tr></table></div></div><h4 class="subHeading" id="Control_BPEnable">
+            Enable breakpoints
+          </h4><div class="subsection"><p>
+              Run the experiment until an actuator changes, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x04</span> indicating the "EnableBreakpoint" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_45"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_45?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Enable breakpoints, set to <span class="keyword"><span id="LSTB47D1933_46"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_46?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_47"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_47?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_48"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_48?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_49"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_49?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_50"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_50?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_51"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_51?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                When the experiment was paused because a breakpoint was reached, the device will send an out-of-band
+                <a href="T_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage.htm">PSPUControlMessage</a>
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_PSPUControlMessage_BreakPoint.htm">BreakPoint</a>: <span class="keyword"><span id="LSTB47D1933_52"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_52?vb=True|nu=true");</script></span>)
+                message.
+              </p></td></tr></table></div></div><h4 class="subHeading" id="Control_BPDisable">
+            Disable breakpoints
+          </h4><div class="subsection"><p>
+              Run the experiment until an actuator changes, the GOLDi Lab Server sends a
+              <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage.htm">ControlMessage</a>
+              to the SPU.
+              The message contains has the following additional properties:
+            </p><dl><dt>
+                Initialization Mode
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_InitMode.htm">InitMode</a>,
+                <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Parameter.htm">Parameter</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="code">0</span>.
+                </p></dd><dt>
+                Flags
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Flags.htm">Flags</a>)
+              </dt><dd><p>
+                  Unused (Automatically set to <span class="code">0x02</span> indicating the "DisableBreakpoint" sub command.)
+                </p></dd><dt>
+                Disable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_DisableBreakpoint.htm">DisableBreakpoint</a>)
+              </dt><dd><p>
+                  Disable breakpoints, set to <span class="keyword"><span id="LSTB47D1933_53"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_53?vb=True|nu=true");</script></span>.
+                </p></dd><dt>
+                Enable Breakpoints
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_EnableBreakpoint.htm">EnableBreakpoint</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_54"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_54?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Initialization
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Initialize.htm">Initialize</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_55"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_55?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Actuator Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepActuator.htm">SingleStepActuator</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_56"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_56?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Perform Single Sensor Step
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_SingleStepSensor.htm">SingleStepSensor</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_57"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_57?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Run Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Run.htm">Run</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_58"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_58?vb=False|nu=false");</script></span>.
+                </p></dd><dt>
+                Stop Experiment
+                (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_ControlMessage_Stop.htm">Stop</a>)
+              </dt><dd><p>
+                  Unused, set to <span class="keyword"><span id="LSTB47D1933_59"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB47D1933_59?vb=False|nu=false");</script></span>.
+                </p></dd></dl><p>
+              This command yields no results, but requires an acknowledgement.
+            </p></div></div><div class="collapsibleAreaRegion" id="SetLightLevel"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Light Control</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+          There is currently only one light-related command.
+          It is used to set the light brightness for the different color channels (red, green, blue and white).
+        </p><p>
+          To change the lighting of an experiment, the GOLDi Lab Server sends a
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage.htm">SetLightLevelMessage</a>.
+          The message has the following properties:
+        </p><dl><dt>
+            Channel Selection
+            (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage_Red.htm">Red</a>,
+            <a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage_Green.htm">Green</a>,
+            <a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage_Blue.htm">Blue</a>,
+            <a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage_White.htm">White</a>)
+          </dt><dd><p>
+              Selects the light channel whichs value should be changed. 
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><ul><li><p>
+                    For compatibility reasons, only one channel should be selected.
+                  </p></li><li><p>
+                    New GCP implementations are required to support multiple channel changes at once.
+                  </p></li></ul></td></tr></table></div></dd><dt>
+            Light Intensity
+            (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetLightLevelMessage_Value.htm">Value</a>)
+          </dt><dd><p>
+              Provides the new light intensity for the selected channels. 
+              The value must be between <span class="input">0</span> (off) and <span class="input">4095</span> (on).
+            </p></dd></dl><p>
+          This command yields no results, but requires an acknowledgement.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            A failure of this command should not be treated as a critical error, and no experiment should be interrupted
+            if its lights are not operable.
+          </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="SetUserSensor"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />User Sensor Update</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+          There is currently only one user sensor related command.
+          It is used to update the value of a user sensor.
+        </p><p>
+          User sensor information is sent to the SPU, where it is usually embedded into the experiment sensor values.
+        </p><p>
+          To change the value of a user sensor, the GOLDi Lab Server sends a
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_SetUserSensorMessage.htm">SetUserSensorMessage</a>.
+          The message has the following properties:
+        </p><dl><dt>
+            User Sensor Index
+            (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetUserSensorMessage_Index.htm">Index</a>)
+          </dt><dd><p>
+              Selects the user sensor whichs value should be changed. 
+              The number of available user sensors depends on the SPU type.
+            </p></dd><dt>
+            User Sensor Value
+            (<a href="P_GOLDi_Fabric_Messages_ServiceMessages_SetUserSensorMessage_Value.htm">Value</a>)
+          </dt><dd><p>
+              Provides the new value for the user sensor.
+              The range of the user sensor values depends on the SPU type.
+            </p></dd></dl><p>
+          This commands yield no results, but requires an acknowledgement.
+        </p></div></div></div><div id="pageFooter" class="pageFooter" /></body></html>

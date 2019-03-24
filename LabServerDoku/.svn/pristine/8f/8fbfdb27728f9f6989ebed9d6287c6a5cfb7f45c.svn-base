@@ -1,0 +1,68 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>GOLDi Common Protocol</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="b3d63f0b-7a28-4308-bde3-f25c0f8e555b" /><meta name="Description" content="This document introduces the GOLDi Common Protocol, which defines the messages and expected responses. It additionally introduces the infrastructure that is used to exchange these messages." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script><script type="text/javascript" src="../scripts/clipboard.min.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">GOLDi Lab Server<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html\c0564785-82de-4e26-9716-cde0e96cc0d2.htm" title="GOLDi Lab Server" tocid="roottoc">GOLDi Lab Server</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html/b3d63f0b-7a28-4308-bde3-f25c0f8e555b.htm" title="GOLDi Common Protocol" tocid="b3d63f0b-7a28-4308-bde3-f25c0f8e555b">GOLDi Common Protocol</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="../html/10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f.htm" title="GOLDi Control API" tocid="10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f">GOLDi Control API</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="../html/f2f064c2-d979-44ad-8055-812a4e6bc951.htm" title="Experiment State Transmission" tocid="f2f064c2-d979-44ad-8055-812a4e6bc951">Experiment State Transmission</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img width="50" src="../icons/Help.png" /></td><td class="titleColumn"><h1>GOLDi Common Protocol</h1></td></tr></table><span class="introStyle"></span> <div class="summary"><p>
+        This document introduces the GOLDi Common Protocol, which defines the messages and expected responses.
+        It additionally introduces the infrastructure that is used to exchange these messages.
+      </p></div><div class="introduction"><p>
+        The GOLDi System supports various kinds of connected devices.
+        Each of the might also have its own method to communicate with the GOLDi Lab Server.
+        To allow the interoperability between different devices, a common message-based protocol
+        was defined.
+        The shared protocol, called the GOLDi Common Protocol (GCP), can be divided into three subprotocols.
+        These parts will be introduced in the following sections.
+      </p></div><div class="collapsibleAreaRegion" id="Fundamentals"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />
+        Fundamental concepts of the GOLDi Common Protocol (GCP)
+      </span></div><div id="ID0RBSection" class="collapsibleSection"><p>This section contains the following subsections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Endpoints">Device Endpoints</a></li><li class="outlineSectionEntry"><a href="#Links">Physical Links</a></li><li class="outlineSectionEntry"><a href="#InBandMessages">In-Band Messaging and Service Messages</a></li><li class="outlineSectionEntry"><a href="#OutOfBandMessages">Out-Of-Band Messaging and Experiment Messages</a></li><li class="outlineSectionEntry"><a href="#Experiment">Experiments</a></li></ul><p>
+          The GOLDi Common Protocol uses messages to communicate between the devices.
+          It assumes that messages are not corrupted or lost during the transmission. 
+          The only exception to this guarantee is the total loss of communication with a device.
+        </p><p>
+          All devices are logically attached to a shared infrastructure, the GOLDi Fabric.
+          The GOLDi Fabric forwards messages generated by any component to its destination.
+        </p><h4 class="subHeading" id="Endpoints">Device Endpoints</h4><div class="subsection"><p>
+              Each message of the GOLDi Common Protocol carries information about its source and its destination.
+              These are represented in <a href="T_GOLDi_Fabric_Infrastructure_Endpoint.htm">Endpoints</a>.
+              Each endpoint uniquely identifies a device or component attached to the server.
+              An exception to this rule is the broadcast endpoint, that can only act as a message destination. 
+              It signals that the message shall be delivered to all attached components and devices.
+            </p><p>
+              Each endpoint has a unique ID. For interoperability with legacy hardware, these IDs should be 1 and 31 for 
+              BPUs and between 33 and 63 for SPUs. New devices must not assume any correllation between an ID and 
+              the devices they belong to. 
+              If possible, the concept of endpoints should not be presented to the attached hardware directly. 
+              Instead, this information shall be stored inside the software component in the GOLDi Lab Server that
+              implements the protocol used to communicate with the hardware.
+            </p><p>
+              While endpoints usually represent devices, there are also more abstract kinds of endpoints.
+              The before mentioned broadcast endpoint is an example of such.
+              For meta-information exchange, there are infrastructure endpoints which represent components
+              inside the GOLDi fabric. If link can detect that a device was disovered or lost, it will use
+              its infrastructure endpoint to create a message publishing inforamtion about the event.
+            </p></div><h4 class="subHeading" id="Links">Physical Links</h4><div class="subsection"><p>
+              The raw GOLDi Lab Server does not contain any implementations of ways to communicate with physical devices.
+              These are provided by "Physical Links" which are loaded using the GOLDi Plugin Archtecture. 
+            </p></div><h4 class="subHeading" id="InBandMessages">In-Band Messaging and Service Messages</h4><div class="subsection"><p>
+              The GOLDi Common Protocol defines a set of 
+              <a href="N_GOLDi_Fabric_Messages_ServiceMessages.htm">service messages</a>,
+              which represent commands the GOLDi Lab Server issues to the devices.
+              Because there is no mechanism to find out which request lead to a response, temporal information has to be used.
+              If different commands had overlapped, it would be impossible for the GOLDi Lab Server to detect f.e. which
+              operation succeeded and which failed. 
+            </p><p>
+              All service messages share the poperty of either its source or its destination beeing the Lab Server.
+              To ensure that different components of the GOLDi Lab Server do not interfere with each other,
+              there are special facilities from synchronization. The use of those synchronization mechanisms 
+              leads to the in-band classification. 
+            </p></div><h4 class="subHeading" id="OutOfBandMessages">Out-Of-Band Messaging and Experiment Messages</h4><div class="subsection"><p>
+              While the aleady described in-band messaging is used to send commands to the devices,
+              the devices communicate with each other during experiment execution to propagate sensor and actuator changes.
+              Such state changes may occur at any point in time. To avoid synchronization between devices or polling,
+              these state change messages are allowed to be interleaved with services messages.
+            </p></div><h4 class="subHeading" id="Experiment">Experiments</h4><div class="subsection"><p>
+              An experiment is a central concept of the GOLDi Common Protocol.
+              Each experiment consists of one BPU and one SPU, which are logically linked during the experiment setup.
+            </p><p>
+              A device can only participate in a single experiment. The only exception to this rule is the virtual SPU or BPU
+              provided by the GOLDi Server itself, which can participate in multiple experiments. 
+            </p></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Components of the GOLDi Common Protocol</span></div><div id="ID1RBSection" class="collapsibleSection"><dl><dt>Experiment State Tranmssion</dt><dd><p>
+              During a running experiment, experiment state information has to be exchanged.
+              These message exchanges are described in
+              <a href="f2f064c2-d979-44ad-8055-812a4e6bc951.htm">Experiment State Transmission</a></p></dd><dt>Lab Management</dt><dd><p><a href="10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f.htm">GOLDi Control API</a></p></dd></dl></div></div></div><div id="pageFooter" class="pageFooter" /></body></html>

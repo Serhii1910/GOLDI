@@ -1,0 +1,1425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GOLDiLabServer</name>
+  </assembly>
+  <members>
+    <member name="T:GOLDi.LabServer.ComponentDiscovery"></member>
+    <member name="M:GOLDi.LabServer.ComponentDiscovery.LoadComponentsFromPluginDirectory(GOLDi.Core.ComponentModel.ComponentLoader)"></member>
+    <member name="T:GOLDi.LabServer.LabServerInstance"></member>
+    <member name="M:GOLDi.LabServer.LabServerInstance.#ctor(System.String[])">
+      <summary>
+            Creates a new, running GOLDi Lab Server instance.
+            </summary>
+      <param name="args"></param>
+    </member>
+    <member name="M:GOLDi.LabServer.LabServerInstance.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.LabServerInstance</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.LabServerInstance.Fabric"></member>
+    <member name="T:GOLDi.LabServer.MainClass"></member>
+    <member name="M:GOLDi.LabServer.MainClass.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.MainClass</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.IWebCam">
+      <summary>
+            Interface for providing frames which each webcam must implement.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.IWebCam.Base64Frames">
+      <summary>
+            Observable which returns frames as base64 strings.
+            For reference see <see cref="M:GOLDi.LabServer.CameraInterface.WebCam.ToBase64Jpeg(System.Drawing.Image)" /> method.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.IWebCam.ImageFrames">
+      <summary>
+            Observable which returns frames as base64 strings.
+            For reference see <see cref="M:GOLDi.LabServer.CameraInterface.WebCam.ToBase64Jpeg(System.Drawing.Image)" /> method.
+            </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.MJPEGWebCam"></member>
+    <member name="M:GOLDi.LabServer.CameraInterface.MJPEGWebCam.#ctor(System.String,System.Drawing.RotateFlipType)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.MJPEGWebCam</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.MJPEGWebCam.InitializeAsync"></member>
+    <member name="P:GOLDi.LabServer.CameraInterface.MJPEGWebCam.RawFrames"></member>
+    <member name="T:GOLDi.LabServer.CameraInterface.SingleFrameWebCam"></member>
+    <member name="M:GOLDi.LabServer.CameraInterface.SingleFrameWebCam.#ctor(System.String,System.Drawing.RotateFlipType)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.SingleFrameWebCam</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.SingleFrameWebCam.RawFrames"></member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCam">
+      <summary>
+            Base class for all webcams.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCam.#ctor(System.Drawing.RotateFlipType)">
+      <summary>
+            Creates the webcam. Creates an <see cref="T:System.IObservable`1" />
+            for grabbing, rotating and transforming of webcam frames.
+            </summary>
+      <param name="rotation">Rotate/Flip properties.</param>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCam.Base64Frames">
+      <summary>
+            Observable returning the webcam frames as Base64.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCam.ImageFrames">
+      <summary>
+            Observable returning the webcam frames as <see cref="T:System.Drawing.Image" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCam.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)">
+      <summary>
+            Extends insight information for the objects.
+            </summary>
+      <param name="source">
+        <see cref="T:GOLDi.Core.Insights.InsightSource" /> of teh object.</param>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCam.RawFrames">
+      <summary>
+            Observable returning the raw webcam frames before
+            adding the GOLDi Fish and rotating the image.
+            </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCamObserver">
+      <summary>
+            Can observe any webcam available. Allows to obtain the last frame.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamObserver.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.Int32,GOLDi.LabServer.CameraInterface.IWebCam})">
+      <summary>
+            Creates the observer.
+            </summary>
+      <param name="cams">Dictionary of webcams available. The dictionary key
+            is the cam id.</param>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCamObserver.CurrentCam">
+      <summary>
+            Webcam currently used.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCamObserver.CurrentCamId">
+      <summary>
+            Id of the cam which is currently observed.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamObserver.Dispose">
+      <summary>
+            Disposes of the object. Disposes the current <see cref="F:GOLDi.LabServer.CameraInterface.WebCamObserver.lastBase64Frame" />
+            and the current <see cref="F:GOLDi.LabServer.CameraInterface.WebCamObserver.base64Subscription" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamObserver.GetBase64FrameAsync">
+      <summary>
+            Gets the last frame from the currently observed webcam.
+            </summary>
+      <returns>Frame as base64 string.</returns>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamObserver.GetImageFrameAsync">
+      <summary>
+            Gets the last frame from the currently observed webcam.
+            </summary>
+      <returns>Frame as <see cref="T:System.Drawing.Image" />.</returns>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamObserver.SubscribeTo(System.Int32)">
+      <summary>
+            Subscribes to a another webcam.
+            </summary>
+      <param name="camId">Id of the webcam to subscribe to.</param>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCamServer">
+      <summary>
+            Server to manage different webcams.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServer.#ctor(GOLDi.LabServer.WebsiteInterface.WebInterface)">
+      <summary>
+            Creates the <see cref="T:GOLDi.LabServer.CameraInterface.WebCamServer" />.
+            </summary>
+      <param name="website">Interface used to communicate with the GOLDi
+            Website.</param>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServer.Dispose">
+      <summary>
+            Disposes the WebCamServer.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServer.GetWebcamObserver">
+      <summary>
+             Gets a webcam observer for getting webcam frames.
+            <remarks>Dispose the <see cref="T:GOLDi.LabServer.CameraInterface.WebCamServer" /> after
+             usage to reduce the server load.</remarks></summary>
+      <returns>Observer to observe webcams wizth.</returns>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServer.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)">
+      <summary>
+            Adds a value characteristic for port information.
+            </summary>
+      <param name="source">
+        <see cref="T:GOLDi.Core.Insights.InsightSource" /> of the object.</param>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServer.StartAsync">
+      <summary>
+            Starts the webcam server.
+            </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCamServerException">
+      <summary>
+            Exception is thrown when there's a problem with the webcam server.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServerException.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.WebCamServerException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCamServerException.#ctor(System.String,System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.WebCamServerException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCams.WC_AxisM1011"></member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCams.WC_AxisM1011.#ctor(System.String,System.Drawing.RotateFlipType)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.WebCams.WC_AxisM1011</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2">
+      <summary>
+            Class to control the webcam "WC_Foscam9821WV2".
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.#ctor(System.String,System.String,System.Drawing.RotateFlipType)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.#ctor(System.String,System.String,System.String,System.String,System.Drawing.RotateFlipType)">
+      <summary>
+            Creates a foscam with username and password.
+            </summary>
+      <param name="url">Url of the foscam with port.</param>
+      <param name="username">Username of the cam.</param>
+      <param name="password">Password of the cam.</param>
+      <param name="parameter"></param>
+      <param name="rotation">Rotation of the image.</param>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.CommandUrl">
+      <summary>
+            Url to pass commands to.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.HasPassword">
+      <summary>
+            Indicates wether a username and password was set for this webcam
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.InitializeAsync"></member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.LoginCredentials">
+      <summary>
+            Part of request path which contains the login credentials.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.Password">
+      <summary>
+            Password to log into the webcam.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.Url">
+      <summary>
+            Url of the webcam.
+            </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.CameraInterface.WebCams.WC_Foscam9821WV2.Username">
+      <summary>
+            Username to log into the webcam.
+            </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.Experiment.ExperimentManager">
+      <summary>
+            Provides the management of list of <see cref="T:GOLDi.LabServer.Experiment.ExperimentRunner" /> objects.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentManager.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.ExperimentManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentManager.Dispose">
+      <summary>
+            Stops the <see cref="T:GOLDi.LabServer.Experiment.ExperimentManager" /></summary>
+    </member>
+    <member name="P:GOLDi.LabServer.Experiment.ExperimentManager.RunningExperiments">
+      <summary>
+            Gets list of the experiments running. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentManager.StartAsync">
+      <summary>
+            Starts the <see cref="T:GOLDi.LabServer.Experiment.ExperimentManager" /></summary>
+    </member>
+    <member name="T:GOLDi.LabServer.Experiment.ExperimentRunner">
+      <summary>
+            Provides the management of one experiment.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.#ctor(SuperSocket.WebSocket.WebSocketSession,System.Int32,System.String,GOLDi.LabServer.HardwareInterface.IBusProtectionUnit,GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit,GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.ExperimentRunner</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.AddVisitor(SuperSocket.WebSocket.WebSocketSession)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.Experiment.ExperimentRunner</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.Experiment.ExperimentRunner.ExperimentID"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.IsOwner(SuperSocket.WebSocket.WebSocketSession)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.IsVisitor(SuperSocket.WebSocket.WebSocketSession)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.NewSocketPacket(GOLDi.LabServer.Experiment.SocketPacket)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.RemoveVisitor(SuperSocket.WebSocket.WebSocketSession)"></member>
+    <member name="P:GOLDi.LabServer.Experiment.ExperimentRunner.SessionID"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ExperimentRunner.Start"></member>
+    <member name="T:GOLDi.LabServer.Experiment.ISPUCommandAdapter"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ISPUCommandAdapter.FlashErrorIndicatorAsync(System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ISPUCommandAdapter.InitializeLightAsync"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ISPUCommandAdapter.ProcessCommandAsync(GOLDi.LabServer.Experiment.SocketPacket)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.ISPUCommandAdapter.ShutdownAsync"></member>
+    <member name="T:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter">
+      <summary>
+            Forwards incoming PSPU commands to the real PSPU.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter.#ctor(GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter.FlashErrorIndicatorAsync(System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter.InitializeLightAsync"></member>
+    <member name="M:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter.ProcessCommandAsync(GOLDi.LabServer.Experiment.SocketPacket)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.PhysicalSPUCommandAdapter.ShutdownAsync"></member>
+    <member name="T:GOLDi.LabServer.Experiment.SocketCommand"></member>
+    <member name="T:GOLDi.LabServer.Experiment.SocketPacket"></member>
+    <member name="M:GOLDi.LabServer.Experiment.SocketPacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.SocketPacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.Actuators"></member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.Command"></member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.ExperimentID"></member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.Parameter"></member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.Sensors"></member>
+    <member name="F:GOLDi.LabServer.Experiment.SocketPacket.SessionID"></member>
+    <member name="M:GOLDi.LabServer.Experiment.SocketPacket.ToString"></member>
+    <member name="T:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter">
+      <summary>
+            Provides dummy (no-op) implementations for PSPU commands.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter.FlashErrorIndicatorAsync(System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter.InitializeLightAsync"></member>
+    <member name="M:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter.ProcessCommandAsync(GOLDi.LabServer.Experiment.SocketPacket)"></member>
+    <member name="M:GOLDi.LabServer.Experiment.VirtualSPUCommandAdapter.ShutdownAsync"></member>
+    <member name="T:GOLDi.LabServer.Experiment.Exceptions.ExperimentException">
+      <summary>
+            Exception thrown from an <see cref="T:GOLDi.LabServer.Experiment.ExperimentRunner" />. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.Exceptions.ExperimentException.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.Exceptions.ExperimentException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.Exceptions.ExperimentException.#ctor(System.String,System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.Exceptions.ExperimentException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.Experiment.Exceptions.ExperimentManagerException">
+      <summary>
+            Exception thrown from an <see cref="T:GOLDi.LabServer.Experiment.ExperimentManager" />. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.Exceptions.ExperimentManagerException.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.Exceptions.ExperimentManagerException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.Exceptions.ExperimentManagerException.#ctor(System.String,System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.Exceptions.ExperimentManagerException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.Experiment.FileParser.FileParser_HEX"></member>
+    <member name="M:GOLDi.LabServer.Experiment.FileParser.FileParser_HEX.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.FileParser.FileParser_HEX</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.Experiment.FileParser.FileParser_HEX.Parse(System.Byte[])"></member>
+    <member name="T:GOLDi.LabServer.Experiment.FileParser.FileParser_POF"></member>
+    <member name="M:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.FileParser.FileParser_POF</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.BitReverseTable256"></member>
+    <member name="M:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.Parse(System.Byte[])"></member>
+    <member name="T:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data"></member>
+    <member name="M:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data.Creator_ID"></member>
+    <member name="F:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data.Data"></member>
+    <member name="F:GOLDi.LabServer.Experiment.FileParser.FileParser_POF.POF_Data.Device"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.BreakpointCondition"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.ConnectedDevice"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.#ctor(GOLDi.Fabric.Messages.InfrastructureMessages.DeviceFoundMessage,System.Collections.Generic.IEnumerable{GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.ConnectedDevice</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.#ctor(GOLDi.Fabric.Messages.ServiceMessages.AliveMessage,System.Collections.Generic.IEnumerable{GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.ConnectedDevice</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.AliveReceived(GOLDi.Fabric.Messages.ServiceMessages.AliveMessage)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Available"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Cancellation"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Discovery"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.ConnectedDevice</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Endpoint"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.FirmwareVersion"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.HardwareVersion"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.HasMaintenanceHandlers"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.HasMalfunction"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.IsBroadcastDiscovered"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.LabelAsMalfunctioning"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.PrepareMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.RequiresNameQuery"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.RequiresPing"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.RunMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.SetType(GOLDi.Fabric.Infrastructure.DeviceType)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.TimeToNextMaintenance"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ConnectedDevice.ToString"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ConnectedDevice.Type"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.LabServer.WebsiteInterface.WebInterface)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.AllDevices"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.GOLDi#Core#ComponentModel#ICollectionDependency{GOLDi#Concepts#Devices#IDeviceFoundHandler}#ResolveDependency(System.Collections.Generic.IEnumerable{GOLDi.Concepts.Devices.IDeviceFoundHandler})"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.GOLDi#Core#ComponentModel#ICollectionDependency{GOLDi#Concepts#Devices#IDeviceMaintenanceHandlerFactory}#ResolveDependency(System.Collections.Generic.IEnumerable{GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory})"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.Start"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.DeviceLifecycleAgent.UsableDevices"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager.#ctor(GOLDi.Concepts.Devices.IDeviceMaintenanceHandler)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager.PerformMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager.PrepareMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.DeviceMaintenanceManager.TimeToNextCheck"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.ErrorCodeSource"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.FirmwareTestAgent"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.FirmwareTestAgent.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider,GOLDi.Concepts.Devices.IDeviceEnumerator)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.FirmwareTestAgent</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.FirmwareTestAgent.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.FirmwareTestAgent</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.FirmwareTestAgent.Start"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.FlowControlCommand"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.FlowControlState"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.ActuatorState"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.Endpoint"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.ResetAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.SensorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.IBusProtectionUnit.Type"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.Endpoint"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.Error"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.FlowControl"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.RequestSensorDataAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.ResetAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.ISystemProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.PSPUError"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PSPUError.#ctor(System.Int32,GOLDi.LabServer.HardwareInterface.ErrorCodeSource,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.PSPUError</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PSPUError.ErrorCode"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PSPUError.MessageCounter"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PSPUError.Source"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint,System.Predicate{GOLDi.Fabric.Infrastructure.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUActuatorsBookkeeper.TryExtractValuesFromMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint,System.Predicate{GOLDi.Fabric.Infrastructure.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.BPUSensorsBookkeeper.TryExtractValuesFromMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.#ctor(System.IObservable{GOLDi.Fabric.Messages.IMessage})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="isDisposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.RepublishCurrentValues"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.TryExtractValuesFromMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.UpdateValues(System.Collections.Generic.IEnumerable{System.Boolean})"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.DeviceIO.DeviceIOBookkeeper.Values"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.DeviceIO.PSPUSensorsBookkeeper"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.PSPUSensorsBookkeeper.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.DeviceIO.PSPUSensorsBookkeeper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.DeviceIO.PSPUSensorsBookkeeper.TryExtractValuesFromMessage(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.JtagProgramming.CommunicationHandler"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.JtagProgramming.CommunicationHandler.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.JtagProgramming.CommunicationHandler</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.JtagProgramming.CommunicationHandler.LoadDefaultFirmwareOntoDevices"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.ActuatorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.CreateAsync(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.Endpoint"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.ProgramDeviceAsync(System.Byte[],System.IProgress{System.Double})"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.RequestActuatorDataAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.ResetAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.SensorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.ToggleSlaveResetPinAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalBusProtectionUnit.Type"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.AddActuatorBreakpointAsync(GOLDi.LabServer.HardwareInterface.BreakpointCondition,System.Int32)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.AddSensorBreakpointAsync(GOLDi.LabServer.HardwareInterface.BreakpointCondition,System.Int32)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.CreateAsync(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.Endpoint,System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.DisableBreakpointsAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.EnableBreakpointsAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.Endpoint"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.Error"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.FirmwareVersion"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.FlowControl"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.HardwareVersion"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.InitializeAsync(System.Byte)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.RemoveAllBreakpointsAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.RequestSensorDataAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.ResetAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.RunSingleStepActuatorsAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.RunSingleStepSensorsAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.SensorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.SetLightLevelAsync(GOLDi.Fabric.RemoteApi.Colors,System.Double)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.SetUserSensorAsync(System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.StartExperimentAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.PhysicalDevices.PhysicalSystemProtectionUnit.StopExperimentAsync"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.#ctor(GOLDi.Fabric.Infrastructure.IFabric)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.ActuatorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.Endpoint"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.ResetAsync"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.SensorState"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.Type"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualBusProtectionUnit.UpdateStateInformationAsync(System.Collections.Generic.IEnumerable{System.Boolean},System.Collections.Generic.IEnumerable{System.Boolean})"></member>
+    <member name="T:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.#ctor(GOLDi.Fabric.Infrastructure.IFabric)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.Endpoint"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.Error"></member>
+    <member name="P:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.FlowControl"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.RequestSensorDataAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.ResetAsync"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.SetDestinationAsync(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="M:GOLDi.LabServer.HardwareInterface.VirtualDevices.VirtualSystemProtectionUnit.UpdateSensorValues(System.Collections.Generic.IEnumerable{System.Boolean})"></member>
+    <member name="T:GOLDi.LabServer.LabInformation.WebCamInformation"></member>
+    <member name="M:GOLDi.LabServer.LabInformation.WebCamInformation.#ctor(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.LabInformation.WebCamInformation</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.LabInformation.WebCamInformation.ID"></member>
+    <member name="P:GOLDi.LabServer.LabInformation.WebCamInformation.Parameter"></member>
+    <member name="P:GOLDi.LabServer.LabInformation.WebCamInformation.Rotation"></member>
+    <member name="P:GOLDi.LabServer.LabInformation.WebCamInformation.URL"></member>
+    <member name="P:GOLDi.LabServer.LabInformation.WebCamInformation.WebcamType"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.#ctor(GOLDi.Fabric.Infrastructure.IFabric)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Creator"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Devices"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Fabric"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.FindOrCreateEndpoint(GOLDi.Fabric.Infrastructure.Endpoint)"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Links"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.Messages"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel.UpdateLinks"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand.#ctor(System.Func{System.Object,System.Threading.Tasks.Task})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand.CanExecute(System.Object)"></member>
+    <member name="E:GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand.CanExecuteChanged"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.AsyncRelayCommand.Execute(System.Object)"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.Endpoint"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.#ctor(GOLDi.Fabric.Infrastructure.Endpoint)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.Endpoint</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.AllColors"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.Color"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.Colorfullness(System.Windows.Media.Color)"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.Device"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.IsReceiveFilterSet"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.Name"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.Endpoint.ParseMessageForDeviceInformation(GOLDi.Fabric.Messages.IMessage)"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.IncomingServiceMessage"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.IncomingServiceMessage.#ctor(GOLDi.Fabric.Messages.IMessage,System.Func{GOLDi.Fabric.Messages.IMessage,GOLDi.LabServer.TracingUI.ViewModel.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.IncomingServiceMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.IncomingServiceMessage.PrimaryEndpoint"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.IncomingServiceMessage.Source"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.Link"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.Link.#ctor(GOLDi.Fabric.Infrastructure.IFabric,GOLDi.Fabric.Infrastructure.IRoutableLinkInformation)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.Link</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.Link.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.Link</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Link.IsAttached"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Link.IsControllable"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Link.Name"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.Link.RawLink"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.MessageBase"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.#ctor(GOLDi.Fabric.Messages.IMessage)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.MessageBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.PrimaryEndpoint"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.RawMessage"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.Timestamp"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.Type"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageBase.Values"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.#ctor(GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.MessageCreator</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.Arguments"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.CreateAndSend"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.CreateAndSendBlocking"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.IsNotBlocked"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.KnownTypes"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageCreator.SelectedType"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.MessagePart"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessagePart.#ctor(System.String,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.MessagePart</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessagePart.Name"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessagePart.Value"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.MessageType"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageType.#ctor(System.Reflection.ConstructorInfo,GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.MessageType</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageType.CreateArguments"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageType.CreateInstance(System.Collections.Generic.IEnumerable{GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument})"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageType.IsValidConstructor(System.Reflection.ConstructorInfo)"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.MessageType.Name"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.MessageType.ToString"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.OutgoingServiceMessage"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.OutgoingServiceMessage.#ctor(GOLDi.Fabric.Messages.IMessage,System.Func{GOLDi.Fabric.Messages.IMessage,GOLDi.LabServer.TracingUI.ViewModel.Endpoint})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.OutgoingServiceMessage</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.OutgoingServiceMessage.Destination"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.OutgoingServiceMessage.PrimaryEndpoint"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand.#ctor(System.Action{System.Object})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.RelayCommand</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand.#ctor(System.Action{System.Object},System.Predicate{System.Object})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.RelayCommand</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand.CanExecute(System.Object)"></member>
+    <member name="E:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand.CanExecuteChanged"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.RelayCommand.Execute(System.Object)"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase.OnPropertyChanged(System.String)"></member>
+    <member name="E:GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase.PropertyChanged"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.ViewModelBase.UpdateValue``1(``0@,``0,System.String)"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.BitArgument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.BitArgument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.BitArgument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.ByteArgument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.ByteArgument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.ByteArgument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.Int32Argument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.Int32Argument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.Int32Argument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.LabServiceArgument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.LabServiceArgument.#ctor(GOLDi.LabServer.TracingUI.ViewModel.ApplicationModel,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.LabServiceArgument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.LabServiceArgument.AllDevices"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.LabServiceArgument.Device"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.StringArgument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.StringArgument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.StringArgument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.UInt32Argument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.UInt32Argument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.UInt32Argument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument.Name"></member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument.NiceName"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument`1"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument`1.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArgument`1.Value"></member>
+    <member name="T:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArrayArgument`1"></member>
+    <member name="M:GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArrayArgument`1.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.TracingUI.ViewModel.TypedParts.WritableArrayArgument`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.Utils.EnumerableHelpers"></member>
+    <member name="M:GOLDi.LabServer.Utils.EnumerableHelpers.InterpretAsBooleans(System.Collections.Generic.IEnumerable{System.String})"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.DeviceServiceDestinationID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.Parameter"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.Rotation"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.URL"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.WebcamID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.WebcamType"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.AnswerWebcamListPacket.WebCAMTypes"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.ClientConnectionInformation"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.ClientConnectionInformation.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.ClientConnectionInformation</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.ClientConnectionInformation.FromAnswerPacket(GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket)"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.CloudCommunicationException"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.CloudCommunicationException.#ctor(System.String,System.Object,System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.CloudCommunicationException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.CloudCommunicationException.Parameter"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.CloudCommunicationException.RemoteMethodInvoked"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.DeviceServiceDestinationID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.InMaintenance"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.IsConnected"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.Location"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.Parameter"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.Rotation"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.ServiceDestID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.Type"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.URL"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.Virtual"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.WebcamID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.ExperimentPartInfoPacket.WebcamType"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.FirmwareData"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.FirmwareData.#ctor(GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.FirmwareData</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.FirmwareData.#ctor(GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.FirmwareData</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.Data"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.HardwareVersion"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.ID"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.ModifyableData"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.TargetHardware"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.FirmwareData.Type"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.LocationProvider"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.LocationProvider.#ctor(GOLDi.Concepts.CloudCommunication.IRawCloudAccess)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.LocationProvider</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.LocationProvider.Location"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.LocationProvider.StartAsync"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.RemoteInvocation">
+      <summary>
+            Data type for GOLDi cloud function logging.
+            Intended for logging only.
+            </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.RemoteInvocation</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.Function"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.IsResultIgnored"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.Parameter"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.RawRequest"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.RawResponse"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.ThrownException"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.RemoteInvocation.ToString"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.RemoteInvocation`1"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.RemoteInvocation`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.RemoteInvocation`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.RemoteInvocation`1.Result"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.RemoteInvocation`1.ToString"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.UntestedFirmware"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.UntestedFirmware.#ctor(GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.UntestedFirmware</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.VerifiedFirmware"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.VerifiedFirmware.#ctor(GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.VerifiedFirmware</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.VerifiedFirmware.IsValid"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.VerifiedFirmware.UploadDate"></member>
+    <member name="P:GOLDi.LabServer.WebsiteInterface.VerifiedFirmware.Version"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.WebInterface"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.#ctor(GOLDi.Concepts.CloudCommunication.IRawCloudAccess)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.WebInterface</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GetWebcamsAsync"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IExperimentCommunicationProvider#DeactivateAllExperimentsAsync"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IExperimentCommunicationProvider#DeactivateExperimentAsync(System.Int32,System.String)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IExperimentCommunicationProvider#GetClientConnectionInformationAsync(System.Int32,System.String)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IExperimentCommunicationProvider#GetExampleAsync(System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IExperimentCommunicationProvider#GetProgramFileAsync(System.Int32)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#BeginFirmwareTestAsync(GOLDi.Concepts.Devices.IUntestedFirmware)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#EndFirmwareTestWithFailureAsync(GOLDi.Concepts.Devices.IUntestedFirmware)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#EndFirmwareTestWithoutResultAsync(GOLDi.Concepts.Devices.IUntestedFirmware)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#EndFirmwareTestWithSuccessAsync(GOLDi.Concepts.Devices.IUntestedFirmware,GOLDi.Fabric.Messages.ServiceMessages.AliveMessage)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#GetNextUntestedFirmwareAsync"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareTestCommunicationProvider#GetTestDeviceDefaultFirmwareAsync(GOLDi.Concepts.Devices.IDeviceHardwareInformation)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareUpdateCommunicationProvider#GetLatestFirmwareAsync(GOLDi.Concepts.Devices.IDeviceInformation)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareUpdateCommunicationProvider#LogFailedFirmwareUpdateAsync(GOLDi.Concepts.Devices.IVerifiedFirmware,GOLDi.Concepts.Devices.IDeviceInformation,System.Boolean)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.GOLDi#Concepts#CloudCommunication#IFirmwareUpdateCommunicationProvider#LogSuccessfulFirmwareUpdateAsync(GOLDi.Concepts.Devices.IVerifiedFirmware,GOLDi.Concepts.Devices.IDeviceInformation)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterface.SetDeviceListAsync(System.Collections.Generic.IEnumerable{GOLDi.Concepts.Devices.IDeviceInformation})"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.CallAsync(System.String)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.CallAsync(System.String,System.Object)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.QueryAsync``1(System.String)"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.WebInterfaceConnection.QueryAsync``1(System.String,System.Object)"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.Example"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.ExampleBPUType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.ExampleNumber"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.ExamplePSPUType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.FileSize"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExamplePacket.ID"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.BPUServiceDestinationID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.BPUType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.EndTime"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.ExperimentID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.Location"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.PSPUServiceDestinationID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.PSPUType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.SessionID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.StartTime"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.State"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.UserID"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.AnswerExperimentDataPacket.States"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.ExperimentID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.File"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.FileName"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.FileSize"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.ID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.AnswerProgramFilePacket.Timestamp"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.BoardType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.BuildType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.Data"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.DeviceType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.FirmwareID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.FirmwareVersion"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.HardwareVersion"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.HWConfigID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.Signature"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.TestState"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.FirmwareUpdatePacket.UploadDate"></member>
+    <member name="T:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket"></member>
+    <member name="M:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket.BoardType"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket.Data"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket.FirmwareID"></member>
+    <member name="F:GOLDi.LabServer.WebsiteInterface.Packets.UntestedFirmwarePacket.HardwareVersion"></member>
+  </members>
+</doc>

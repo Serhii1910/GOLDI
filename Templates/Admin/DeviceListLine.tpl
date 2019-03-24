@@ -1,0 +1,20 @@
+<tr>
+    <td>[[++DeviceType++]]</td>
+    <td>[[++Category++]]</td>
+    <td>[[++ServiceDestID++]]</td>
+    <td>[[++Virtual++]]</td>
+    <td>[[++IsConnected++]]</td>
+    <td>
+        <input
+                DeviceType="[[++DeviceType++]]"
+                ServiceDestID="[[++ServiceDestID++]]"
+                Virtual="[[++Virtual++]]"
+                [[++InMaintenance++]]
+                type="checkbox"
+                class="maintenance_toggle"
+                data-onstyle="success"
+                data-offstyle="danger"
+                data-width="150"
+        >
+    </td>
+</tr>

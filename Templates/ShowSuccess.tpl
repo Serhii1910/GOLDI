@@ -1,0 +1,1 @@
+<h2 class="alert alert-success tag" role="alert" data-i18n="[[++SuccessMessage++]]"></h2>

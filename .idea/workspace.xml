@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="87faf930-0a17-4772-98b0-54cd2d183797" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1933402241">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="35" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="4" />
+          <entry key="project.open.time.22" value="6" />
+          <entry key="project.open.time.23" value="6" />
+          <entry key="project.open.time.24" value="2" />
+          <entry key="project.open.time.25" value="4" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.27" value="2" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="36" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="33" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="2602" />
+          <entry key="svg" value="268" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="2602" />
+          <entry key="SVG" value="268" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="1" />
+          <entry key="svg" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="1" />
+          <entry key="SVG" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1972">
+              <caret line="116" column="88" selection-start-line="116" selection-start-column="79" selection-end-line="116" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_Elevator4Floors.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4069">
+              <caret line="94" column="11" lean-forward="true" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ECP/Animation/EnvironmentSimulation_Elevator4Floors.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6716">
+              <caret line="21" column="95" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ECP/Animation/Images/Image_Elevator4Floors.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ECP/ServerInterface/Message.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>con</find>
+      <find>ManCount</find>
+      <find>ManCounter</find>
+      <find>ManCounters</find>
+      <find>EventHandler</find>
+      <find>15</find>
+      <find>PSPURun</find>
+      <find>EventHandler.fireCommandEvent(Message);</find>
+      <find>getTy</find>
+      <find>EnvironmentSimulationDataInterface</find>
+      <find>ManAnimate</find>
+      <find>CommandIn</find>
+      <find>ManCounterFloor2_down</find>
+      <find>208</find>
+      <find>error</find>
+      <find>Lavel</find>
+      <find>Level</find>
+      <find>y11</find>
+      <find>Call</find>
+      <find>Actu</find>
+      <find>Snap_ArrowDownFloor3</find>
+      <find>Arr</find>
+      <find>Actuators</find>
+      <find>Snap_ArrowUpFloor3</find>
+      <find>ManLavel</find>
+      <find>consol</find>
+      <find>ManCounterFloor1</find>
+      <find>7</find>
+      <find>Sensors[7]</find>
+      <find>conso</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\GOLDi Website\ECP\Animation\Images</dir>
+      <dir>D:\GOLDi Website\ECP</dir>
+      <dir>D:\GOLDi Website</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ECP/Animation/Images/man.svg" />
+        <option value="$PROJECT_DIR$/ECP/Enumerations.js" />
+        <option value="$PROJECT_DIR$/ECP/Animation/Animation.js" />
+        <option value="$PROJECT_DIR$/ECP/Animation/Animation_Elevator4Floors.js" />
+        <option value="$PROJECT_DIR$/ECP/Animation/EnvironmentSimulation_Elevator4Floors.js" />
+        <option value="$PROJECT_DIR$/ECP/Animation/Images/Image_Elevator4Floors.svg" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/BEAST/package.json" />
+      <path value="$PROJECT_DIR$/GIFT/includes/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/GIFT/includes/bower_components/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/GIFT/includes/wavedrom-master/commandline/package.json" />
+      <path value="$PROJECT_DIR$/GIFT/includes/wavedrom-master/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-162" />
+    <option name="y" value="-14" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GOLDi Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GOLDi Website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GOLDi Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GOLDi Website" type="462c0819:PsiDirectoryNode" />
+              <item name="ECP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GOLDi Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GOLDi Website" type="462c0819:PsiDirectoryNode" />
+              <item name="ECP" type="462c0819:PsiDirectoryNode" />
+              <item name="Animation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GOLDi Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GOLDi Website" type="462c0819:PsiDirectoryNode" />
+              <item name="ECP" type="462c0819:PsiDirectoryNode" />
+              <item name="ServerInterface" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.EnvironmentSimulation_Elevator4Floors.js">
+    <configuration name="BEAST.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GOLDi Website/BEAST.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="ControlPanel.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GOLDi Website/ECP/ControlPanel/ControlPanel.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Elevator4Floors.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GOLDi Website/Sites/Models/Elevator4Floors.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="EnvironmentSimulation_Elevator4Floors.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="EnvironmentSimulation_Elevator4Floors.js" working-dir="$PROJECT_DIR$/ECP/Animation">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Elevator4Floors.php" />
+      <item itemvalue="JavaScript Debug.BEAST.html" />
+      <item itemvalue="JavaScript Debug.ControlPanel.html" />
+      <item itemvalue="PHP Script.index.php" />
+      <item itemvalue="Node.js.EnvironmentSimulation_Elevator4Floors.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.EnvironmentSimulation_Elevator4Floors.js" />
+        <item itemvalue="JavaScript Debug.BEAST.html" />
+        <item itemvalue="PHP Script.index.php" />
+        <item itemvalue="JavaScript Debug.ControlPanel.html" />
+        <item itemvalue="JavaScript Debug.Elevator4Floors.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\vetro\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87faf930-0a17-4772-98b0-54cd2d183797" name="Default" comment="" />
+      <created>1524474160377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524474160377</updated>
+      <workItem from="1524474163588" duration="2105000" />
+      <workItem from="1524496999490" duration="3549000" />
+      <workItem from="1524550961367" duration="1232000" />
+      <workItem from="1524552545633" duration="6833000" />
+      <workItem from="1524564427912" duration="5944000" />
+      <workItem from="1524636904453" duration="4145000" />
+      <workItem from="1524642325810" duration="351000" />
+      <workItem from="1524644517890" duration="633000" />
+      <workItem from="1524646146435" duration="345000" />
+      <workItem from="1524647137502" duration="5886000" />
+      <workItem from="1524738362834" duration="28000" />
+      <workItem from="1524738467838" duration="1113000" />
+      <workItem from="1524811326328" duration="1862000" />
+      <workItem from="1524813892448" duration="8270000" />
+      <workItem from="1524824724781" duration="9497000" />
+      <workItem from="1525071776624" duration="1255000" />
+      <workItem from="1525073097877" duration="11722000" />
+      <workItem from="1525097080923" duration="705000" />
+      <workItem from="1525252208857" duration="2435000" />
+      <workItem from="1525853448887" duration="2419000" />
+      <workItem from="1526028662781" duration="382000" />
+      <workItem from="1526029082829" duration="668000" />
+      <workItem from="1526029872095" duration="2044000" />
+      <workItem from="1526032560719" duration="1140000" />
+      <workItem from="1526034103839" duration="3308000" />
+      <workItem from="1526301119333" duration="25000" />
+      <workItem from="1526301236261" duration="82000" />
+      <workItem from="1526369239222" duration="279000" />
+      <workItem from="1526369628176" duration="280000" />
+      <workItem from="1526546481583" duration="3430000" />
+      <workItem from="1526552158440" duration="7743000" />
+      <workItem from="1526625013280" duration="1909000" />
+      <workItem from="1526890193663" duration="26000" />
+      <workItem from="1526890293318" duration="4568000" />
+      <workItem from="1526971008862" duration="5055000" />
+      <workItem from="1526976141221" duration="10000" />
+      <workItem from="1526976404265" duration="2696000" />
+      <workItem from="1526989789843" duration="8330000" />
+      <workItem from="1527069459489" duration="1859000" />
+      <workItem from="1527146181538" duration="870000" />
+      <workItem from="1527496461784" duration="1137000" />
+      <workItem from="1527594273821" duration="1656000" />
+      <workItem from="1527596263458" duration="5266000" />
+      <workItem from="1527611619625" duration="1179000" />
+      <workItem from="1527678186412" duration="5618000" />
+      <workItem from="1527752430341" duration="4379000" />
+      <workItem from="1528106210019" duration="7045000" />
+      <workItem from="1528134169344" duration="1035000" />
+      <workItem from="1528182202287" duration="822000" />
+      <workItem from="1528207170479" duration="3359000" />
+      <workItem from="1528266262404" duration="2048000" />
+      <workItem from="1528354853730" duration="620000" />
+      <workItem from="1528365771299" duration="893000" />
+      <workItem from="1528714568814" duration="31000" />
+      <workItem from="1528714660617" duration="856000" />
+      <workItem from="1528727242739" duration="498000" />
+      <workItem from="1528785364261" duration="86000" />
+      <workItem from="1528806290289" duration="2170000" />
+      <workItem from="1528869585372" duration="2108000" />
+      <workItem from="1529044902420" duration="1227000" />
+      <workItem from="1529324844153" duration="29000" />
+      <workItem from="1529324940215" duration="8152000" />
+      <workItem from="1529387558114" duration="4264000" />
+      <workItem from="1529395842466" duration="1318000" />
+      <workItem from="1529409756869" duration="1409000" />
+      <workItem from="1529654201797" duration="17866000" />
+      <workItem from="1529910769762" duration="6408000" />
+      <workItem from="1529999953809" duration="29445000" />
+      <workItem from="1530105598162" duration="10895000" />
+      <workItem from="1530169162078" duration="3572000" />
+      <workItem from="1530253543438" duration="32000" />
+      <workItem from="1530255871294" duration="5819000" />
+      <workItem from="1530267388024" duration="6898000" />
+      <workItem from="1530353282081" duration="5964000" />
+      <workItem from="1530363980376" duration="2809000" />
+      <workItem from="1530517538284" duration="16163000" />
+      <workItem from="1530598450992" duration="3689000" />
+      <workItem from="1530604608084" duration="3284000" />
+      <workItem from="1530695102900" duration="4865000" />
+      <workItem from="1530704286954" duration="4143000" />
+      <workItem from="1530777206049" duration="6107000" />
+      <workItem from="1530859648629" duration="2533000" />
+      <workItem from="1531035131092" duration="1781000" />
+      <workItem from="1531126171894" duration="2003000" />
+      <workItem from="1531482939688" duration="158000" />
+      <workItem from="1531817987509" duration="31000" />
+      <workItem from="1532005827374" duration="2953000" />
+      <workItem from="1532010980921" duration="949000" />
+      <workItem from="1532071098096" duration="2996000" />
+      <workItem from="1532347959499" duration="2406000" />
+      <workItem from="1532362845605" duration="3582000" />
+      <workItem from="1532414275997" duration="6201000" />
+      <workItem from="1532497863574" duration="7314000" />
+      <workItem from="1532587204010" duration="2771000" />
+      <workItem from="1532599568156" duration="4547000" />
+      <workItem from="1532607765806" duration="2410000" />
+      <workItem from="1532672268289" duration="1234000" />
+      <workItem from="1532683500274" duration="272000" />
+      <workItem from="1532953756870" duration="53000" />
+      <workItem from="1533646237930" duration="32000" />
+      <workItem from="1533646383630" duration="1242000" />
+      <workItem from="1533717777589" duration="963000" />
+      <workItem from="1534944105884" duration="470000" />
+      <workItem from="1535383151076" duration="897000" />
+      <workItem from="1535956490277" duration="25000" />
+      <workItem from="1535956592457" duration="9897000" />
+      <workItem from="1535980873538" duration="2369000" />
+      <workItem from="1536044701977" duration="4870000" />
+      <workItem from="1536072566609" duration="1021000" />
+      <workItem from="1536130325623" duration="8353000" />
+      <workItem from="1536146515335" duration="773000" />
+      <workItem from="1536153563437" duration="2193000" />
+      <workItem from="1536218285855" duration="1761000" />
+      <workItem from="1536311040196" duration="8586000" />
+      <workItem from="1536344929176" duration="902000" />
+      <workItem from="1536418970808" duration="1844000" />
+      <workItem from="1536477502978" duration="359000" />
+      <workItem from="1536477926682" duration="3669000" />
+      <workItem from="1536524630607" duration="5000" />
+      <workItem from="1536568988379" duration="4055000" />
+      <workItem from="1536590920566" duration="3204000" />
+      <workItem from="1536654308034" duration="13044000" />
+      <workItem from="1536738598156" duration="4373000" />
+      <workItem from="1536753689865" duration="4113000" />
+      <workItem from="1536822928613" duration="6069000" />
+      <workItem from="1536842638914" duration="8653000" />
+      <workItem from="1536908478670" duration="973000" />
+      <workItem from="1537092183299" duration="143000" />
+      <workItem from="1537275850294" duration="108000" />
+      <workItem from="1537276010424" duration="277000" />
+      <workItem from="1537276342121" duration="6364000" />
+      <workItem from="1537293798284" duration="507000" />
+      <workItem from="1537345985950" duration="1598000" />
+      <workItem from="1543481177378" duration="623000" />
+      <workItem from="1544623427593" duration="564000" />
+      <workItem from="1545978876970" duration="187000" />
+    </task>
+    <task id="LOCAL-00383">
+      <created>1536343113726</created>
+      <option name="number" value="00383" />
+      <option name="presentableId" value="LOCAL-00383" />
+      <option name="project" value="LOCAL" />
+      <updated>1536343113726</updated>
+    </task>
+    <task id="LOCAL-00384">
+      <created>1536343387153</created>
+      <option name="number" value="00384" />
+      <option name="presentableId" value="LOCAL-00384" />
+      <option name="project" value="LOCAL" />
+      <updated>1536343387153</updated>
+    </task>
+    <task id="LOCAL-00385">
+      <created>1536343558220</created>
+      <option name="number" value="00385" />
+      <option name="presentableId" value="LOCAL-00385" />
+      <option name="project" value="LOCAL" />
+      <updated>1536343558220</updated>
+    </task>
+    <task id="LOCAL-00386">
+      <created>1536343739488</created>
+      <option name="number" value="00386" />
+      <option name="presentableId" value="LOCAL-00386" />
+      <option name="project" value="LOCAL" />
+      <updated>1536343739488</updated>
+    </task>
+    <task id="LOCAL-00387">
+      <created>1536345242793</created>
+      <option name="number" value="00387" />
+      <option name="presentableId" value="LOCAL-00387" />
+      <option name="project" value="LOCAL" />
+      <updated>1536345242794</updated>
+    </task>
+    <task id="LOCAL-00388">
+      <created>1536422557425</created>
+      <option name="number" value="00388" />
+      <option name="presentableId" value="LOCAL-00388" />
+      <option name="project" value="LOCAL" />
+      <updated>1536422557427</updated>
+    </task>
+    <task id="LOCAL-00389">
+      <created>1536477590092</created>
+      <option name="number" value="00389" />
+      <option name="presentableId" value="LOCAL-00389" />
+      <option name="project" value="LOCAL" />
+      <updated>1536477590093</updated>
+    </task>
+    <task id="LOCAL-00390">
+      <created>1536477960447</created>
+      <option name="number" value="00390" />
+      <option name="presentableId" value="LOCAL-00390" />
+      <option name="project" value="LOCAL" />
+      <updated>1536477960448</updated>
+    </task>
+    <task id="LOCAL-00391">
+      <created>1536479114245</created>
+      <option name="number" value="00391" />
+      <option name="presentableId" value="LOCAL-00391" />
+      <option name="project" value="LOCAL" />
+      <updated>1536479114246</updated>
+    </task>
+    <task id="LOCAL-00392">
+      <created>1536479667110</created>
+      <option name="number" value="00392" />
+      <option name="presentableId" value="LOCAL-00392" />
+      <option name="project" value="LOCAL" />
+      <updated>1536479667110</updated>
+    </task>
+    <task id="LOCAL-00393">
+      <created>1536480119902</created>
+      <option name="number" value="00393" />
+      <option name="presentableId" value="LOCAL-00393" />
+      <option name="project" value="LOCAL" />
+      <updated>1536480119902</updated>
+    </task>
+    <task id="LOCAL-00394">
+      <created>1536480413864</created>
+      <option name="number" value="00394" />
+      <option name="presentableId" value="LOCAL-00394" />
+      <option name="project" value="LOCAL" />
+      <updated>1536480413864</updated>
+    </task>
+    <task id="LOCAL-00395">
+      <created>1536480538995</created>
+      <option name="number" value="00395" />
+      <option name="presentableId" value="LOCAL-00395" />
+      <option name="project" value="LOCAL" />
+      <updated>1536480538995</updated>
+    </task>
+    <task id="LOCAL-00396">
+      <created>1536480719596</created>
+      <option name="number" value="00396" />
+      <option name="presentableId" value="LOCAL-00396" />
+      <option name="project" value="LOCAL" />
+      <updated>1536480719597</updated>
+    </task>
+    <task id="LOCAL-00397">
+      <created>1536481838402</created>
+      <option name="number" value="00397" />
+      <option name="presentableId" value="LOCAL-00397" />
+      <option name="project" value="LOCAL" />
+      <updated>1536481838402</updated>
+    </task>
+    <task id="LOCAL-00398">
+      <created>1536569132365</created>
+      <option name="number" value="00398" />
+      <option name="presentableId" value="LOCAL-00398" />
+      <option name="project" value="LOCAL" />
+      <updated>1536569132366</updated>
+    </task>
+    <task id="LOCAL-00399">
+      <created>1536569584379</created>
+      <option name="number" value="00399" />
+      <option name="presentableId" value="LOCAL-00399" />
+      <option name="project" value="LOCAL" />
+      <updated>1536569584379</updated>
+    </task>
+    <task id="LOCAL-00400">
+      <created>1536572135955</created>
+      <option name="number" value="00400" />
+      <option name="presentableId" value="LOCAL-00400" />
+      <option name="project" value="LOCAL" />
+      <updated>1536572135956</updated>
+    </task>
+    <task id="LOCAL-00401">
+      <created>1536573562883</created>
+      <option name="number" value="00401" />
+      <option name="presentableId" value="LOCAL-00401" />
+      <option name="project" value="LOCAL" />
+      <updated>1536573562883</updated>
+    </task>
+    <task id="LOCAL-00402">
+      <created>1536578349684</created>
+      <option name="number" value="00402" />
+      <option name="presentableId" value="LOCAL-00402" />
+      <option name="project" value="LOCAL" />
+      <updated>1536578349685</updated>
+    </task>
+    <task id="LOCAL-00403">
+      <created>1536655415883</created>
+      <option name="number" value="00403" />
+      <option name="presentableId" value="LOCAL-00403" />
+      <option name="project" value="LOCAL" />
+      <updated>1536655415884</updated>
+    </task>
+    <task id="LOCAL-00404">
+      <created>1536665385932</created>
+      <option name="number" value="00404" />
+      <option name="presentableId" value="LOCAL-00404" />
+      <option name="project" value="LOCAL" />
+      <updated>1536665385932</updated>
+    </task>
+    <task id="LOCAL-00405">
+      <created>1536665903148</created>
+      <option name="number" value="00405" />
+      <option name="presentableId" value="LOCAL-00405" />
+      <option name="project" value="LOCAL" />
+      <updated>1536665903149</updated>
+    </task>
+    <task id="LOCAL-00406">
+      <created>1536666608952</created>
+      <option name="number" value="00406" />
+      <option name="presentableId" value="LOCAL-00406" />
+      <option name="project" value="LOCAL" />
+      <updated>1536666608952</updated>
+    </task>
+    <task id="LOCAL-00407">
+      <created>1536666779660</created>
+      <option name="number" value="00407" />
+      <option name="presentableId" value="LOCAL-00407" />
+      <option name="project" value="LOCAL" />
+      <updated>1536666779660</updated>
+    </task>
+    <task id="LOCAL-00408">
+      <created>1536667376576</created>
+      <option name="number" value="00408" />
+      <option name="presentableId" value="LOCAL-00408" />
+      <option name="project" value="LOCAL" />
+      <updated>1536667376576</updated>
+    </task>
+    <task id="LOCAL-00409">
+      <created>1536668714600</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1536668714600</updated>
+    </task>
+    <task id="LOCAL-00410">
+      <created>1536668802788</created>
+      <option name="number" value="00410" />
+      <option name="presentableId" value="LOCAL-00410" />
+      <option name="project" value="LOCAL" />
+      <updated>1536668802788</updated>
+    </task>
+    <task id="LOCAL-00411">
+      <created>1536668901271</created>
+      <option name="number" value="00411" />
+      <option name="presentableId" value="LOCAL-00411" />
+      <option name="project" value="LOCAL" />
+      <updated>1536668901272</updated>
+    </task>
+    <task id="LOCAL-00412">
+      <created>1536669144693</created>
+      <option name="number" value="00412" />
+      <option name="presentableId" value="LOCAL-00412" />
+      <option name="project" value="LOCAL" />
+      <updated>1536669144693</updated>
+    </task>
+    <task id="LOCAL-00413">
+      <created>1536669315087</created>
+      <option name="number" value="00413" />
+      <option name="presentableId" value="LOCAL-00413" />
+      <option name="project" value="LOCAL" />
+      <updated>1536669315088</updated>
+    </task>
+    <task id="LOCAL-00414">
+      <created>1536669684635</created>
+      <option name="number" value="00414" />
+      <option name="presentableId" value="LOCAL-00414" />
+      <option name="project" value="LOCAL" />
+      <updated>1536669684635</updated>
+    </task>
+    <task id="LOCAL-00415">
+      <created>1536669854450</created>
+      <option name="number" value="00415" />
+      <option name="presentableId" value="LOCAL-00415" />
+      <option name="project" value="LOCAL" />
+      <updated>1536669854451</updated>
+    </task>
+    <task id="LOCAL-00416">
+      <created>1536670384065</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
+      <option name="project" value="LOCAL" />
+      <updated>1536670384065</updated>
+    </task>
+    <task id="LOCAL-00417">
+      <created>1536670630001</created>
+      <option name="number" value="00417" />
+      <option name="presentableId" value="LOCAL-00417" />
+      <option name="project" value="LOCAL" />
+      <updated>1536670630001</updated>
+    </task>
+    <task id="LOCAL-00418">
+      <created>1536670659202</created>
+      <option name="number" value="00418" />
+      <option name="presentableId" value="LOCAL-00418" />
+      <option name="project" value="LOCAL" />
+      <updated>1536670659202</updated>
+    </task>
+    <task id="LOCAL-00419">
+      <created>1536671150880</created>
+      <option name="number" value="00419" />
+      <option name="presentableId" value="LOCAL-00419" />
+      <option name="project" value="LOCAL" />
+      <updated>1536671150880</updated>
+    </task>
+    <task id="LOCAL-00420">
+      <created>1536671563530</created>
+      <option name="number" value="00420" />
+      <option name="presentableId" value="LOCAL-00420" />
+      <option name="project" value="LOCAL" />
+      <updated>1536671563530</updated>
+    </task>
+    <task id="LOCAL-00421">
+      <created>1536672084807</created>
+      <option name="number" value="00421" />
+      <option name="presentableId" value="LOCAL-00421" />
+      <option name="project" value="LOCAL" />
+      <updated>1536672084808</updated>
+    </task>
+    <task id="LOCAL-00422">
+      <created>1536672581796</created>
+      <option name="number" value="00422" />
+      <option name="presentableId" value="LOCAL-00422" />
+      <option name="project" value="LOCAL" />
+      <updated>1536672581796</updated>
+    </task>
+    <task id="LOCAL-00423">
+      <created>1536738787644</created>
+      <option name="number" value="00423" />
+      <option name="presentableId" value="LOCAL-00423" />
+      <option name="project" value="LOCAL" />
+      <updated>1536738787645</updated>
+    </task>
+    <task id="LOCAL-00424">
+      <created>1536754743617</created>
+      <option name="number" value="00424" />
+      <option name="presentableId" value="LOCAL-00424" />
+      <option name="project" value="LOCAL" />
+      <updated>1536754743618</updated>
+    </task>
+    <task id="LOCAL-00425">
+      <created>1536758374172</created>
+      <option name="number" value="00425" />
+      <option name="presentableId" value="LOCAL-00425" />
+      <option name="project" value="LOCAL" />
+      <updated>1536758374172</updated>
+    </task>
+    <task id="LOCAL-00426">
+      <created>1536758614870</created>
+      <option name="number" value="00426" />
+      <option name="presentableId" value="LOCAL-00426" />
+      <option name="project" value="LOCAL" />
+      <updated>1536758614870</updated>
+    </task>
+    <task id="LOCAL-00427">
+      <created>1536758811968</created>
+      <option name="number" value="00427" />
+      <option name="presentableId" value="LOCAL-00427" />
+      <option name="project" value="LOCAL" />
+      <updated>1536758811968</updated>
+    </task>
+    <task id="LOCAL-00428">
+      <created>1536759454746</created>
+      <option name="number" value="00428" />
+      <option name="presentableId" value="LOCAL-00428" />
+      <option name="project" value="LOCAL" />
+      <updated>1536759454746</updated>
+    </task>
+    <task id="LOCAL-00429">
+      <created>1536825739223</created>
+      <option name="number" value="00429" />
+      <option name="presentableId" value="LOCAL-00429" />
+      <option name="project" value="LOCAL" />
+      <updated>1536825739224</updated>
+    </task>
+    <task id="LOCAL-00430">
+      <created>1536909462284</created>
+      <option name="number" value="00430" />
+      <option name="presentableId" value="LOCAL-00430" />
+      <option name="project" value="LOCAL" />
+      <updated>1536909462285</updated>
+    </task>
+    <task id="LOCAL-00431">
+      <created>1537293948356</created>
+      <option name="number" value="00431" />
+      <option name="presentableId" value="LOCAL-00431" />
+      <option name="project" value="LOCAL" />
+      <updated>1537293948357</updated>
+    </task>
+    <option name="localTasksCounter" value="432" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="449477000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.19969743" />
+      <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.23903178" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290938" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990461" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49926794" weight="0.42130366" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50073206" side_tool="true" weight="0.19016394" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23718888" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290938" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990461" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49926794" weight="0.42130366" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50073206" side_tool="true" weight="0.19077902" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/BEAST/js/event_queue.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspacetest.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/Dialog.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/SVGGraphics.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/model/model.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/fancytree/treeController.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/simcir/GridBuilder.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspace/ParameterDialog.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspace/ParameterInputs.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspace/main.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspace/workspace.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/workspace/SimulationInterface.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/BeastController.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/common.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/EmbeddedBeastController.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/common.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/workspaceController.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/editorController.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/editorController.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/menubarController.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/BeastController.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/EmbeddedBeastController.js.map" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/menubarController.js" />
+        <option value="$PROJECT_DIR$/BEAST/js/controller/workspaceController.js" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BEAST/README_SIMCIR.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/ECPMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1887" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEAST/workspacetest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="71" column="53" lean-forward="true" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEAST/sample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3703" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEAST/get_and_set.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEAST/css/simcir.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3227" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/ServerInterface/ServerInterface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GIFT/testplace/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PANDA/SendCoins.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sites/Structure/Header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sites/StartExperiment/StartAll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Control/Register.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/ControlUnits/FSMInterpreter.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1680">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/ECP/ECPDocumentation.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="246" column="94" selection-start-line="246" selection-start-column="88" selection-end-line="246" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/ECP/ECPMain.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1136" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.php" />
+    <entry file="file://$PROJECT_DIR$/Sites/Models/Elevator4FloorsClassic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="89" selection-start-line="19" selection-start-column="89" selection-end-line="19" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/StartExperiment/StartExperiment.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" selection-start-line="75" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/ControlPanel/ControlPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="833" column="40" lean-forward="true" selection-start-line="833" selection-start-column="40" selection-end-line="833" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sites/Models/Elevator4Floors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_OLD/Animation_Elevator4Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_OLD/Animation_Elevator4FloorsClassic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4250">
+          <caret line="250" column="27" selection-start-line="250" selection-start-column="11" selection-end-line="250" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_OLD/Animation_Elevator3Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Simulation/ManualControl_Elevator4Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_Pump.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1575" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Simulation/ManualControl_Maze.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_Elevator3Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="116" column="88" selection-start-line="116" selection-start-column="79" selection-end-line="116" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Images/Image_Elevator4Floors.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/ServerInterface/Message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Enumerations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/Animation_Elevator4Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4069">
+          <caret line="94" column="11" lean-forward="true" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ECP/Animation/EnvironmentSimulation_Elevator4Floors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6716">
+          <caret line="21" column="95" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

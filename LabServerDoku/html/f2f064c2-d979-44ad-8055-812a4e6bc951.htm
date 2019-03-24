@@ -1,0 +1,105 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Experiment State Transmission</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="f2f064c2-d979-44ad-8055-812a4e6bc951" /><meta name="Description" content="The most fundmental part of the GCP is the transmission of sensor and actuator data. During an experiment these information has to exchanged between an SPU (System Protection Unit) and a BPU (Bus Protection Unit)." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script><script type="text/javascript" src="../scripts/clipboard.min.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">GOLDi Lab Server<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html\c0564785-82de-4e26-9716-cde0e96cc0d2.htm" title="GOLDi Lab Server" tocid="roottoc">GOLDi Lab Server</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="../html/b3d63f0b-7a28-4308-bde3-f25c0f8e555b.htm" title="GOLDi Common Protocol" tocid="b3d63f0b-7a28-4308-bde3-f25c0f8e555b">GOLDi Common Protocol</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="../html/10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f.htm" title="GOLDi Control API" tocid="10e3aed5-dd07-4956-9c5d-d5ed34bfcd1f">GOLDi Control API</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="../html/f2f064c2-d979-44ad-8055-812a4e6bc951.htm" title="Experiment State Transmission" tocid="f2f064c2-d979-44ad-8055-812a4e6bc951">Experiment State Transmission</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img width="50" src="../icons/Help.png" /></td><td class="titleColumn"><h1>Experiment State Transmission</h1></td></tr></table><span class="introStyle"></span> <div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SensorStateChanged">Sensor State Update Messages</a></li><li class="outlineSectionEntry"><a href="#ActuatorStateChanged">Actuator State Update Messages</a></li><li class="outlineSectionEntry"><a href="#ErrorDetected">SPU Error Detection Message</a></li></ul><p>
+        The most fundmental part of the GCP is the transmission of sensor and actuator data.
+        During an experiment these information has to exchanged between an SPU (System Protection Unit)
+        and a BPU (Bus Protection Unit).
+        The BPU contains the logic used to control the experiment, while the SPU is connected to
+        the model that shall be controlled. Note that each of the components might be virtualized and
+        implemented in JavaScript running in the user's browser without impacting the GCP.
+      </p><p>
+        Sensor and actuator data is transmitted out-of-band and exchanged directly between the
+        participating components. The setup phase will be documented in later sections, in this section
+        it is assumed that both devices known where to send their messages to.
+      </p><p>
+        Another part of the experiment state are control errors detected by the SPU.
+        Because errors are detected after a BPU sent new actuator information or after a timeout,
+        they are also out-of-band messages.
+      </p></div><div class="collapsibleAreaRegion" id="SensorStateChanged"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Sensor State Update Messages</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          When an SPU detected that its at least one of sensors changed, it informs the BPU by sending a
+          <a href="T_GOLDi_Fabric_Messages_ExperimentMessages_SPUStateMessage.htm">SPUStateMessage</a>.
+          However, devices are also allowed to send these messages if nothing changed. This behavior is required as
+          a reaction to the <a href="T_GOLDi_Fabric_Messages_ServiceMessages_SendDataMessage.htm">SendDataMessage</a>.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            Sensor state update messages can only be sent if the device is part of an experiment.
+          </p></td></tr></table></div><p>
+          The message contains the following information:
+        </p><dl><dt>Message source</dt><dd><p>
+              The message source is the endpoint of the SPU that created the message.
+              It is provided by the
+              <a href="P_GOLDi_Fabric_Messages_IMessage_Source.htm">Source</a>
+              property.
+            </p></dd><dt>Message destination</dt><dd><p>
+              The message destination is the endpoint of the BPU that participates in the same experiment as the SPU.
+              It is provided by the
+              <a href="P_GOLDi_Fabric_Messages_IMessage_Destination.htm">Destination</a>
+              property.
+            </p></dd><dt>Sensor state</dt><dd><p>
+              This message contains the new sensor states as a 128 bit vector.
+              If a sensor has more values than zero and one (on or off), it should be encoded in a contiguous range of bits.
+
+              The sensor state is provided as a boolean array by the
+              <a href="P_GOLDi_Fabric_Messages_ExperimentMessages_SPUStateMessage_SensorValues.htm">SensorValues</a>
+              property.
+            </p></dd></dl></div><div class="collapsibleAreaRegion" id="ActuatorStateChanged"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Actuator State Update Messages</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          When an BPU detected that its at least one of actuators changed, it informs the SPU by sending a
+          <a href="T_GOLDi_Fabric_Messages_ExperimentMessages_BPUStateMessage.htm">BPUStateMessage</a>.
+          However, devices are also allowed to send these messages if nothing changed. This behavior is required as
+          a reaction to the <a href="T_GOLDi_Fabric_Messages_ServiceMessages_SendDataMessage.htm">SendDataMessage</a>.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            Actuator state update messages can only be sent if the device is part of an experiment.
+          </p></td></tr></table></div><p>
+          The message contains the following information:
+        </p><dl><dt>Message source</dt><dd><p>
+              The message source is the endpoint of the BPU that created the message.
+              It is provided by the
+              <a href="P_GOLDi_Fabric_Messages_IMessage_Source.htm">Source</a>
+              property.
+            </p></dd><dt>Message destination</dt><dd><p>
+              The message destination is the endpoint of the SPU that participates in the same experiment as the BPU.
+              It is provided by the
+              <a href="P_GOLDi_Fabric_Messages_IMessage_Destination.htm">Destination</a>
+              property.
+            </p></dd><dt>Sensor state</dt><dd><p>
+              This message contains the sensor state that was used to compute the actuators as a 128 bit vector.
+              The value must be the same as the one provided by the latest received Sensor State Message.
+
+              The sensor state is provided as a boolean array by the
+              <a href="P_GOLDi_Fabric_Messages_ExperimentMessages_BPUStateMessage_SensorValues.htm">SensorValues</a>
+              property.
+            </p></dd><dt>Actuator state</dt><dd><p>
+              The new state of the actuators is contained in the message as a 128 bit vector.
+              The meaning of the different actuators is defined by the SPU used as part of the same experiment.
+
+              The actuator state is provided as a boolean array by the
+              <a href="P_GOLDi_Fabric_Messages_ExperimentMessages_BPUStateMessage_ActuatorValues.htm">ActuatorValues</a>
+              property.
+            </p></dd></dl></div><div class="collapsibleAreaRegion" id="ErrorDetected"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />SPU Error Detection Message</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          An SPU can detect two different kinds of control errors.
+          When the associated BPU sends new actuators as described in
+          <a href="#ActuatorStateChanged">Actuator State Update Messages</a>,
+          the SPU checks whether the actuator combination is allowed based on sensors state that was known to the BPU
+          when computing them. These are called "Control Exceptions".
+          On the other hand there are "Timeout Exceptions" which are fired by the SPU when it did not receive a valid actuator
+          message within an unspecified time interval after the last actuator configuration became invalid.
+        </p><p>
+          To signal that an error occured, a
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ErrorCodeMessage.htm">ErrorCodeMessage</a>
+          message will be sent.
+
+          The
+          <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ErrorCodeMessage_IsTimeoutError.htm">IsTimeoutError</a>
+          field will be <span class="code">true</span> for a timeout exception and
+          <span class="code">false</span> for a control exception.
+
+          In many cases a wrong actuator combination violates multiple rules and hence creates multiple error messages.
+          Each error is transmitted in a separate
+          <a href="T_GOLDi_Fabric_Messages_ServiceMessages_ErrorCodeMessage.htm">ErrorCodeMessage</a>.
+
+          When multitple erros occured at once, the
+          <a href="P_GOLDi_Fabric_Messages_ServiceMessages_ErrorCodeMessage_Counter.htm">Counter</a>
+          property will start at 0 for the first message and increment for every following message.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            Even through these events are called exceptions,
+            they do not in any way interact with the .NET Exception dispatch mechanisms.
+          </p></td></tr></table></div><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            SPU Error Messages can only be sent if the device is part of an experiment.
+          </p></td></tr></table></div></div></div></div><div id="pageFooter" class="pageFooter" /></body></html>

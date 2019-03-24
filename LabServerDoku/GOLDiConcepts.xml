@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GOLDiConcepts</name>
+  </assembly>
+  <members>
+    <member name="T:GOLDi.Concepts.ClientConnection.IClientConnectionInformation">
+      <summary>
+            Interface providing all informtion that is shared by all possible states of a client connection.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.ClientConnection.IControllerInformation">
+      <summary>
+            Provides information for a client connection in which the client is controlling the experiment.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.ClientConnection.IControllerInformation.BusProtectionUnitEndpoint">
+      <summary>
+            Get the endpoint of the BPU participating in the experiment.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.ClientConnection.IControllerInformation.SystemProtectionUnitEndpoint">
+      <summary>
+            Get the endpoint fo the SPU participating in the experiment.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.ClientConnection.IDeniedConnectionInformation">
+      <summary>
+            Signals that the client does not have the permission to connect to the server.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.ClientConnection.IVisitorInformation">
+      <summary>
+            Signals that the client is requesting a connection as an observer.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider">
+      <summary>
+            Provides RPC calls to the GOLDi cloud for experiment management tasks.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider.DeactivateAllExperimentsAsync">
+      <summary>
+            Signal the cloud to stop all experiments that are run on this server.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider.DeactivateExperimentAsync(System.Int32,System.String)">
+      <summary>
+            Removes an experiment fromt he list of currently active experiments.
+            </summary>
+      <param name="experimentId">The ID of the experiment created by the GOLDi cloud.</param>
+      <param name="session">The current session token of the user.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider.GetClientConnectionInformationAsync(System.Int32,System.String)">
+      <summary>
+            Request information about the role of the connected client.
+            </summary>
+      <param name="experimentId">The ID of the experiment created by the GOLDi cloud.</param>
+      <param name="session">The current session token of the user.</param>
+      <returns>An object implementing an interface derrived from 
+            <see cref="T:GOLDi.Concepts.ClientConnection.IClientConnectionInformation" /> describing the role of the client.
+            </returns>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider.GetExampleAsync(System.Int32,System.Int32)">
+      <summary>
+            Get a raw representation of the programming file for the example.
+            </summary>
+      <param name="experimentId">The ID of the experiment created by the GOLDi cloud.</param>
+      <param name="exampleNumber">Number of the example.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IExperimentCommunicationProvider.GetProgramFileAsync(System.Int32)">
+      <summary>
+            Get the programming file for the given experiment which was uploaded by the user.
+            </summary>
+      <param name="experimentId">The ID of the experiment created by the GOLDi cloud.</param>
+    </member>
+    <member name="T:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider">
+      <summary>
+            Provides RPC calls to the GOLDi cloud for automatic firmare testing.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.BeginFirmwareTestAsync(GOLDi.Concepts.Devices.IUntestedFirmware)">
+      <summary>
+            Signal the GOLDi cloud, that the test for the given firmware file has started.
+            </summary>
+      <param name="firmware">An object which was aquired using the <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetNextUntestedFirmwareAsync" /> function.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.EndFirmwareTestWithFailureAsync(GOLDi.Concepts.Devices.IUntestedFirmware)">
+      <summary>
+            Signal the GOLDi cloud, that the test for the given firmware file failed.
+            </summary>
+      <param name="firmware">An object which was aquired using the <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetNextUntestedFirmwareAsync" /> function.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.EndFirmwareTestWithoutResultAsync(GOLDi.Concepts.Devices.IUntestedFirmware)">
+      <summary>
+            Signal the GOLDi cloud, that the test for the given firmware cannot be performed.
+            </summary>
+      <param name="firmware">An object which was aquired using the <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetNextUntestedFirmwareAsync" /> function.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.EndFirmwareTestWithSuccessAsync(GOLDi.Concepts.Devices.IUntestedFirmware,GOLDi.Fabric.Messages.ServiceMessages.AliveMessage)">
+      <summary>
+            Signal the GOLDi cloud, that the test for the given firmware file succeeded and that it is
+            ready for deployment.
+            </summary>
+      <param name="firmware">An object which was aquired using the <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetNextUntestedFirmwareAsync" /> function.</param>
+      <param name="deviceInformationMessage">Reply to a ping packet created by the device.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetNextUntestedFirmwareAsync">
+      <summary>
+            Get a firmware file which was uploaded to the GOLDi cloud for automatic testing.
+            </summary>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareTestCommunicationProvider.GetTestDeviceDefaultFirmwareAsync(GOLDi.Concepts.Devices.IDeviceHardwareInformation)">
+      <summary>
+            Get a firmware file that will be applied to the test device when the test is completed.
+            </summary>
+      <param name="testDevice">Provides information about the test devices type.</param>
+    </member>
+    <member name="T:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider">
+      <summary>
+            Provides RPC calls to the GOLDi cloud for automatic firmware updating.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider.GetLatestFirmwareAsync(GOLDi.Concepts.Devices.IDeviceInformation)">
+      <summary>
+            Request the latest firmware for the device or <code>null</code>, if it is up-to-date.
+            </summary>
+      <param name="deviceInformation">Information about hard- and firmware versions of the device.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider.LogFailedFirmwareUpdateAsync(GOLDi.Concepts.Devices.IVerifiedFirmware,GOLDi.Concepts.Devices.IDeviceInformation,System.Boolean)">
+      <summary>
+            Inform the GOLDi cloud that the firmware update of the given device failed.
+            </summary>
+      <param name="firmware">A firmware that was gathered using <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider.GetLatestFirmwareAsync(GOLDi.Concepts.Devices.IDeviceInformation)" /></param>
+      <param name="targetDevice">Information about the device that failed to be updated correctly.</param>
+      <param name="isDeviceStillUsable">Flag indicating wether the device can still be used, i.e. still has its old firmware.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider.LogSuccessfulFirmwareUpdateAsync(GOLDi.Concepts.Devices.IVerifiedFirmware,GOLDi.Concepts.Devices.IDeviceInformation)">
+      <summary>
+            Inform the GOLDi cloud that the firmware update of the given device was successful.
+            </summary>
+      <param name="firmware">A firmware that was gathered using <see cref="M:GOLDi.Concepts.CloudCommunication.IFirmwareUpdateCommunicationProvider.GetLatestFirmwareAsync(GOLDi.Concepts.Devices.IDeviceInformation)" /></param>
+      <param name="targetDevice">Information about the device that was sucessfully updated.</param>
+    </member>
+    <member name="T:GOLDi.Concepts.CloudCommunication.ILocationProvider">
+      <summary>
+            Defines an auxilliary interface providing the location ID of the current server.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.CloudCommunication.ILocationProvider.Location">
+      <summary>
+            Location ID of the currently running server or null, if there is no associated location.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.CloudCommunication.IRawCloudAccess">
+      <summary>
+            Provides access to methods provided by the GOLDi cloud.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IRawCloudAccess.CallAsync(System.String)">
+      <summary>
+            Invokes a function in the GOLDi cloud without a result or parameter.
+            </summary>
+      <param name="functionName">Name of a function that is provided by the GOLDi cloud.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IRawCloudAccess.CallAsync(System.String,System.Object)">
+      <summary>
+            Invokes a function in the GOLDi cloud with a parameter, but without a result.
+            </summary>
+      <param name="functionName">Name of a function that is provided by the GOLDi cloud.</param>
+      <param name="parameter">An objects whichs public properties and fields act as a parameters to the function.</param>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IRawCloudAccess.QueryAsync``1(System.String)">
+      <summary>
+            Perform a query to the GOLDi cloud.
+            </summary>
+      <param name="functionName">Name of a function that is provided by the GOLDi cloud.</param>
+      <typeparam name="TResult">Expected result type</typeparam>
+      <returns>
+            An instance of an object of the requested type 
+            whichs public fields and properties are set to the values returned by the function.
+            
+            This function might also return null if the function call itself return null.
+            </returns>
+    </member>
+    <member name="M:GOLDi.Concepts.CloudCommunication.IRawCloudAccess.QueryAsync``1(System.String,System.Object)">
+      <summary>
+            Perform a query to the GOLDi cloud with a parameter.
+            </summary>
+      <param name="functionName">Name of a function that is provided by the GOLDi cloud.</param>
+      <param name="parameter">An objects whichs public properties and fields act as a parameters to the function.</param>
+      <typeparam name="TResult">Expected result type</typeparam>
+      <returns>
+            An instance of an object of the requested type 
+            whichs public fields and properties are set to the values returned by the function.
+            
+            This function might also return null if the function call itself return null.
+            </returns>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IConnectedDevice">
+      <summary>
+            Provides information about a device that is currently connected to the server.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IConnectedDevice.Discovery">
+      <summary>
+            Gets the timestamp of discovery.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IConnectedDevice.HasMalfunction">
+      <summary>
+            Check wether the device has been labeled as malfunctioning.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IConnectedDevice.LabelAsMalfunctioning">
+      <summary>
+            Label the device as malfunctioning.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceEnumerator">
+      <summary>
+            Provides facilities to enumerate all devices currently conneted to the server.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceEnumerator.AllDevices">
+      <summary>
+            Get the sequence of all devices that are currently connected to the server.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceEnumerator.UsableDevices">
+      <summary>
+            Get the sequence of all devices that are currently usable for experiments.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceFoundHandler">
+      <summary>
+            Describes a handler that is invoked whenever a new device is found.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceFoundHandler.HandleDeviceAsync(GOLDi.Concepts.Devices.IConnectedDevice,GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)">
+      <summary>
+            Perform the handler for the given device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceFoundHandler.IsSupported(GOLDi.Concepts.Devices.IConnectedDevice)">
+      <summary>
+            Check whether the handler supportes the given device.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceHardwareInformation">
+      <summary>
+            Provides basic information about the device hardware.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceHardwareInformation.HardwareVersion">
+      <summary>
+            Get the hardware version.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceHardwareInformation.Type">
+      <summary>
+            Get the type of the device. 
+            This might be <see cref="F:GOLDi.Fabric.Infrastructure.DeviceType.Unknown" /> during discovery.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceInformation">
+      <summary>
+            Provides information about the device.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceInformation.Endpoint">
+      <summary>
+            Get the endpoint of the device.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceInformation.FirmwareVersion">
+      <summary>
+            Get the firmware version of the device. 
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler">
+      <summary>
+            Defines a handler that performs a regular maintenance task.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler.MaintenanceInterval">
+      <summary>
+            Defines in which interval the maintenance should be performed.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler.PerformMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)">
+      <summary>
+            Perform the maintenance task for the given device. This method will be called directly after
+            a call to <see cref="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler.PrepareMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler.PrepareMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)">
+      <summary>
+            Prepares the execution of the maintenance task.
+            </summary>
+      <param name="link">An link for exclusive access to the device.</param>
+      <param name="cancel">Cancellation token to abort the maintance preparation.</param>
+      <returns>
+            True, if a maintenance step is required 
+            (<see cref="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler.PrepareMaintenanceAsync(GOLDi.Fabric.Infrastructure.ILink,System.Threading.CancellationToken)" /> will be invoked),
+            False otherwise.
+            </returns>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory">
+      <summary>
+            Provides a factory for <see cref="T:GOLDi.Concepts.Devices.IDeviceMaintenanceHandler" /> objects.
+            A device maintenace handler will be instantiated for each found device.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory.Create(GOLDi.Concepts.Devices.IConnectedDevice)">
+      <summary>
+            Creates a handler for the given device.
+            </summary>
+      <param name="connectedDevice">Information about the deivce the handler should target.</param>
+      <returns>An instance of the maintenace handler for the given device.</returns>
+      <exception cref="T:System.InvalidOperationException">
+            If <see cref="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory.IsSupported(GOLDi.Concepts.Devices.IConnectedDevice)" /> returned false
+            for the given device, an <see cref="T:System.InvalidOperationException" /> might be thrown.
+            </exception>
+    </member>
+    <member name="M:GOLDi.Concepts.Devices.IDeviceMaintenanceHandlerFactory.IsSupported(GOLDi.Concepts.Devices.IConnectedDevice)">
+      <summary>
+            Chekc whether the given device type is supported by the maintenance handler.
+            </summary>
+      <param name="device">Information about the found device.</param>
+      <returns>True, if the handler is applicable, false otherwise.</returns>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IFirmwareData">
+      <summary>
+            Provides the necessary information about a frimware to flush it to a device.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IFirmwareData.Data">
+      <summary>
+            Raw representaton fo the firmware.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IFirmwareData.ID">
+      <summary>
+            ID of the firmware file.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IFirmwareData.TargetHardware">
+      <summary>
+            Get information about the hardware platform the firmware is targeted at.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IUntestedFirmware">
+      <summary>
+            Represents an untested firmware.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Concepts.Devices.IVerifiedFirmware">
+      <summary>
+            Provides information about a verified firmware that can safely be deployed to a device.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IVerifiedFirmware.IsValid">
+      <summary>
+            Checks wether there were no errors during the transmission to the Lab Server.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IVerifiedFirmware.UploadDate">
+      <summary>
+            Get the upload timestamp of the firmware.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Concepts.Devices.IVerifiedFirmware.Version">
+      <summary>
+            Get the version number of the firmware. When a device is reconfigured with this firmware, its 
+            <see cref="T:GOLDi.Fabric.Messages.ServiceMessages.AliveMessage" /> will contain the same firmware version.
+            </summary>
+    </member>
+  </members>
+</doc>

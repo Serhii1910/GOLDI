@@ -1,0 +1,1 @@
+<div id="MessageSuccess" class="alert alert-success tag" role="alert" data-i18n="[[++OkayMessage++]]"></div>

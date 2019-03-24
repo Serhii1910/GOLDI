@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "inlineSources": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "BEAST/js/d_ts/jquery.d.ts",
+    "BEAST/js/d_ts/jqueryui.d.ts",
+    "BEAST/js/d_ts/jquery.fancytree.d.ts",
+    "BEAST/js/d_ts/simcir.d.ts",
+    "BEAST/js/SVGGraphics.ts",
+    "BEAST/js/Dialog.ts",
+    "BEAST/js/controller/common.ts",
+    "BEAST/js/fancytree/treeController.ts",
+    "BEAST/js/controller/BeastController.ts",
+    "BEAST/js/controller/EmbeddedBeastController.ts",
+    "BEAST/js/workspace/ParameterInputs.ts",
+    "BEAST/js/workspace/ParameterDialog.ts",
+    "BEAST/js/event_queue.ts",
+    "BEAST/js/workspace/workspace.ts",
+    "BEAST/js/workspace/SimulationInterface.ts",
+    "BEAST/js/workspace/main.ts",
+    "BEAST/js/controller/editorController.ts",
+    "BEAST/js/controller/workspaceController.ts",
+    "BEAST/js/model/model.ts",
+    "BEAST/js/workspacetest.ts",
+    "BEAST/js/controller/menubarController.ts",
+    "BEAST/js/simcir/GridBuilder.ts"
+  ]
+}

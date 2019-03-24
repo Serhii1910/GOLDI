@@ -1,0 +1,33 @@
+.table-header-rotated th{
+    white-space: nowrap;
+}
+
+.table-header-rotated td{
+    white-space: nowrap;
+    border:1px solid #ddd;
+}
+
+.table-header-rotated th.rotate {
+    white-space: nowrap;
+}
+
+.table-header-rotated th.rotate > div {
+    -ms-transform:
+    translate(-2px, 17px)
+    rotate(315deg);
+
+    -webkit-transform:
+    translate(-2px, 17px)
+    rotate(315deg);
+
+    transform:
+    translate(-2px, 17px)
+    rotate(315deg);
+
+    width: 30px;
+}
+
+.table-header-rotated th.rotate > div > span {
+    border-top: 1px solid #ccc;
+    padding: 5px 10px 0px 30px;
+}

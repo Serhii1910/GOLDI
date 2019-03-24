@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="SVGAnimation" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 274 388"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#2B2A29;stroke-width:1.61156}
+    .fil0 {fill:none}
+    .fil2 {fill:#FEFEFE}
+    .fil1 {fill:#2B2A29}
+    .fnt0 {font-weight:normal;font-size:20.4668px;font-family:'Arial'}
+    .fnt1 {font-weight:normal;font-size:27.2891px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <line class="fil0 str0" x1="33" y1="49" x2="33" y2= "339" />
+  <rect id="ControlBackground" class="fil0 str0" x="1" y="339" width="272.353" height="48.3467"/>
+  <line class="fil0 str0" x1="186" y1="339" x2="186" y2= "388" />
+  <g id="_1932727217744">
+   <rect id="ControlButtonTest" class="fil0 str0" x="194" y="347" width="70.9085" height="32.2321"/>
+   <text x="211" y="371" id="ControlButtonTestText" class="fil1 fnt0">Test</text>
+  </g>
+  <g id="_1932727568688">
+   <rect id="ControlButtonRestart" class="fil0 str0" x="9" y="347" width="80.5778" height="32.2318"/>
+   <text x="15" y="371" id="ControlButtonRestartText" class="fil1 fnt0">Restart</text>
+  </g>
+  <g id="_1932725467776">
+   <rect id="ControlButton1P2PBackground" class="fil0 str0" x="97" y="347" width="80.5778" height="32.2318"/>
+   <text x="104" y="371" id="ControlButton1P2PText1P" class="fil1 fnt0">1P</text>
+   <text x="145" y="371" id="ControlButton1P2PText2P" class="fil1 fnt0">2P</text>
+   <rect id="ControlButton1P2PSlider" class="fil2 str0" x="138" y="347" width="40.2889" height="32.2318"/>
+  </g>
+  <g id="_1932727791568">
+   <rect id="Row6Background" class="fil0 str0" x="1" y="49" width="272.353" height="48.3467"/>
+   <text x="9" y="83" id="Row6Text" class="fil1 fnt1">6</text>
+   <g>
+    <circle id="SolutionPin6_1" class="fil0 str0" cx="57" cy="73" r="16"/>
+    <circle id="SolutionPin6_2" class="fil0 str0" cx="106" cy="73" r="16"/>
+    <circle id="SolutionPin6_3" class="fil0 str0" cx="154" cy="73" r="16"/>
+    <circle id="SolutionPin6_4" class="fil0 str0" cx="202" cy="73" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin6_1" class="fil0 str0" cx="243" cy="65" r="8"/>
+    <circle id="ResultPin6_2" class="fil0 str0" cx="259" cy="65" r="8"/>
+    <circle id="ResultPin6_3" class="fil0 str0" cx="243" cy="81" r="8"/>
+    <circle id="ResultPin6_4" class="fil0 str0" cx="259" cy="81" r="8"/>
+   </g>
+  </g>
+  <g id="_1932725466032">
+   <rect id="Row5Background" class="fil0 str0" x="1" y="97" width="272.353" height="48.3467"/>
+   <text x="9" y="131" id="Row5Text" class="fil1 fnt1">5</text>
+   <g>
+    <circle id="SolutionPin5_1" class="fil0 str0" cx="57" cy="122" r="16"/>
+    <circle id="SolutionPin5_2" class="fil0 str0" cx="106" cy="122" r="16"/>
+    <circle id="SolutionPin5_3" class="fil0 str0" cx="154" cy="122" r="16"/>
+    <circle id="SolutionPin5_4" class="fil0 str0" cx="202" cy="122" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin5_1" class="fil0 str0" cx="243" cy="114" r="8"/>
+    <circle id="ResultPin5_2" class="fil0 str0" cx="259" cy="114" r="8"/>
+    <circle id="ResultPin5_3" class="fil0 str0" cx="243" cy="130" r="8"/>
+    <circle id="ResultPin5_4" class="fil0 str0" cx="259" cy="130" r="8"/>
+   </g>
+  </g>
+  <g id="_1932724151120">
+   <rect id="Row4Background" class="fil0 str0" x="1" y="146" width="272.353" height="48.3467"/>
+   <text x="10" y="180" id="Row4Text" class="fil1 fnt1">4</text>
+   <g>
+    <circle id="SolutionPin4_1" class="fil0 str0" cx="57" cy="170" r="16"/>
+    <circle id="SolutionPin4_2" class="fil0 str0" cx="106" cy="170" r="16"/>
+    <circle id="SolutionPin4_3" class="fil0 str0" cx="154" cy="170" r="16"/>
+    <circle id="SolutionPin4_4" class="fil0 str0" cx="202" cy="170" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin4_1" class="fil0 str0" cx="243" cy="162" r="8"/>
+    <circle id="ResultPin4_2" class="fil0 str0" cx="259" cy="162" r="8"/>
+    <circle id="ResultPin4_3" class="fil0 str0" cx="243" cy="178" r="8"/>
+    <circle id="ResultPin4_4" class="fil0 str0" cx="259" cy="178" r="8"/>
+   </g>
+  </g>
+  <g id="_1932727517904">
+   <rect id="Row3Background" class="fil0 str0" x="1" y="194" width="272.353" height="48.3467"/>
+   <text x="9" y="228" id="Row3Text" class="fil1 fnt1">3</text>
+   <g>
+    <circle id="SolutionPin3_1" class="fil0 str0" cx="57" cy="218" r="16"/>
+    <circle id="SolutionPin3_2" class="fil0 str0" cx="106" cy="218" r="16"/>
+    <circle id="SolutionPin3_3" class="fil0 str0" cx="154" cy="218" r="16"/>
+    <circle id="SolutionPin3_4" class="fil0 str0" cx="202" cy="218" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin3_1" class="fil0 str0" cx="243" cy="210" r="8"/>
+    <circle id="ResultPin3_2" class="fil0 str0" cx="259" cy="210" r="8"/>
+    <circle id="ResultPin3_3" class="fil0 str0" cx="243" cy="226" r="8"/>
+    <circle id="ResultPin3_4" class="fil0 str0" cx="259" cy="226" r="8"/>
+   </g>
+  </g>
+  <g id="_1932727519312">
+   <rect id="Row2Background" class="fil0 str0" x="1" y="243" width="272.353" height="48.3467"/>
+   <text x="10" y="277" id="Row2Text" class="fil1 fnt1">2</text>
+   <g>
+    <circle id="SolutionPin2_1" class="fil0 str0" cx="57" cy="267" r="16"/>
+    <circle id="SolutionPin2_2" class="fil0 str0" cx="106" cy="267" r="16"/>
+    <circle id="SolutionPin2_3" class="fil0 str0" cx="154" cy="267" r="16"/>
+    <circle id="SolutionPin2_4" class="fil0 str0" cx="202" cy="267" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin2_1" class="fil0 str0" cx="243" cy="258" r="8"/>
+    <circle id="ResultPin2_2" class="fil0 str0" cx="259" cy="258" r="8"/>
+    <circle id="ResultPin2_3" class="fil0 str0" cx="243" cy="274" r="8"/>
+    <circle id="ResultPin2_4" class="fil0 str0" cx="259" cy="274" r="8"/>
+   </g>
+  </g>
+  <g id="_1932725215856">
+   <rect id="Row1Background" class="fil0 str0" x="1" y="291" width="272.353" height="48.3467"/>
+   <text x="10" y="325" id="Row1Text" class="fil1 fnt1">1</text>
+   <g>
+    <circle id="SolutionPin1_1" class="fil0 str0" cx="57" cy="315" r="16"/>
+    <circle id="SolutionPin1_2" class="fil0 str0" cx="106" cy="315" r="16"/>
+    <circle id="SolutionPin1_3" class="fil0 str0" cx="154" cy="315" r="16"/>
+    <circle id="SolutionPin1_4" class="fil0 str0" cx="202" cy="315" r="16"/>
+   </g>
+   <g>
+    <circle id="ResultPin1_1" class="fil0 str0" cx="243" cy="307" r="8"/>
+    <circle id="ResultPin1_2" class="fil0 str0" cx="259" cy="307" r="8"/>
+    <circle id="ResultPin1_3" class="fil0 str0" cx="243" cy="323" r="8"/>
+    <circle id="ResultPin1_4" class="fil0 str0" cx="259" cy="323" r="8"/>
+   </g>
+  </g>
+  <g id="OKGroup">
+   <rect id="OKBackground" class="fil0 str0" x="1" y="1" width="272.353" height="48.3467"/>
+   <g>
+    <circle id="ChallengePin1" class="fil0 str0" cx="57" cy="25" r="16"/>
+    <circle id="ChallengePin2" class="fil0 str0" cx="106" cy="25" r="16"/>
+    <circle id="ChallengePin3" class="fil0 str0" cx="154" cy="25" r="16"/>
+    <circle id="ChallengePin4" class="fil0 str0" cx="202" cy="25" r="16"/>
+   </g>
+   <g>
+    <rect id="OKButton" class="fil0 str0" x="234" y="9" width="32.2311" height="32.2311"/>
+    <text x="235" y="32" id="OKText" class="fil1 fnt0">OK</text>
+   </g>
+  </g>
+ </g>
+</svg>

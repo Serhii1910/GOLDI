@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="SVGAnimation" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1281 1281"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#2B2A29;stroke-width:10.5852}
+    .fil0 {fill:none}
+    .fil3 {fill:#FFED00}
+    .fil2 {fill:#E31E24}
+    .fil1 {fill:#008DD2}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="217,111 217,323 111,323 "/>
+  <line class="fil0 str0" x1="111" y1="217" x2="5" y2= "217" />
+  <polyline class="fil0 str0" points="429,217 429,111 535,111 535,323 "/>
+  <line class="fil0 str0" x1="640" y1="217" x2="640" y2= "5" />
+  <polyline class="fil0 str0" points="958,217 746,217 746,111 1064,111 "/>
+  <polyline class="fil0 str0" points="1276,111 1170,111 1170,323 "/>
+  <polyline class="fil0 str0" points="640,429 852,429 852,323 429,323 429,429 "/>
+  <polyline class="fil0 str0" points="5,111 323,111 323,323 "/>
+  <line class="fil0 str0" x1="535" y1="429" x2="5" y2= "429" />
+  <line class="fil0 str0" x1="958" y1="323" x2="958" y2= "535" />
+  <line class="fil0 str0" x1="1170" y1="535" x2="746" y2= "535" />
+  <polyline class="fil0 str0" points="429,429 429,535 535,535 "/>
+  <line class="fil0 str0" x1="429" y1="535" x2="429" y2= "746" />
+  <polyline class="fil0 str0" points="111,535 111,640 217,640 217,535 323,535 323,746 111,746 111,958 217,958 217,852 535,852 "/>
+  <polyline class="fil0 str0" points="535,640 535,746 640,746 "/>
+  <line class="fil0 str0" x1="640" y1="535" x2="640" y2= "852" />
+  <line class="fil0 str0" x1="1170" y1="535" x2="1170" y2= "746" />
+  <polyline class="fil0 str0" points="1064,111 1064,429 1276,429 "/>
+  <line class="fil0 str0" x1="746" y1="640" x2="746" y2= "746" />
+  <line class="fil0 str0" x1="746" y1="746" x2="958" y2= "746" />
+  <line class="fil0 str0" x1="1064" y1="746" x2="1064" y2= "852" />
+  <polyline class="fil0 str0" points="1064,958 958,958 958,852 1170,852 1170,1064 "/>
+  <line class="fil0 str0" x1="1276" y1="1064" x2="1085" y2= "1064" />
+  <polyline class="fil0 str0" points="1276,1170 958,1170 958,1064 "/>
+  <polyline class="fil0 str0" points="852,1276 852,852 746,852 "/>
+  <line class="fil0 str0" x1="746" y1="958" x2="323" y2= "958" />
+  <line class="fil0 str0" x1="217" y1="958" x2="217" y2= "1064" />
+  <polyline class="fil0 str0" points="5,1064 429,1064 429,958 "/>
+  <line class="fil0 str0" x1="852" y1="1064" x2="535" y2= "1064" />
+  <line class="fil0 str0" x1="535" y1="1170" x2="535" y2= "1064" />
+  <line class="fil0 str0" x1="746" y1="1170" x2="217" y2= "1170" />
+  <line class="fil0 str0" x1="111" y1="1170" x2="5" y2= "1170" />
+  <rect class="fil0 str0" x="5" y="5" width="1270" height="1270"/>
+  <rect class="fil1 str0" x="26" y="1191" width="63.5111" height="63.5111"/>
+  <rect class="fil2 str0" x="132" y="979" width="63.5111" height="63.5111"/>
+  <line class="fil0 str0" x1="640" y1="640" x2="1276" y2= "640" />
+  <line class="fil0 str0" x1="111" y1="1170" x2="5" y2= "1170" />
+  <rect class="fil3 str0" x="1191" y="1191" width="63.5111" height="63.5111"/>
+ </g>
+</svg>

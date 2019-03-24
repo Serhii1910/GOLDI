@@ -1,0 +1,17 @@
+    <tr>
+        <td>
+            [[++Timestamp++]]
+        </td>
+        <td>
+            [[++Location++]]
+        </td>
+        <td>
+            [[++DeviceType++]]
+        </td>
+        <td>
+            [[++FirmwareID++]]
+        </td>
+        <td>
+            [[++Result++]]
+        </td>
+    </tr>

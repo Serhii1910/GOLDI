@@ -1,0 +1,1 @@
+<noscript><meta http-equiv="refresh" content="0;url=index.php?Site=20&Error=ErrorNoJavaScript"></noscript>

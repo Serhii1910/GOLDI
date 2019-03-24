@@ -1,0 +1,82 @@
+/* Sticky footer styles  */
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    overflow-y:scroll;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap
+{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin-bottom:-52px;
+    padding-bottom:80px;
+    padding-top:170px;
+}
+
+/* �nderungen neben Bootstrap */
+
+h1
+{
+    margin-top:0px;
+}
+
+#SideBar button
+{
+    border-radius:30px;
+    -webkit-box-shadow: 3px 3px 7px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    3px 3px 7px rgba(50, 50, 50, 0.75);
+    box-shadow:         3px 3px 7px rgba(50, 50, 50, 0.75);
+    border:0px;
+}
+
+#Username
+{
+    margin-right:15px;
+    color:#DDD;
+}
+
+.glyphicon {color:white}
+.navbar-toggle .icon-bar {background-color:white!important;}
+
+#headernavbar a{
+    padding-left:8px;
+    padding-right:8px;
+}
+
+/*BEGIN Adminselector in Header Menu*/
+a.headerdropdownselector + ul{
+    background-color:#4f5d6e;
+    width: 50px!important;
+}
+
+a.headerdropdownselector + ul li a{
+    color:white
+}
+
+a.headerdropdownselector + ul {
+    min-width:130px;
+}
+
+a.headerdropdownselector:hover{
+    background-color:#414d5b
+}
+/*ENDE Adminselector in Header Menu*/
+
+.active{
+    background-color:#414d5b
+}
+.inactive {
+    background-color:#4f5d6e;
+}
+
+#DeviceList td, #DeviceList th{
+    padding:3px;
+}

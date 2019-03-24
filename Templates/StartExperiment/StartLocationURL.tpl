@@ -1,0 +1,1 @@
+<input class="hidden URL" location="[[++Location++]]" url="[[++URL++]]">

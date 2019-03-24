@@ -1,0 +1,1 @@
+<img src="Images/Devices/[[++Type++]].png" style="margin:2px; width:45px; height:45px">

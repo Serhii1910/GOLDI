@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2368px" height="1313px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2322 1287"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#2B2A29;stroke-width:5.78973}
+    .str0 {stroke:#2B2A29;stroke-width:5.78973}
+    .fil0 {fill:none}
+    .fil4 {fill:#FEFEFE}
+    .fil2 {fill:#2B2A29}
+    .fil3 {fill:#FBD7BB}
+    .fil1 {fill:#FBD7BB;fill-rule:nonzero}
+    .fnt0 {font-weight:normal;font-size:89.8694px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="3" y="3" width="2316" height="1281"/>
+  <g id="_2316889045296">
+   <g>
+    <path id="ArrowUp" class="fil1 str1" d="M350 358l0 -116 -58 0 116 -116 116 116 -58 0 0 116 -116 0zm0 -58m-29 -58m29 -58m116 0m29 58m-29 58m-58 58"/>
+    <text x="376" y="274" id="ArrowUpText" class="fil2 fnt0">U</text>
+    <line class="fil0 str1" x1="379" y1="284" x2="437" y2= "284" />
+   </g>
+   <g>
+    <path id="ArrowDown" class="fil1 str1" d="M466 474l0 116 58 0 -116 115 -116 -115 58 0 0 -116 116 0zm0 58m29 58m-29 57m-116 0m-29 -57m29 -58m58 -58"/>
+    <text x="376" y="616" id="ArrowDownText" class="fil2 fnt0">D</text>
+    <line class="fil0 str1" x1="379" y1="627" x2="437" y2= "627" />
+   </g>
+  </g>
+  <g id="_2316889048112">
+   <g>
+    <rect id="ButtonFloor3" class="fil3 str1" x="813" y="126" width="579" height="232"/>
+    <circle id="LEDFloor3" class="fil4 str1" cx="933" cy="242" r="58"/>
+    <text x="1048" y="268" id="TextFloor3" class="fil2 fnt0">Floor 3</text>
+    <line class="fil0 str1" x1="1275" y1="286" x2="1333" y2= "286" />
+   </g>
+   <g>
+    <rect id="ButtonFloor2" class="fil3 str1" x="813" y="474" width="579" height="232"/>
+    <circle id="LEDFloor2" class="fil4 str1" cx="933" cy="590" r="58"/>
+    <text x="1048" y="616" id="TextFloor2" class="fil2 fnt0">Floor 2</text>
+    <line class="fil0 str1" x1="1275" y1="632" x2="1333" y2= "632" />
+   </g>
+   <g>
+    <rect id="ButtonFloor1" class="fil3 str1" x="813" y="821" width="579" height="232"/>
+    <circle id="LEDFloor1" class="fil4 str1" cx="933" cy="937" r="58"/>
+    <text x="1048" y="963" id="TextFloor1" class="fil2 fnt0">Floor 1</text>
+    <line class="fil0 str1" x1="1275" y1="978" x2="1333" y2= "978" />
+   </g>
+  </g>
+  <g id="_2316889053712">
+   <g>
+    <rect id="OpenDoorBackground" class="fil3 str1" x="1508" y="126" width="695" height="463"/>
+    <g>
+     <rect id="OpenDoorLeftDoor" class="fil4 str1" x="1566" y="184" width="145" height="347"/>
+     <path id="OpenDoorLeftDoorArrow" class="fil1 str1" d="M1667 343l-29 0 0 -14 -28 29 28 29 0 -15 29 0 0 -29zm-14 0m-15 -7m-14 7m0 29m14 8m15 -8m14 -14"/>
+     <rect id="OpenDoorRightDoor" class="fil4 str1" x="2000" y="184" width="145" height="347"/>
+     <path id="OpenDoorRightDoorArrow" class="fil1 str1" d="M2044 372l29 0 0 15 29 -29 -29 -29 0 14 -29 0 0 29zm14 0m15 8m14 -8m0 -29m-14 -7m-15 7m-14 15"/>
+    </g>
+    <g>
+     <text x="1745" y="340" id="OpenDoorTextOpen" class="fil2 fnt0">Open</text>
+     <text x="1755" y="463" id="OpenDoorTextDoor" class="fil2 fnt0">Door</text>
+     <line class="fil0 str1" x1="1750" y1="353" x2="1808" y2= "353" />
+    </g>
+   </g>
+   <g>
+    <rect id="CloseDoorBackground" class="fil3 str1" x="1508" y="705" width="695" height="463"/>
+    <g>
+     <rect id="CloseDoorRightDoor" class="fil4 str1" x="1711" y="763" width="145" height="347"/>
+     <path id="CloseDoorRightDoorArrow" class="fil1 str1" d="M1812 922l-29 0 0 -14 -29 29 29 29 0 -15 29 0 0 -29zm-14 0m-15 -7m-14 7m0 29m14 8m15 -8m14 -14"/>
+     <rect id="CloseDoorLeftDoor" class="fil4 str1" x="1566" y="763" width="145" height="347"/>
+     <path id="CloseDoorLeftDoorArrow" class="fil1 str1" d="M1610 951l28 0 0 15 29 -29 -29 -29 0 14 -28 0 0 29zm14 0m14 8m15 -8m0 -29m-15 -7m-14 7m-14 15"/>
+    </g>
+    <g>
+     <text x="1914" y="919" id="CloseDoorTextClose" class="fil2 fnt0">Close</text>
+     <text x="1919" y="1049" id="CloseDoorTextDoor" class="fil2 fnt0">Door</text>
+     <line class="fil0 str1" x1="1918" y1="931" x2="1976" y2= "931" />
+    </g>
+   </g>
+  </g>
+  <g id="_2316889027888">
+   <rect id="SliderBackground" class="fil3 str1" x="119" y="821" width="579" height="232"/>
+   <text x="173" y="963" id="SliderTextFast" class="fil2 fnt0">Fast</text>
+   <text x="456" y="963" id="SliderTextSlow" class="fil2 fnt0">Slow</text>
+   <line class="fil0 str1" x1="275" y1="972" x2="332" y2= "972" />
+   <line class="fil0 str1" x1="458" y1="973" x2="516" y2= "973" />
+   <rect id="Slider" class="fil4 str1" x="408" y="821" width="289" height="232"/>
+  </g>
+ </g>
+</svg>

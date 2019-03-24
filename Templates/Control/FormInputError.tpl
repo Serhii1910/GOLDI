@@ -1,0 +1,1 @@
+<div class="alert alert-danger tag" role="alert" data-i18n="[[++ErrorMessage++]]"></div>

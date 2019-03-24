@@ -1,0 +1,11 @@
+$(document).ready(function()
+{
+    $('#LoginButton').click(function()
+    {
+        $('#LoginWaitingModal').modal('show');
+    });
+    $('#LoginButtonHeader').click(function()
+    {
+        $('#LoginWaitingModal').modal('show');
+    });
+});

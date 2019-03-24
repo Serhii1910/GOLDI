@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2362px" height="1299px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2383 1310"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#2B2A29;stroke-width:5.95636}
+    .str0 {stroke:#2B2A29;stroke-width:5.95636}
+    .fil0 {fill:none}
+    .fil2 {fill:#2B2A29}
+    .fil1 {fill:#FBD7BB}
+    .fnt0 {font-weight:normal;font-size:92.4558px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" width="2383" height="1310"/>
+  <rect class="fil0 str0" x="536" y="238" width="1310" height="834"/>
+  <rect id="AllPumpsOn" class="fil1 str1" x="655" y="361" width="1072" height="238"/>
+  <text x="927" y="504" id="AllPumpsOnText" class="fil2 fnt0">All pumps on</text>
+  <rect id="Pump1" class="fil1 str1" x="655" y="719" width="477" height="238"/>
+  <text x="739" y="862" id="Pump1Text" class="fil2 fnt0">Pump 1</text>
+  <rect id="Pump2" class="fil1 str1" x="1251" y="719" width="477" height="238"/>
+  <text x="1329" y="862" id="Pump2Text" class="fil2 fnt0">Pump 2</text>
+  <line class="fil0 str1" x1="926" y1="517" x2="986" y2= "517" />
+  <line class="fil0 str1" x1="1001" y1="883" x2="1061" y2= "883" />
+  <line class="fil0 str1" x1="1590" y1="883" x2="1650" y2= "883" />
+ </g>
+</svg>

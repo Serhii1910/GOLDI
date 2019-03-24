@@ -1,0 +1,1843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GOLDiCore</name>
+  </assembly>
+  <members>
+    <member name="T:GOLDi.Core.BitManipulation.BigEndianBitVector">
+      <summary>
+            Defines a bit vector that works as a big-endian view onto a byte sequence.
+            The bits inside a byte are indexed from the LSB to the MSB.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BigEndianBitVector.#ctor(System.Collections.Generic.IEnumerable{System.Byte})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.BigEndianBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BigEndianBitVector.#ctor(System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.BigEndianBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BigEndianBitVector.GetBitIndex(System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BigEndianBitVector.GetByteIndex(System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.BitVectorBase">
+      <summary>
+            Provides a template implementation for bit vectors that act as a view onto a byte array.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.#ctor(System.Collections.Generic.IEnumerable{System.Byte})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.BitVectorBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.#ctor(System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.BitVectorBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.BitVectorBase.Count"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.GetBitIndex(System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.GetByteIndex(System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.GetBytes"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorBase.GetEnumerator"></member>
+    <member name="P:GOLDi.Core.BitManipulation.BitVectorBase.Item(System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation">
+      <summary>
+            Provides a default implementation for the range indexer of a bit vector using its single bit indexer.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.Count"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.GetEnumerator"></member>
+    <member name="P:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.Item(System.Int32)"></member>
+    <member name="P:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.Item(System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorDefaultLongIndexerImplementation.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="T:GOLDi.Core.BitManipulation.BitVectorExtensions"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.Set(GOLDi.Core.BitManipulation.IBitVector,System.Int64)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.Set(GOLDi.Core.BitManipulation.IBitVector,System.UInt64)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.SignedValue(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.SignedValue(GOLDi.Core.BitManipulation.IBitVector,System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.SignedValue(GOLDi.Core.BitManipulation.IBitVector,System.Int32,System.Int32,System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.BitVectorExtensions.UnsignedValue(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.ByteOrderReversingBitVector"></member>
+    <member name="M:GOLDi.Core.BitManipulation.ByteOrderReversingBitVector.#ctor(GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.ByteOrderReversingBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.ByteOrderReversingBitVector.Count"></member>
+    <member name="P:GOLDi.Core.BitManipulation.ByteOrderReversingBitVector.Item(System.Int32)"></member>
+    <member name="P:GOLDi.Core.BitManipulation.ByteOrderReversingBitVector.Item(System.Int32,System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.ConcatenatedBitVector">
+      <summary>
+            Provides a view onto a number of concatenated bit vectors.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.ConcatenatedBitVector.#ctor(GOLDi.Core.BitManipulation.IBitVector[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.ConcatenatedBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.ConcatenatedBitVector.#ctor(System.Collections.Generic.IEnumerable{GOLDi.Core.BitManipulation.IBitVector})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.ConcatenatedBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.ConcatenatedBitVector.Count"></member>
+    <member name="M:GOLDi.Core.BitManipulation.ConcatenatedBitVector.GetEnumerator"></member>
+    <member name="P:GOLDi.Core.BitManipulation.ConcatenatedBitVector.Item(System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.IBitVector">
+      <summary>
+            Defines fixed-sized, mutable list of bits.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.IBitVector.Item(System.Int32)">
+      <summary>
+            Access a single bit in the vector.
+            </summary>
+      <param name="position"></param>
+      <returns></returns>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.IBitVector.Item(System.Int32,System.Int32)">
+      <summary>
+            Access up to 64 contiguous bit in the vector. If less than 64 bits are accessed
+            the lower bits of the vector will be respected.
+            </summary>
+      <param name="msb">Most significant bit of the range.</param>
+      <param name="lsb">Least significant bit of the range.</param>
+      <returns></returns>
+    </member>
+    <member name="T:GOLDi.Core.BitManipulation.LittleEndianBitVector">
+      <summary>
+            Defines a bit vector that works as a little-endian view onto a byte sequence.
+            The bits inside a byte are indexed from the LSB to the MSB.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.LittleEndianBitVector.#ctor(System.Collections.Generic.IEnumerable{System.Byte})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.LittleEndianBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.LittleEndianBitVector.#ctor(System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.LittleEndianBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.LittleEndianBitVector.GetBitIndex(System.Int32)"></member>
+    <member name="M:GOLDi.Core.BitManipulation.LittleEndianBitVector.GetByteIndex(System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.ReversingBitVector">
+      <summary>
+            Wraps an underlying bit vector and reveres the bit order.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.ReversingBitVector.#ctor(GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.ReversingBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.ReversingBitVector.Count"></member>
+    <member name="P:GOLDi.Core.BitManipulation.ReversingBitVector.Item(System.Int32)"></member>
+    <member name="P:GOLDi.Core.BitManipulation.ReversingBitVector.Item(System.Int32,System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.SlicingBitVector">
+      <summary>
+            Creates a view onto a contiguous range of bits in an underlying bit vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.SlicingBitVector.#ctor(GOLDi.Core.BitManipulation.IBitVector,System.Int32,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.SlicingBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.SlicingBitVector.Count"></member>
+    <member name="P:GOLDi.Core.BitManipulation.SlicingBitVector.Item(System.Int32)"></member>
+    <member name="P:GOLDi.Core.BitManipulation.SlicingBitVector.Item(System.Int32,System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.TranslatingBitVector">
+      <summary>
+            Creates a view onto an underlying bit vector using a table to lookup the actual index of a bit.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.TranslatingBitVector.#ctor(GOLDi.Core.BitManipulation.IBitVector,System.Collections.Generic.IEnumerable{System.Int32})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.TranslatingBitVector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.BitManipulation.TranslatingBitVector.Count"></member>
+    <member name="P:GOLDi.Core.BitManipulation.TranslatingBitVector.Item(System.Int32)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.Selectors.ConcatenatingBitSelector">
+      <summary>
+            Defines a bit vector factory which concatenates the results of multiple underyling factories into a single bit vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.Selectors.ConcatenatingBitSelector.#ctor(GOLDi.Core.BitManipulation.Selectors.IBitSelector[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.BitManipulation.Selectors.ConcatenatingBitSelector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.Selectors.ConcatenatingBitSelector.GetView(GOLDi.Core.BitManipulation.IBitVector)"></member>
+    <member name="T:GOLDi.Core.BitManipulation.Selectors.IBitSelector">
+      <summary>
+            Defines a factory for a view on a bit vector.
+            The created bit vectors do not store any data, they just forward
+            reads an writes to an underlying storage vector.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.BitManipulation.Selectors.IBitSelector.GetView(GOLDi.Core.BitManipulation.IBitVector)">
+      <summary>
+            Create a view onto the given bit vector.
+            </summary>
+      <param name="rawMessage">The underlying vector that provides the actual data.</param>
+    </member>
+    <member name="T:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2"></member>
+    <member name="M:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.#ctor(System.Func{`0,`1})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.Empty"></member>
+    <member name="M:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.Get"></member>
+    <member name="M:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.Insert(`0)"></member>
+    <member name="M:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.Peek"></member>
+    <member name="P:GOLDi.Core.Collections.ImplicitKeyPriorityQueue`2.Values"></member>
+    <member name="T:GOLDi.Core.Collections.IPriorityQueue`2"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.Dequeue"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.Dequeue(`1@)"></member>
+    <member name="P:GOLDi.Core.Collections.IPriorityQueue`2.Empty"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.InsertOrDecreaseKey(`0,`1)"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.InsertOrUpdate(`0,`1)"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.Peek"></member>
+    <member name="M:GOLDi.Core.Collections.IPriorityQueue`2.Peek(`1@)"></member>
+    <member name="P:GOLDi.Core.Collections.IPriorityQueue`2.Values"></member>
+    <member name="T:GOLDi.Core.Collections.IValueCollection`1"></member>
+    <member name="P:GOLDi.Core.Collections.IValueCollection`1.Empty"></member>
+    <member name="M:GOLDi.Core.Collections.IValueCollection`1.Get"></member>
+    <member name="M:GOLDi.Core.Collections.IValueCollection`1.Insert(`0)"></member>
+    <member name="M:GOLDi.Core.Collections.IValueCollection`1.Peek"></member>
+    <member name="P:GOLDi.Core.Collections.IValueCollection`1.Values"></member>
+    <member name="T:GOLDi.Core.Collections.PriorityQueue"></member>
+    <member name="M:GOLDi.Core.Collections.PriorityQueue.Consume``2(GOLDi.Core.Collections.IPriorityQueue{``0,``1})"></member>
+    <member name="M:GOLDi.Core.Collections.PriorityQueue.Consume``1(GOLDi.Core.Collections.IValueCollection{``0})"></member>
+    <member name="T:GOLDi.Core.Collections.PriorityQueue`1"></member>
+    <member name="M:GOLDi.Core.Collections.PriorityQueue`1.Create``1"></member>
+    <member name="M:GOLDi.Core.Collections.PriorityQueue`1.Create``1(System.Func{`0,``0})"></member>
+    <member name="T:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Collections.ValueIndexedPriorityQueue`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.#ctor(System.Collections.Generic.IComparer{`1})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Collections.ValueIndexedPriorityQueue`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Dequeue"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Dequeue(`1@)"></member>
+    <member name="P:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Empty"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.InsertOrDecreaseKey(`0,`1)"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.InsertOrUpdate(`0,`1)"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Peek"></member>
+    <member name="M:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Peek(`1@)"></member>
+    <member name="P:GOLDi.Core.Collections.ValueIndexedPriorityQueue`2.Values"></member>
+    <member name="T:GOLDi.Core.Collections.WeakReferenceCollection`1">
+      <summary>
+            Provides a strongly-typed collection of weak references, so each item in the list could be garbage-collected if not otherwise kept alive.
+            All individual operation are thread-safe, but not lock-free.
+            </summary>
+      <typeparam name="T">Defines the type of the items in this list. This must be a reference type.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Collections.WeakReferenceCollection`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.Add(`0)"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.Clear"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.Contains(`0)"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.CopyTo(`0[],System.Int32)"></member>
+    <member name="P:GOLDi.Core.Collections.WeakReferenceCollection`1.Count"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.GetEnumerator"></member>
+    <member name="P:GOLDi.Core.Collections.WeakReferenceCollection`1.IsReadOnly"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.Remove(`0)"></member>
+    <member name="M:GOLDi.Core.Collections.WeakReferenceCollection`1.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="T:GOLDi.Core.ComponentModel.ComponentAttribute">
+      <summary>
+            Marks a class as a compontent. 
+            Each component class will be automatically instantiated, if it was an exported (public) type and 
+            the containing assembly was found during the plugin resolution process.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.ComponentAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Core.ComponentModel.ComponentLoader">
+      <summary>
+            This class performs the dependency resolution process and object creation.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.ComponentLoader</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.ComponentLoader</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.#ctor(System.Object[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.ComponentLoader</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.AddAuxilliaryObject(System.Object)"></member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.AddComponentByType``1"></member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.AddComponentByType(System.Type)"></member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.AddComponentsFromAssembly(System.Reflection.Assembly)"></member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.CreateObjects"></member>
+    <member name="M:GOLDi.Core.ComponentModel.ComponentLoader.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.ComponentModel.ComponentLoader</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Core.ComponentModel.IAsyncStartable">
+      <summary>
+            Signals that an object must be started after it was created.
+            This interface should be used if the start action is asynchronous. 
+            For synchronous start actions, consider <see cref="T:GOLDi.Core.ComponentModel.IStartable" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IAsyncStartable.StartAsync"></member>
+    <member name="T:GOLDi.Core.ComponentModel.IAsyncStoppable">
+      <summary>
+            Singals that an object must be stopped for a normal shutdown. 
+            This interface supplements <see cref="T:System.IDisposable" /> and should only be used, 
+            if the shutdown action has to perform asynchronous calls.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IAsyncStoppable.StopAsync"></member>
+    <member name="T:GOLDi.Core.ComponentModel.IBindingPolicy">
+      <summary>
+            Creates a customization point in the dependency resolution process.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IBindingPolicy.TrySelectAcceptableFit``1(System.Collections.Generic.IEnumerable{``0},``0@)">
+      <summary>
+            Perform the second lookup phase which will also include only acceptable matches.
+            </summary>
+      <param name="candidates">Sequence of all found candidates</param>
+      <param name="value">Output parameter containing the value if one was selected</param>
+      <typeparam name="T">Type of the parameter</typeparam>
+      <returns>true, if a value was found, false otherwise.</returns>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IBindingPolicy.TrySelectPerfectFit``1(System.Collections.Generic.IEnumerable{``0},``0@)">
+      <summary>
+            Perform the first lookup phase which will only find perfect matches.
+            </summary>
+      <param name="candidates">Sequence of all found candidates</param>
+      <param name="value">Output parameter containing the value if one was selected</param>
+      <typeparam name="T">Type of the parameter</typeparam>
+      <returns>true, if a preferred value was found, false otherwise.</returns>
+    </member>
+    <member name="T:GOLDi.Core.ComponentModel.ICircularDependency`1">
+      <summary>
+            This auxilliary interface can be used in components which have
+            circular references to other components. Instead of using constructor parameters,
+            one class has to implement the <see cref="T:GOLDi.Core.ComponentModel.ICircularDependency`1" /> interface
+            with the type of other component. After all objects have been created, 
+            the resolve function will be called.
+            </summary>
+      <typeparam name="T">Specifies the type of the object that must be injected.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ICircularDependency`1.ResolveDependency(`0)"></member>
+    <member name="T:GOLDi.Core.ComponentModel.ICollectionDependency`1">
+      <summary>
+            This auxilliary interface can be used for components that
+            require a complete list of all other components of a specific type.
+            Collection dependency resolution is performed as the last step.
+            </summary>
+      <typeparam name="T">Specifies the type of the objects that should be injected.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.ICollectionDependency`1.ResolveDependency(System.Collections.Generic.IEnumerable{`0})"></member>
+    <member name="T:GOLDi.Core.ComponentModel.IComponentInstantiationFilter">
+      <summary>
+            Defines an interface for checking whether an object of a specific class can/has to be created.
+            This interface should be implemented by attributes which are given to the type.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IComponentInstantiationFilter.CanInstantiateComponent(System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+            Decides whether an object of the type tagged with this attribute should be created.
+            </summary>
+      <param name="contextObjects">
+            Sequence of all the objects that were created outside the dependency injection process.
+            These are used to parametrise the process. Typically, an instance of <see cref="T:GOLDi.Core.ComponentModel.CommonData.CommandLine" />
+            is provided.
+            </param>
+      <returns>Boolean flg indication whether an instance has to be created.</returns>
+    </member>
+    <member name="T:GOLDi.Core.ComponentModel.IFactoryDependency">
+      <summary>
+            If a component requires support for the dynamic creation of additional objects
+            using the dependency binding mechanisms used to create itself, it can implement this interface.
+            
+            After the resolution process is completed, an object implementing the IGenericFactory-Interface will
+            be created and passed to the <see cref="M:GOLDi.Core.ComponentModel.IFactoryDependency.ResolveDependency(GOLDi.Core.ComponentModel.IGenericFactory)" /> method. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IFactoryDependency.ResolveDependency(GOLDi.Core.ComponentModel.IGenericFactory)"></member>
+    <member name="T:GOLDi.Core.ComponentModel.IGenericFactory">
+      <summary>
+            Defines an interface that allows the creation of objects of arbitrary types.
+            During the creation, the dependency resolution mechanisms of the component model
+            will be used.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IGenericFactory.Create``1"></member>
+    <member name="T:GOLDi.Core.ComponentModel.IStartable">
+      <summary>
+            Signals that an object must be started after it was created.
+            This interface should be used if the start action is synchronous. 
+            For asynchrnous start actions, consider <see cref="T:GOLDi.Core.ComponentModel.IAsyncStartable" />.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.IStartable.Start"></member>
+    <member name="T:GOLDi.Core.ComponentModel.LifecycleManager">
+      <summary>
+            This class implements the object lifecycle for the component model.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.LifecycleManager.#ctor(GOLDi.Core.ComponentModel.ComponentLoader)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.LifecycleManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.LifecycleManager.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.LifecycleManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.LifecycleManager.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.ComponentModel.LifecycleManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.ComponentModel.LifecycleManager.Factory"></member>
+    <member name="P:GOLDi.Core.ComponentModel.LifecycleManager.IsStarted"></member>
+    <member name="M:GOLDi.Core.ComponentModel.LifecycleManager.StartAsync"></member>
+    <member name="M:GOLDi.Core.ComponentModel.LifecycleManager.StopAsync"></member>
+    <member name="T:GOLDi.Core.ComponentModel.OptionalAttribute">
+      <summary>
+            If applied to a parameter, it declares a parameter as optional during dependency resolution.
+            If no value at all, or more than one valuefor the type can be found, 
+            the parameter will be set to the default value of the type.
+            
+            When applied to a whole class, failed parameter substitution will not cause an error.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.OptionalAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.OptionalAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.OptionalAttribute.GOLDi#Core#ComponentModel#IBindingPolicy#TrySelectAcceptableFit``1(System.Collections.Generic.IEnumerable{``0},``0@)"></member>
+    <member name="M:GOLDi.Core.ComponentModel.OptionalAttribute.GOLDi#Core#ComponentModel#IBindingPolicy#TrySelectPerfectFit``1(System.Collections.Generic.IEnumerable{``0},``0@)"></member>
+    <member name="T:GOLDi.Core.ComponentModel.CommonData.CommandLine"></member>
+    <member name="M:GOLDi.Core.ComponentModel.CommonData.CommandLine.#ctor(System.Collections.Generic.IEnumerable{GOLDi.Core.ComponentModel.CommonData.CommandLine})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.CommonData.CommandLine</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.CommonData.CommandLine.#ctor(System.String[])">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.CommonData.CommandLine</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.ComponentModel.CommonData.CommandLine.Arguments"></member>
+    <member name="M:GOLDi.Core.ComponentModel.CommonData.CommandLine.HasFlag(System.String)"></member>
+    <member name="P:GOLDi.Core.ComponentModel.CommonData.CommandLine.NamedValues"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Filters.DisableWhenFlagSetAttribute"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Filters.DisableWhenFlagSetAttribute.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Filters.DisableWhenFlagSetAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Filters.DisableWhenFlagSetAttribute.CanInstantiateComponent(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Filters.EnableWhenFlagSetAttribute"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Filters.EnableWhenFlagSetAttribute.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Filters.EnableWhenFlagSetAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Filters.EnableWhenFlagSetAttribute.CanInstantiateComponent(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.ComponentConstructor"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.#ctor(System.Type)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.ComponentConstructor</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.Bind(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.CanCreate(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.Construct"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.IsBound"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.IsMandatory"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.ComponentConstructor.IsPerfectlyBound"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.ComponentConstructor`1"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.ComponentConstructor`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ComponentConstructor`1.Construct"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy.Instance"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy.TrySelectAcceptableFit``1(System.Collections.Generic.IEnumerable{``0},``0@)"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ExactBindingPolicy.TrySelectPerfectFit``1(System.Collections.Generic.IEnumerable{``0},``0@)"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1.#ctor(System.Reflection.ParameterInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1.IsBound"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1.IsPerfectlyBound"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1.TryBind(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.GenericParameterBinder`1.Value"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.InvocationBinder"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.InvocationBinder.#ctor(System.Object,System.Reflection.MethodInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.InvocationBinder</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.InvocationBinder.#ctor(System.Reflection.ConstructorInfo)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.InvocationBinder</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.InvocationBinder.Invoke"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.InvocationBinder.IsBound"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.InvocationBinder.IsOptional"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.InvocationBinder.IsPerfectlyBound"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.InvocationBinder.ParameterCount"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.InvocationBinder.TryBind(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.IParameterBinder"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.IParameterBinder.IsBound"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.IParameterBinder.IsPerfectlyBound"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.IParameterBinder.TryBind(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="P:GOLDi.Core.ComponentModel.Loader.IParameterBinder.Value"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.LateBindings"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.LateBindings.BindCircularDependencies(System.Object,System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.LateBindings.BindCollectionDependencies(System.Object,System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.LateBindings.BindFactoryDependencies(System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.LateBindings.BindFactoryDependencies(System.Object,System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.LateBindings.FindImplementationForInterfaceMethod(System.Type,System.Reflection.MethodInfo)"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.ObjectFactory"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ObjectFactory.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.ComponentModel.Loader.ObjectFactory</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ObjectFactory.Create``1"></member>
+    <member name="T:GOLDi.Core.ComponentModel.Loader.ParameterBinder"></member>
+    <member name="M:GOLDi.Core.ComponentModel.Loader.ParameterBinder.Create(System.Reflection.ParameterInfo)"></member>
+    <member name="T:GOLDi.Core.Insights.IInsightCapturer">
+      <summary>
+            Provides the base interface for capturers of any type.
+            See the generic specialisation <see cref="T:GOLDi.Core.Insights.IInsightCapturer`1" /> for additional information.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.IInsightCapturer.Characteristic"></member>
+    <member name="P:GOLDi.Core.Insights.IInsightCapturer.Identity"></member>
+    <member name="T:GOLDi.Core.Insights.IInsightCapturer`1">
+      <summary>
+            Provides a way to capture value changes for characteristics of an insight identity.
+            </summary>
+      <typeparam name="T">
+            Input type of the characteristic.
+            </typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Insights.IInsightCapturer`1.Capture(`0,System.Collections.Generic.IEnumerable{GOLDi.Core.Insights.InsightOrigin})"></member>
+    <member name="T:GOLDi.Core.Insights.IInsightCharacteristic">
+      <summary>
+            Defines the basic properties of an insight characteristic.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.IInsightCharacteristic.Insights"></member>
+    <member name="P:GOLDi.Core.Insights.IInsightCharacteristic.Name"></member>
+    <member name="P:GOLDi.Core.Insights.IInsightCharacteristic.Severity"></member>
+    <member name="P:GOLDi.Core.Insights.IInsightCharacteristic.Significance"></member>
+    <member name="T:GOLDi.Core.Insights.IInsightCharacteristic`1">
+      <summary>
+            Defines the additional methods needed to create capturers used to trace value changes.
+            </summary>
+      <typeparam name="T">
+            Sets the type of the values that will be captured for this characteristic.
+            </typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Insights.IInsightCharacteristic`1.Bind(GOLDi.Core.Insights.InsightIdentity)">
+      <summary>
+            Get a capturer for insight values that is bound to a specific insight identity.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Insight">
+      <summary>
+            Represents a self-contained insight. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Insight.#ctor(GOLDi.Core.Insights.IInsightCharacteristic,GOLDi.Core.Insights.InsightIdentity,System.Collections.Generic.IEnumerable{GOLDi.Core.Insights.InsightOrigin},System.DateTimeOffset)">
+      <summary>
+            Creates a new Insight with the given properties.
+            </summary>
+      <param name="characteristic">
+        <see cref="P:GOLDi.Core.Insights.Insight.Characteristic" />
+      </param>
+      <param name="id">
+        <see cref="P:GOLDi.Core.Insights.Insight.SourceIdentity" />
+      </param>
+      <param name="originPath">
+        <see cref="P:GOLDi.Core.Insights.Insight.OriginPath" />
+      </param>
+      <param name="created">
+        <see cref="P:GOLDi.Core.Insights.Insight.Created" />
+      </param>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.Characteristic">
+      <summary>
+            Get the characteristic which created this insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.Created">
+      <summary>
+            Timestamp of the creating of the insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.Origin">
+      <summary>
+            Get the source code place that created the insight.
+            <seealso cref="P:GOLDi.Core.Insights.Insight.OriginPath" /></summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.OriginPath">
+      <summary>
+            Path of different places in the source code that lead to the creation of the insight, 
+            starting with the place that created the insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.Severity">
+      <summary>
+            Get the reason for the creation of this insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.Significance">
+      <summary>
+            Get the level of detail for this insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.SourceIdentity">
+      <summary>
+            Identity of the object that created the insight.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight.UntypedValue">
+      <summary>
+            Object that holds the significant information for the insight.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Insight`1"></member>
+    <member name="M:GOLDi.Core.Insights.Insight`1.#ctor(GOLDi.Core.Insights.IInsightCharacteristic,GOLDi.Core.Insights.InsightIdentity,GOLDi.Core.Insights.InsightOrigin,`0)">
+      <summary>
+            Creates a new Insight with the given properties with the timestamp of the object construction and a single origin.
+            </summary>
+      <param name="characteristic">
+        <see cref="P:GOLDi.Core.Insights.Insight.Characteristic" />
+      </param>
+      <param name="id">
+        <see cref="P:GOLDi.Core.Insights.Insight.SourceIdentity" />
+      </param>
+      <param name="origin">Create an <see cref="P:GOLDi.Core.Insights.Insight.OriginPath" /> with this item as its only element.</param>
+      <param name="value">
+        <see cref="P:GOLDi.Core.Insights.Insight`1.Value" />
+      </param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Insight`1.#ctor(GOLDi.Core.Insights.IInsightCharacteristic,GOLDi.Core.Insights.InsightIdentity,System.Collections.Generic.IEnumerable{GOLDi.Core.Insights.InsightOrigin},`0)">
+      <summary>
+            Creates a new Insight with the given properties with the timestamp of the object construction.
+            </summary>
+      <param name="characteristic">
+        <see cref="P:GOLDi.Core.Insights.Insight.Characteristic" />
+      </param>
+      <param name="id">
+        <see cref="P:GOLDi.Core.Insights.Insight.SourceIdentity" />
+      </param>
+      <param name="originPath">
+        <see cref="P:GOLDi.Core.Insights.Insight.OriginPath" />
+      </param>
+      <param name="value">
+        <see cref="P:GOLDi.Core.Insights.Insight`1.Value" />
+      </param>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Insight`1.UntypedValue"></member>
+    <member name="P:GOLDi.Core.Insights.Insight`1.Value"></member>
+    <member name="T:GOLDi.Core.Insights.InsightIdentity">
+      <summary>
+            Provides an identity for an object sending an insight.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.#ctor(GOLDi.Core.Insights.InsightSource)">
+      <summary>
+            Create a new identity of a given <see cref="T:GOLDi.Core.Insights.InsightSource" />.
+            </summary>
+      <param name="source">
+        <see cref="T:GOLDi.Core.Insights.InsightSource" /> this identidiy belongs to. The source is usally stored in a static readonly field of the type.</param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.Add(System.String,System.Object)">
+      <summary>
+            Add a property to the identity which helps identifying the object.
+            This operation is only valid when initializing the object an cannot be performed after the first read on the Identity was performed.
+            </summary>
+      <param name="identityPartName">Short name of the property</param>
+      <param name="value">Value of the property of the object</param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.ContainsKey(System.String)"></member>
+    <member name="P:GOLDi.Core.Insights.InsightIdentity.Count"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.Equals(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.Equals(System.Object)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.GetCapturer``1(System.String)">
+      <summary>
+            Get a capturer for a characteristic of this identity. The characteristic has to be attached to the <see cref="T:GOLDi.Core.Insights.InsightSource" />.
+            </summary>
+      <param name="name">name of the characteristic. This is case-sensitive.</param>
+      <typeparam name="T">type of the characteristics values</typeparam>
+      <returns>
+        <see cref="T:GOLDi.Core.Insights.IInsightCapturer`1" /> connected to this identity.</returns>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.GetEnumerator"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.GetHashCode"></member>
+    <member name="P:GOLDi.Core.Insights.InsightIdentity.Item(System.String)"></member>
+    <member name="P:GOLDi.Core.Insights.InsightIdentity.Keys"></member>
+    <member name="P:GOLDi.Core.Insights.InsightIdentity.Source">
+      <summary>
+            Get the <see cref="T:GOLDi.Core.Insights.InsightSource" /> this identity is an instance of. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.ToString"></member>
+    <member name="M:GOLDi.Core.Insights.InsightIdentity.TryGetValue(System.String,System.String@)"></member>
+    <member name="P:GOLDi.Core.Insights.InsightIdentity.Values"></member>
+    <member name="T:GOLDi.Core.Insights.InsightManager">
+      <summary>
+            Provides a singleton root for all insights. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightManager.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.InsightManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightManager.AddDefaultTracers">
+      <summary>
+            Set up console and file output for insights.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightManager.AddSource(GOLDi.Core.Insights.InsightSource)">
+      <summary>
+            Register an insight source.
+            </summary>
+      <param name="source">Instance of the insight source to be registered for monitoring.</param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightManager.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Insights.InsightManager</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightManager.Insights">
+      <summary>
+            Get all future insights.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightManager.Instance">
+      <summary>
+            Get the singleton instance.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightManager.KnownSources">
+      <summary>
+            Get all known and future insight sources.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.InsightOrigin">
+      <summary>
+            Identifies a location in code by its file, line and/or method sourrounding it.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.#ctor(System.String,System.Int32,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.InsightOrigin</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.Equals(GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.Equals(System.Object)"></member>
+    <member name="P:GOLDi.Core.Insights.InsightOrigin.FileName"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.GetHashCode"></member>
+    <member name="P:GOLDi.Core.Insights.InsightOrigin.Line"></member>
+    <member name="P:GOLDi.Core.Insights.InsightOrigin.MemberName"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.op_Equality(GOLDi.Core.Insights.InsightOrigin,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.op_Inequality(GOLDi.Core.Insights.InsightOrigin,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigin.ToString"></member>
+    <member name="T:GOLDi.Core.Insights.InsightOrigins">
+      <summary>
+            Provides helper functions for creating InsightOrigins or lists of them from different scenarios.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigins.FromException(System.Exception)">
+      <summary>
+            Create a list of origins from an exception and all its inner exceptions.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigins.FromStackTrace(System.Diagnostics.StackTrace)">
+      <summary>
+            Get a list of origins corresponding to the stack trace.
+            The origins are ordered in ascending level of detail, 
+            which means that the outermost call is represented by the first item and the innermost by the last.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigins.FullPathToProjectPath(System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigins.Here(System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.InsightOrigins.There(System.String,System.Int32,System.String)"></member>
+    <member name="P:GOLDi.Core.Insights.InsightOrigins.Unknown"></member>
+    <member name="T:GOLDi.Core.Insights.InsightSignal">
+      <summary>
+            Placeholder class for events that are just signaled without any value.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightSignal.Instance"></member>
+    <member name="M:GOLDi.Core.Insights.InsightSignal.ToString"></member>
+    <member name="T:GOLDi.Core.Insights.InsightSource">
+      <summary>
+            Identifies a trace source by its type. 
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightSource.#ctor(System.Type)">
+      <summary>
+            Create an insight source for a specific type.
+            </summary>
+      <param name="contextType">A type which owns the insight source.</param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightSource.Add(GOLDi.Core.Insights.IInsightCharacteristic)">
+      <summary>
+            Add a characteristic to this source.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightSource.Characteristics">
+      <summary>
+            Get the list of characteristics associtated to this source.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightSource.CompleteAddingCharacteristics">
+      <summary>
+            Signal that no additional characteristics will be added to the insight source.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightSource.GetCharacteristic``1(System.String)">
+      <summary>
+            Get the instance of a associated characteristic for this source by its name. 
+            Calling this method will implicitly prevent adding new characteristics to this insight source by calling <see cref="M:GOLDi.Core.Insights.InsightSource.CompleteAddingCharacteristics" />.
+            </summary>
+      <typeparam name="T">Input type of the characteristic or a more specific type.</typeparam>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightSource.Insights">
+      <summary>
+            Get the insights collected from all characteristics of this source.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.InsightSource.Name">
+      <summary>
+            Get the name of the insight source. It is derived from the type its associated to.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.InsightSource.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="T:GOLDi.Core.Insights.ObjectWithInsightIdentity"></member>
+    <member name="M:GOLDi.Core.Insights.ObjectWithInsightIdentity.#ctor(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.ObjectWithInsightIdentity</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.ObjectWithInsightIdentity.Identity"></member>
+    <member name="M:GOLDi.Core.Insights.ObjectWithInsightIdentity.OnInsightIdentityCreating(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="T:GOLDi.Core.Insights.Severity">
+      <summary>
+            Defines the meaning of an insight which affects e.g. how it is displayed to the user.
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Severity.PerformanceIndicator">
+      <summary>
+            The information provided acts as a performance indicator. 
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Severity.Information">
+      <summary>
+            The information provided does not correlate with any error.
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Severity.Warning">
+      <summary>
+            An unusual condition occured which could potentially lead to a later error.
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Severity.Error">
+      <summary>
+            There was an error inside the component which directly impacted its functionality.
+            The component can recover, but the operation failed.
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Severity.Crash">
+      <summary>
+            There was an error from which the component might not recover fully.
+            Any following operation potentially also fails.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Significance">
+      <summary>
+            Defines different levels of detail for insights.
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Significance.ExtendedDebug">
+      <summary>
+            Very detailed information for low-level debugging
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Significance.Debug">
+      <summary>
+            Detailed information for debugging
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Significance.Trace">
+      <summary>
+            Information required for a broad picture of what is going on
+            </summary>
+    </member>
+    <member name="F:GOLDi.Core.Insights.Significance.Feedback">
+      <summary>
+            Information published for dirct feedback to the user.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1">
+      <summary>
+            Provides base functionality for insight characteristics.
+            </summary>
+      <typeparam name="T">Type of the insights received by this characteristic.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance)">
+      <summary>
+            Create a new characteristc with the given properties.
+            </summary>
+      <param name="name">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Name" />
+      </param>
+      <param name="purpose">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Severity" />
+      </param>
+      <param name="detailLevel">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Significance" />
+      </param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.Bind(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.Insights">
+      <summary>
+            Obserable on insights produced by the characteristic.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.Name"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.Severity"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.CharacteristicBase`1.Significance"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Double)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2.ExtractNumericValue(GOLDi.Core.Insights.Insight{`0})"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2.GetGroupKey(GOLDi.Core.Insights.Insight{`0})"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2.Insights"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalNumericValueCharacteristicBase`2.OnInsightCaptured(GOLDi.Core.Insights.InsightIdentity,`0,GOLDi.Core.Insights.InsightOrigin[])"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.ExceptionalTimeSpanCharacteristic"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalTimeSpanCharacteristic.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Double)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.ExceptionalTimeSpanCharacteristic</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalTimeSpanCharacteristic.ExtractNumericValue(GOLDi.Core.Insights.Insight{System.TimeSpan})"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ExceptionalTimeSpanCharacteristic.GetGroupKey(GOLDi.Core.Insights.Insight{System.TimeSpan})"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.ForwardingCapturerCharacteristicBase`1">
+      <summary>
+            Provides base functionality for insight characteristics which don't require state per identity.
+            </summary>
+      <typeparam name="T">Type of the insights received by this characteristic.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ForwardingCapturerCharacteristicBase`1.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance)">
+      <summary>
+            Create a new characteristc with the given properties.
+            </summary>
+      <param name="name">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Name" />
+      </param>
+      <param name="purpose">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Severity" />
+      </param>
+      <param name="detailLevel">
+        <see cref="P:GOLDi.Core.Insights.IInsightCharacteristic.Significance" />
+      </param>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ForwardingCapturerCharacteristicBase`1.Bind(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ForwardingCapturerCharacteristicBase`1.OnInsightCaptured(GOLDi.Core.Insights.InsightIdentity,`0,GOLDi.Core.Insights.InsightOrigin[])">
+      <summary>
+            This method gets called whenever a capturer received an insight.
+            </summary>
+      <param name="identity">Identity of the object the capturer was created for.</param>
+      <param name="value">Value that was captured.</param>
+      <param name="originPath">Array of origins of the insight.</param>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.FrequencyCharacteristic"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.FrequencyCharacteristic.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.FrequencyCharacteristic</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.FrequencyCharacteristic.Insights"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.FrequencyCharacteristic.OnInsightCaptured(GOLDi.Core.Insights.InsightIdentity,GOLDi.Core.Insights.InsightSignal,GOLDi.Core.Insights.InsightOrigin[])"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.MultithreadedUtilizationCharacteristic">
+      <summary>
+            This characteristic provides support for multi-threaded load tracing.
+            <see cref="T:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase" /></summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.MultithreadedUtilizationCharacteristic.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.MultithreadedUtilizationCharacteristic</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.MultithreadedUtilizationCharacteristic.CreateCapturer"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.NirvanaCharacteristic`1">
+      <summary>
+            Provide a characteristic which just ignores each call.
+            </summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.NirvanaCharacteristic`1.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.NirvanaCharacteristic`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.NirvanaCharacteristic`1.Insights"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.NirvanaCharacteristic`1.OnInsightCaptured(GOLDi.Core.Insights.InsightIdentity,`0,GOLDi.Core.Insights.InsightOrigin[])"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.ReentrantUtilizationCharacteristic">
+      <summary>
+            This characteristic provides support for single-threaded utilization tracing with nested signalling of activity.
+            <see cref="T:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase" /></summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ReentrantUtilizationCharacteristic.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.ReentrantUtilizationCharacteristic</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ReentrantUtilizationCharacteristic.CreateCapturer"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase">
+      <summary>
+            This class provides base functionality for load tracing. 
+            Being busy is signalled by sending an insight with a value of true, going back to idle with the value of false.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance,System.Int32)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.Bind(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.CreateCapturer"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.Insights"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase">
+      <summary>
+            Provides base functionality for utilization captuers including time aggregation.
+            Inheriting classes must provide an implemenation for the time scaling in case the Capturer was signalled multiple times.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.Capture(System.Boolean,System.Collections.Generic.IEnumerable{GOLDi.Core.Insights.InsightOrigin})"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.Characteristic"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.GetActivityAndReset"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.Identity"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.IsActive"></member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.IsPassive"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.UtilizationCharacteristicBase.UtilizationCapturerBase.ScaleTime(System.Int32,System.TimeSpan)"></member>
+    <member name="T:GOLDi.Core.Insights.Characteristics.ValueCharacteristic`1"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ValueCharacteristic`1.#ctor(System.String,GOLDi.Core.Insights.Severity,GOLDi.Core.Insights.Significance)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Characteristics.ValueCharacteristic`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Characteristics.ValueCharacteristic`1.Insights"></member>
+    <member name="M:GOLDi.Core.Insights.Characteristics.ValueCharacteristic`1.OnInsightCaptured(GOLDi.Core.Insights.InsightIdentity,`0,GOLDi.Core.Insights.InsightOrigin[])"></member>
+    <member name="T:GOLDi.Core.Insights.CodeBlocks.BusyBlock"></member>
+    <member name="M:GOLDi.Core.Insights.CodeBlocks.BusyBlock.#ctor(GOLDi.Core.Insights.IInsightCapturer{System.Boolean},GOLDi.Core.Insights.InsightOrigin)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.CodeBlocks.BusyBlock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.CodeBlocks.BusyBlock.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Insights.CodeBlocks.BusyBlock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.CodeBlocks.ExecutionTimeTracingBlock"></member>
+    <member name="M:GOLDi.Core.Insights.CodeBlocks.ExecutionTimeTracingBlock.#ctor(GOLDi.Core.Insights.IInsightCapturer{System.TimeSpan},GOLDi.Core.Insights.InsightOrigin)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.CodeBlocks.ExecutionTimeTracingBlock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.CodeBlocks.ExecutionTimeTracingBlock.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Insights.CodeBlocks.ExecutionTimeTracingBlock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.ApplyHighlightTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.ApplyPrimaryTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.CaptureCurrentTheme"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.RestoreTheme"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.Write(System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.ConsoleInsightWriter.WriteLine(System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter.#ctor(System.IO.TextWriter)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter.System#IObserver{GOLDi#Core#Insights#InsightSource}#OnCompleted"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter.System#IObserver{GOLDi#Core#Insights#InsightSource}#OnError(System.Exception)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.MetaInformationWriter.System#IObserver{GOLDi#Core#Insights#InsightSource}#OnNext(GOLDi.Core.Insights.InsightSource)"></member>
+    <member name="T:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.#ctor(System.IO.TextWriter)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.ApplyHighlightTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.ApplyPrimaryTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.CaptureCurrentTheme"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.RestoreTheme"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.Write(System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.StreamInsightWriter.WriteLine(System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.ApplyHighlightTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.ApplyPrimaryTheme(GOLDi.Core.Insights.Severity)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.CaptureCurrentTheme"></member>
+    <member name="P:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.MinimumSeverity"></member>
+    <member name="P:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.MinimumSignificance"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.RestoreTheme"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.System#IObserver{GOLDi#Core#Insights#Insight}#OnCompleted"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.System#IObserver{GOLDi#Core#Insights#Insight}#OnError(System.Exception)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.System#IObserver{GOLDi#Core#Insights#Insight}#OnNext(GOLDi.Core.Insights.Insight)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.Write(System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.HumanReadableOutput.TextInsightWriter.WriteLine(System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.IdentityCreator"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.IdentityCreatorMethodBuilder"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.IdentityCreatorMethodBuilder.#ctor(System.Type)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Integration.IdentityCreatorMethodBuilder</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Integration.IdentityCreatorMethodBuilder.AddIdentityPart(System.String,System.Reflection.MethodInfo)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.IdentityCreatorMethodBuilder.GetCreator"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.InsightCapturerExtensions">
+      <summary>
+            Provides various extension methods for capturers to make them more user-friendly.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.Capture``1(GOLDi.Core.Insights.IInsightCapturer{``0},``0,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.Capture``1(GOLDi.Core.Insights.IInsightCapturer{``0},``0,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.CaptureException``1(GOLDi.Core.Insights.IInsightCapturer{``0},``0,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.CaptureException``1(GOLDi.Core.Insights.IInsightCapturer{``0},``0,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.Signal(GOLDi.Core.Insights.IInsightCapturer{GOLDi.Core.Insights.InsightSignal},GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightCapturerExtensions.Signal(GOLDi.Core.Insights.IInsightCapturer{GOLDi.Core.Insights.InsightSignal},System.String,System.Int32,System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.InsightIdentityExtensions"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.Capture``1(GOLDi.Core.Insights.InsightIdentity,System.String,``0,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.Capture``1(GOLDi.Core.Insights.InsightIdentity,System.String,``0,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.CaptureException``1(GOLDi.Core.Insights.InsightIdentity,System.String,``0,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.CaptureException``1(GOLDi.Core.Insights.InsightIdentity,System.String,``0,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.Signal(GOLDi.Core.Insights.InsightIdentity,System.String,GOLDi.Core.Insights.InsightOrigin)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityExtensions.Signal(GOLDi.Core.Insights.InsightIdentity,System.String,System.String,System.Int32,System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.InsightIdentityPartAttribute"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightIdentityPartAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Integration.InsightIdentityPartAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:GOLDi.Core.Insights.Integration.InsightObject"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Integration.InsightObject</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.DebugCrash(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.DebugError(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.DebugInformation(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.DebugWarning(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="F:GOLDi.Core.Insights.Integration.InsightObject.ExecutionTimeInsight"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ExecutionTimeTracer(System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ExtendedDebugCrash(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ExtendedDebugError(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ExtendedDebugInformation(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ExtendedDebugWarning(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.FeedbackCrash(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.FeedbackError(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.FeedbackInformation(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.FeedbackWarning(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.ForwardedException(System.Exception,System.String,System.Int32,System.String)"></member>
+    <member name="F:GOLDi.Core.Insights.Integration.InsightObject.ForwardedExceptionInsight"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.HandledException(System.Exception,System.String,System.Int32,System.String)"></member>
+    <member name="F:GOLDi.Core.Insights.Integration.InsightObject.HandledExceptionInsight"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.IgnoredException(System.Exception,System.String,System.Int32,System.String)"></member>
+    <member name="F:GOLDi.Core.Insights.Integration.InsightObject.IgnoredExceptionInsight"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.OnInsightIdentityCreating(GOLDi.Core.Insights.InsightIdentity)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.TraceCrash(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.TraceError(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.TraceInformation(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.InsightObject.TraceWarning(System.String,System.String,System.Int32,System.String)"></member>
+    <member name="T:GOLDi.Core.Insights.Integration.ObjectWithInsightSource"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.ObjectWithInsightSource.#ctor(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Insights.Integration.ObjectWithInsightSource</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Insights.Integration.ObjectWithInsightSource.InsightSource"></member>
+    <member name="M:GOLDi.Core.Insights.Integration.ObjectWithInsightSource.OnInsightSourceCreating(GOLDi.Core.Insights.InsightSource)"></member>
+    <member name="T:GOLDi.Core.Linq.FixedLengthWrappingCollection`1"></member>
+    <member name="M:GOLDi.Core.Linq.FixedLengthWrappingCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,`0)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Linq.FixedLengthWrappingCollection`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Linq.FixedLengthWrappingCollection`1.Count"></member>
+    <member name="M:GOLDi.Core.Linq.FixedLengthWrappingCollection`1.GetEnumerator"></member>
+    <member name="M:GOLDi.Core.Linq.FixedLengthWrappingCollection`1.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="T:GOLDi.Core.Linq.PaddingExtensions"></member>
+    <member name="M:GOLDi.Core.Linq.PaddingExtensions.FixLength``1(System.Collections.Generic.IEnumerable{``0},System.Int32,``0)">
+      <summary>
+            Pads or trims a sequence to contain the given number of items.
+            </summary>
+      <param name="sequence">Base sequence of items.</param>
+      <param name="count">Specifies the number of items to trim or pad to.</param>
+      <param name="fill">If the sequence has to be padded, this value is repeated after the end of the sequence.</param>
+      <typeparam name="T">Type of the items in the collection.</typeparam>
+    </member>
+    <member name="T:GOLDi.Core.Numeric.NumberStreamStatistics">
+      <summary>
+            helper class for computing statistics of a number stream.
+            The class is intended to be used with Observable.Scan.
+            </summary>
+    </member>
+    <member name="P:GOLDi.Core.Numeric.NumberStreamStatistics.Mean"></member>
+    <member name="M:GOLDi.Core.Numeric.NumberStreamStatistics.ProcessInput(System.Collections.Generic.IEnumerable{System.Double})"></member>
+    <member name="M:GOLDi.Core.Numeric.NumberStreamStatistics.ProcessInput(System.Double)"></member>
+    <member name="P:GOLDi.Core.Numeric.NumberStreamStatistics.StandardDeviation"></member>
+    <member name="T:GOLDi.Core.Numeric.NumericStreamObservableExtension"></member>
+    <member name="M:GOLDi.Core.Numeric.NumericStreamObservableExtension.ExceptionalValues``1(System.IObservable{``0},System.Func{``0,System.Double})">
+      <summary>
+            Selects the items in a sequence which have an unusual numeric value associated with them.
+            </summary>
+      <param name="sequence"></param>
+      <param name="numericValueSelector"></param>
+      <typeparam name="T"></typeparam>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Core.Numeric.NumericStreamObservableExtension.ExceptionalValues``1(System.IObservable{``0},System.Func{``0,System.Double},System.Double)"></member>
+    <member name="T:GOLDi.Core.Scheduler.IScheduler"></member>
+    <member name="M:GOLDi.Core.Scheduler.IScheduler.Post(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.IScheduler.Send(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.IScheduler.SendAsync(System.Action)"></member>
+    <member name="T:GOLDi.Core.Scheduler.LimitedParallelismScheduler">
+      <summary>
+            Scheduler which works on top of another, limiting the maximum number of simultaously running tasks.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.#ctor(System.Threading.SynchronizationContext,System.Int32,System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Scheduler.LimitedParallelismScheduler</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.CreateCopy"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.Finalize"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.Post(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.Post(System.Threading.SendOrPostCallback,System.Object)"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.Send(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.Send(System.Threading.SendOrPostCallback,System.Object)"></member>
+    <member name="M:GOLDi.Core.Scheduler.LimitedParallelismScheduler.SendAsync(System.Action)"></member>
+    <member name="T:GOLDi.Core.Scheduler.SingleThreadScheduler">
+      <summary>
+            Provides a SynchronizationContext which schedules its tasks on its own thread.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Scheduler.SingleThreadScheduler</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.CreateCopy"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.Finalize"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.Post(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.Post(System.Threading.SendOrPostCallback,System.Object)"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.Send(System.Action)"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.Send(System.Threading.SendOrPostCallback,System.Object)"></member>
+    <member name="M:GOLDi.Core.Scheduler.SingleThreadScheduler.SendAsync(System.Action)"></member>
+    <member name="T:GOLDi.Core.Scheduler.SynchronizationContextAwaiter">
+      <summary>
+            Provides an awaitable object which lets you switch to the given SynchronizationContext.
+            Code stolen from http://www.thomaslevesque.com/2015/11/11/explicitly-switch-to-the-ui-thread-in-an-async-method/.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.SynchronizationContextAwaiter.#ctor(System.Threading.SynchronizationContext)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Scheduler.SynchronizationContextAwaiter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Scheduler.SynchronizationContextAwaiter.GetResult"></member>
+    <member name="P:GOLDi.Core.Scheduler.SynchronizationContextAwaiter.IsCompleted"></member>
+    <member name="M:GOLDi.Core.Scheduler.SynchronizationContextAwaiter.OnCompleted(System.Action)"></member>
+    <member name="T:GOLDi.Core.Scheduler.SynchronizationContextExtensions"></member>
+    <member name="M:GOLDi.Core.Scheduler.SynchronizationContextExtensions.GetAwaiter(System.Threading.SynchronizationContext)">
+      <summary>
+            Extension method on <span class="nolink">[SynchronizationContext]</span> instances to allow awaiting onto the context.
+            </summary>
+      <param name="context">
+            Target synchronization context
+            </param>
+    </member>
+    <member name="T:GOLDi.Core.Threading.AsyncProducerSlot`1">
+      <summary>
+            Provides a way to decouple a producer that always creates new values from a single consumer that is only interested in the lastest value.
+            </summary>
+      <typeparam name="T">Type of the item created by the producer.</typeparam>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AsyncProducerSlot`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Threading.AsyncProducerSlot`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AsyncProducerSlot`1.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Threading.AsyncProducerSlot`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AsyncProducerSlot`1.ReadAsync">
+      <summary>
+            Get the latest value created by the producer and block if it was not updated since the last read atempt.
+            </summary>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AsyncProducerSlot`1.ReadAsync(System.Threading.CancellationToken)">
+      <summary>
+            Get the latest value created by the producer and block if it was not updated since the last read atempt.
+            </summary>
+      <returns></returns>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AsyncProducerSlot`1.Update(`0)">
+      <summary>
+            Set a new value for the produced item.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Threading.AwaitableSignal">
+      <summary>
+            Provides a synchronization mechanism for async methods that allows waiting for reoccuring events.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AwaitableSignal.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Threading.AwaitableSignal</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AwaitableSignal.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Threading.AwaitableSignal</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AwaitableSignal.Signal">
+      <summary>
+            Signal the event. Any waiting method will be notified to continue.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.AwaitableSignal.WaitForNextSignalAsync">
+      <summary>
+            Wait for the next time the signal is asserted.
+            </summary>
+      <returns>A task that will complete when the <see cref="M:GOLDi.Core.Threading.AwaitableSignal.Signal" /> method is called.</returns>
+    </member>
+    <member name="T:GOLDi.Core.Threading.SetOnceFlag">
+      <summary>
+            Represents a thread-safe boolean flag that can be set only once and be used to prevent multiple executions.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.SetOnceFlag.#ctor(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Threading.SetOnceFlag</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:GOLDi.Core.Threading.SetOnceFlag.IsSet">
+      <summary>
+            Get the state of the flag.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Threading.SetOnceFlag.op_False(GOLDi.Core.Threading.SetOnceFlag)"></member>
+    <member name="M:GOLDi.Core.Threading.SetOnceFlag.op_True(GOLDi.Core.Threading.SetOnceFlag)"></member>
+    <member name="M:GOLDi.Core.Threading.SetOnceFlag.TrySet">
+      <summary>
+            Try setting the flag and return true if it was not already set.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Utility.CancellationAwaitable"></member>
+    <member name="M:GOLDi.Core.Utility.CancellationAwaitable.ToCancellingTask(System.Threading.CancellationToken)"></member>
+    <member name="M:GOLDi.Core.Utility.CancellationAwaitable.ToCompletingTask(System.Threading.CancellationToken)"></member>
+    <member name="T:GOLDi.Core.Utility.DelegateDisposable"></member>
+    <member name="M:GOLDi.Core.Utility.DelegateDisposable.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Utility.DelegateDisposable</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.DelegateDisposable.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Utility.DelegateDisposable</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.DelegateDisposable.Dispose(System.Boolean)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDisposeBool">
+            <parameter>GOLDi.Core.Utility.DelegateDisposable</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>GOLDi.Core.Utility.DelegateDisposable</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="E:GOLDi.Core.Utility.DelegateDisposable.Disposed"></member>
+    <member name="M:GOLDi.Core.Utility.DelegateDisposable.Finalize"></member>
+    <member name="T:GOLDi.Core.Utility.Disposable"></member>
+    <member name="M:GOLDi.Core.Utility.Disposable.DisposeField``1(System.Reactive.Subjects.Subject{``0}@)"></member>
+    <member name="M:GOLDi.Core.Utility.Disposable.DisposeField``1(System.Threading.Tasks.Dataflow.BufferBlock{``0}@)"></member>
+    <member name="M:GOLDi.Core.Utility.Disposable.DisposeField``1(``0@)"></member>
+    <member name="T:GOLDi.Core.Utility.Watchdog">
+      <summary>
+            This class implements a simple watchdog mechanism. The watchdog will trigger after the specified timeout when <see cref="M:GOLDi.Core.Utility.Watchdog.Reset" /> has not been called.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.Watchdog.#ctor(System.TimeSpan)">
+      <summary>
+            Ceates a new watchdog with given timeout.
+            </summary>
+      <param name="timeout">Positive timespan, specifying watchdog trigger period.</param>
+    </member>
+    <member name="M:GOLDi.Core.Utility.Watchdog.Dispose">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocDispose">
+            <parameter>GOLDi.Core.Utility.Watchdog</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.Watchdog.Reset">
+      <summary>
+            Signal that the process watched by the watchdog is still alive.
+            </summary>
+    </member>
+    <member name="E:GOLDi.Core.Utility.Watchdog.TimeoutExpired">
+      <summary>
+            Provides the event fired after timeout expiration.
+            </summary>
+    </member>
+    <member name="T:GOLDi.Core.Utility.WatchdogFiredException">
+      <summary>
+            Signals that a watchdog reset operation failed because the watchdog timeout had already expired.
+            </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.WatchdogFiredException.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Utility.WatchdogFiredException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.WatchdogFiredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Utility.WatchdogFiredException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.WatchdogFiredException.#ctor(System.String)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Utility.WatchdogFiredException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:GOLDi.Core.Utility.WatchdogFiredException.#ctor(System.String,System.Exception)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>GOLDi.Core.Utility.WatchdogFiredException</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+  </members>
+</doc>
